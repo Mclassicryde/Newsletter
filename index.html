@@ -47,20 +47,27 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.2);
   }
   .lang-bar button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: transparent;
-    color: #fff;
-    border: 1px solid rgba(201,169,122,0.4);
-    padding: 8px 14px;
-    border-radius: 22px;
-    font-size: 14px;
+    color: #ffffff !important;
+    border: 1px solid rgba(201,169,122,0.55);
+    padding: 11px 18px;
+    border-radius: 26px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
     font-family: Arial, sans-serif;
     white-space: nowrap;
+    line-height: 1.2;
+    margin: 0;
+    outline: none;
+    display: inline-block;
   }
   .lang-bar button:hover { background: rgba(201,169,122,0.18); border-color: var(--gold); }
-  .lang-bar button.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .lang-bar button.active { background: var(--gold); color: var(--navy) !important; border-color: var(--gold); }
 
   /* ========= Layout ========= */
   main { padding: 24px 10px 0; }
@@ -190,8 +197,8 @@
 
   /* ========= Mobile ========= */
   @media (max-width: 600px) {
-    .lang-bar { padding: 8px 6px; gap: 4px; }
-    .lang-bar button { padding: 7px 11px; font-size: 13px; }
+    .lang-bar { padding: 10px 6px; gap: 5px; }
+    .lang-bar button { padding: 9px 13px; font-size: 14px; }
     .hero { padding: 28px 22px; }
     .hero h1 { font-size: 28px; }
     .section { padding: 28px 22px; }
