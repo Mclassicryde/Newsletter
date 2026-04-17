@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Ryde — Driver Newsletter · April 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B3A6B;
+    --navy-dark: #0c3b66;
+    --gold: #C9A97A;
+    --gold-bright: #d4b06a;
+    --bg: #F0F0F0;
+    --white: #FFFFFF;
+    --off-white: #FAFAFA;
+    --lightblue: #F5F8FF;
+    --border: #EEEEEE;
+    --text: #1a1a1a;
+    --text-muted: #555555;
+    --text-light: #888888;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ========= Language Bar ========= */
+  .lang-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 3px solid var(--gold);
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+  .lang-bar button {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(201,169,122,0.4);
+    padding: 8px 14px;
+    border-radius: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+  }
+  .lang-bar button:hover { background: rgba(201,169,122,0.18); border-color: var(--gold); }
+  .lang-bar button.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+  /* ========= Layout ========= */
+  main { padding: 24px 10px 0; }
+  .flyer {
+    max-width: 640px;
+    margin: 0 auto 24px;
+    background: var(--white);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.08);
+    display: none;
+    animation: fadeIn 0.35s ease;
+    overflow: hidden;
+  }
+  .flyer.active { display: block; }
+  @keyframes fadeIn { from {opacity:0;transform:translateY(10px);} to {opacity:1;transform:translateY(0);} }
+
+  /* ========= Hero ========= */
+  .hero { background: var(--navy); padding: 40px 36px 32px; color: #fff; }
+  .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand-row { display: flex; align-items: center; gap: 14px; }
+  .logo {
+    width: 64px; height: 64px; background: #f3f3f3; border-radius: 50%;
+    text-align: center; font-size: 0; line-height: 64px;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .logo .c {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px; font-weight: 400; color: var(--gold-bright);
+    line-height: 1; display: inline-block; vertical-align: top;
+    padding-top: 6px; padding-left: 3px; margin-right: -8px;
+  }
+  .logo .r {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 37px; font-weight: 700; color: var(--navy-dark);
+    line-height: 1; display: inline-block; vertical-align: bottom;
+    padding-bottom: 5px;
+  }
+  .brand-text-wrap { line-height: 1; }
+  .brand-text-wrap .classic { font-family: Georgia, serif; font-size: 26px; color: var(--gold); letter-spacing: 1px; }
+  .brand-text-wrap .ryde { font-family: Arial, sans-serif; font-size: 20px; color: #fff; font-weight: 700; letter-spacing: 3px; }
+  .edition { text-align: right; }
+  .edition-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .edition-badge { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 5px 14px; display: inline-block; }
+  .hero-body { margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,169,122,0.35); }
+  .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: normal; line-height: 1.2; margin-bottom: 14px; color: #fff;}
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-intro { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+  /* ========= Generic Section ========= */
+  .section { padding: 36px 36px; background: var(--white); border-bottom: 1px solid var(--border); }
+  .section-light { background: var(--lightblue); border-top: 3px solid var(--navy); border-bottom: 1px solid #DDDDDD; }
+
+  .eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .section h2 { font-family: Georgia, serif; font-size: 24px; font-weight: normal; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+  .section h2 em { font-style: italic; color: var(--gold); }
+  .accent-bar { width: 40px; height: 2px; background: var(--gold); margin-bottom: 20px; }
+
+  /* ========= Update Cards ========= */
+  .update-card { background: var(--off-white); padding: 18px 20px; margin-bottom: 14px; border-left: 3px solid var(--gold); }
+  .update-card.navy-border { border-left-color: var(--navy); }
+  .pill { font-family: Arial; font-size: 8px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: var(--gold); padding: 3px 10px; display: inline-block; margin-bottom: 10px; }
+  .pill.navy { background: var(--navy); }
+  .update-card h4 { font-family: Arial; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--navy); margin-bottom: 6px; }
+  .update-card p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+
+  /* ========= Driver Spotlight ========= */
+  .spot-row { display: flex; gap: 22px; align-items: flex-start; }
+  .spot-avatar { width: 80px; height: 80px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .spot-avatar span { font-family: Georgia, serif; font-size: 26px; font-weight: 700; color: var(--gold); }
+  .spot-content { flex: 1; min-width: 0; }
+  .spot-content h2 { margin-bottom: 2px; }
+  .spot-content h2 .num { font-size: 14px; color: #999; font-family: Arial; }
+  .spot-subtitle { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 14px; }
+  .spot-content p { font-size: 13px; color: #444; line-height: 1.8; margin-bottom: 16px; }
+  .tag { font-family: Arial; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; display: inline-block; margin-right: 6px; margin-bottom: 4px; border: 1px solid var(--gold); color: var(--gold); }
+  .tag.navy { border-color: var(--navy); color: var(--navy); }
+
+  /* ========= Promotion Box ========= */
+  .promo-box { border: 1px solid #DDDDDD; }
+  .promo-header { background: var(--navy); padding: 16px 22px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .promo-header h3 { font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0; }
+  .april-badge { font-size: 8px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 4px 12px; }
+  .promo-body { background: var(--off-white); padding: 22px; }
+  .stats { display: flex; gap: 10px; margin-bottom: 18px; }
+  .stat { flex: 1; background: #fff; border: 1px solid #DDDDDD; border-top: 3px solid var(--gold); padding: 14px 6px; text-align: center; }
+  .stat.navy { border-top-color: var(--navy); }
+  .stat-num { font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 4px; }
+  .stat.navy .stat-num { color: var(--navy); }
+  .stat-label { font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #888; }
+  .promo-body .promo-desc { font-size: 13px; color: #444; line-height: 1.8; text-align: center; margin-bottom: 10px; }
+  .promo-body .promo-desc strong.gold { color: var(--gold); }
+  .promo-body .promo-desc strong.navy { color: var(--navy); }
+  .fine-print { font-size: 9px; color: #AAA; text-align: center; margin-top: 10px; }
+
+  /* ========= Contact Strip ========= */
+  .contact-strip { background: var(--navy); padding: 26px 36px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .contact-left .q { font-size: 10px; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+  .contact-left .phone { font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: var(--gold); line-height: 1.3; }
+  .contact-left .q2 { font-size: 9px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .contact-right { text-align: right; }
+  .contact-right .lbl { font-size: 9px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+  .contact-right a { font-size: 12px; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 10px; }
+  .contact-right a:last-child { margin-bottom: 0; }
+
+  /* ========= Legal Footer (shared) ========= */
+  .legal {
+    max-width: 640px; margin: 0 auto 40px; padding: 26px 36px; text-align: center;
+    background: #F8F8F8; border-top: 3px solid var(--gold); font-size: 10px;
+    color: var(--text-light); line-height: 1.8;
+  }
+  .legal p { margin-bottom: 4px; }
+  .legal a { color: var(--gold); text-decoration: none; }
+  .legal a.navy { color: var(--navy); }
+  .legal .badges { margin-top: 14px; display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; }
+  .legal .badge-item {
+    font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #888; border: 1px solid #DDD; padding: 4px 10px;
+  }
+
+  /* ========= RTL ========= */
+  [dir="rtl"] .hero h1, [dir="rtl"] .section h2, [dir="rtl"] .update-card h4,
+  [dir="rtl"] .update-card p, [dir="rtl"] .hero-intro { text-align: right; }
+  [dir="rtl"] .update-card { border-left: none; border-right: 3px solid var(--gold); }
+  [dir="rtl"] .update-card.navy-border { border-right-color: var(--navy); }
+  [dir="rtl"] .edition { text-align: left; }
+  [dir="rtl"] .contact-right { text-align: left; }
+  [dir="rtl"] .spot-content h2, [dir="rtl"] .spot-content p, [dir="rtl"] .spot-subtitle { text-align: right; }
+
+  /* ========= Mobile ========= */
+  @media (max-width: 600px) {
+    .lang-bar { padding: 8px 6px; gap: 4px; }
+    .lang-bar button { padding: 7px 11px; font-size: 13px; }
+    .hero { padding: 28px 22px; }
+    .hero h1 { font-size: 28px; }
+    .section { padding: 28px 22px; }
+    .contact-strip { padding: 22px; }
+    .legal { padding: 22px; margin-bottom: 24px; }
+    .stats { flex-direction: column; }
+    .spot-row { flex-direction: column; gap: 16px; }
+    .edition { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="lang-bar" role="navigation" aria-label="Language selection">
+  <button data-lang="en" class="active">English</button>
+  <button data-lang="es">Español</button>
+  <button data-lang="zh">中文</button>
+  <button data-lang="ru">Русский</button>
+  <button data-lang="bn">বাংলা</button>
+  <button data-lang="ht">Kreyòl</button>
+  <button data-lang="ko">한국어</button>
+  <button data-lang="ar">العربية</button>
+  <button data-lang="ur">اردو</button>
+  <button data-lang="fr">Français</button>
+</nav>
+
+<main>
+
+<!-- ============ ENGLISH ============ -->
+<section id="en" class="flyer active" lang="en">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">April 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>You Keep New York<br><em>Moving.</em></h1>
+      <p class="hero-intro">Thank you for being part of the Classic Ryde team. Here's everything you need to know this month: company updates, driver recognition, and how to earn more.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Company Updates</div>
+    <h2>What's New at <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+
+    <div class="update-card">
+      <span class="pill">Operations</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>Starting April 7th, Classic Ryde is expanding to become the preferred transportation provider for New Horizon Counseling Center, a network of 14 locations across the city with especially high volume in Brooklyn and Far Rockaway. This is a major opportunity for our team and a direct result of the professionalism you bring every day.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Policy</span>
+      <h4>Monday Vehicle Inspection — Now Required</h4>
+      <p>Effective immediately, all drivers must complete the vehicle inspection every Monday and submit it to remain active. Submissions are accepted between <strong>4:00 AM and 8:00 AM</strong>. Please make sure you send it on time each week to avoid any interruptions to your account.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Community</span>
+      <h4>Refer a Driver — Earn a Hiring Bonus</h4>
+      <p>Classic Ryde is growing and expanding, and we're actively hiring new drivers. Know someone great? Refer a friend and earn a <strong>hiring bonus</strong> once they complete their first 100 trips. Help us build the team — and get rewarded for it.</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">Driver Spotlight</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">Driver of the Month · April 2026</div>
+        <p>William Lozada is simply the best we have. Always kind, always dedicated, always on time. He leads our entire network in completed trips and carries a perfect <strong style="color:var(--navy)">5/5 rating</strong> from every single client. His reliability and professionalism set the standard for what it means to be a Classic Ryde driver. William, thank you.</p>
+        <span class="tag">★ 5/5 Rating — All Clients</span>
+        <span class="tag navy">Trip Leader</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">April Promotion</div>
+    <h2>Your Chance to <em>Earn More</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Top Performer Bonus</h3>
+        <span class="april-badge">April Offer</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">Trips Required</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">Bonus Payout</span></div>
+          <div class="stat"><span class="stat-num">May 30</span><span class="stat-label">Deadline</span></div>
+        </div>
+        <p class="promo-desc">Complete <strong class="gold">200 trips</strong> and earn a <strong class="navy">$200 bonus</strong> deposited directly to your account. All trip types count. Offer valid through May 30th — all TLC-licensed Classic Ryde drivers are eligible.</p>
+        <p class="fine-print">Offer valid through May 30, 2026 · All trip types included</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Questions? We're here 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Live dispatch, always a real person</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Email us</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Website</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPANISH ============ -->
+<section id="es" class="flyer" lang="es">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Boletín para Conductores</div>
+        <div class="edition-badge">Abril 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>Tú Mantienes Nueva York<br><em>En Movimiento.</em></h1>
+      <p class="hero-intro">Gracias por ser parte del equipo de Classic Ryde. Aquí encontrarás todo lo que necesitas saber este mes: actualizaciones de la empresa, reconocimiento a conductores y cómo ganar más.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Actualizaciones de la Empresa</div>
+    <h2>Novedades en <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Operaciones</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>A partir del 7 de abril, Classic Ryde se expande para convertirse en el proveedor de transporte preferido de New Horizon Counseling Center, una red de 14 ubicaciones en toda la ciudad con especialmente alto volumen en Brooklyn y Far Rockaway. Esta es una gran oportunidad para nuestro equipo y es resultado directo del profesionalismo que demuestras cada día.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Política</span>
+      <h4>Inspección Vehicular los Lunes — Ahora Obligatoria</h4>
+      <p>A partir de ahora, todos los conductores deberán completar la inspección vehicular cada lunes y enviarla para mantenerse activos. El horario de envío es de <strong>4:00 AM a 8:00 AM</strong>. Asegúrate de enviarla a tiempo cada semana para evitar interrupciones en tu cuenta.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Comunidad</span>
+      <h4>Refiere a un Conductor — Gana un Bono</h4>
+      <p>Classic Ryde está creciendo y expandiéndose, y estamos contratando nuevos conductores. ¿Conoces a alguien que encaje? Refiere a tu amigo o amiga y gana un <strong>bono de contratación</strong> cuando completen sus primeros 100 viajes. Ayuda a construir el equipo — y recibe tu recompensa.</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">Conductor Destacado</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">Conductor del Mes · Abril 2026</div>
+        <p>William Lozada es simplemente lo mejor que tenemos. Siempre súper amable, dedicado y puntual. Es el líder en viajes completados de toda nuestra red y mantiene un puntaje perfecto de <strong style="color:var(--navy)">5/5</strong> de todos sus clientes. Su responsabilidad y profesionalismo son un ejemplo para todo el equipo. William, gracias.</p>
+        <span class="tag">★ Puntaje 5/5 — Todos los Clientes</span>
+        <span class="tag navy">Líder en Viajes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Promoción de Abril</div>
+    <h2>Tu Oportunidad de <em>Ganar Más</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Bono por Mejor Desempeño</h3>
+        <span class="april-badge">Oferta de Abril</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">Viajes Requeridos</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">Pago del Bono</span></div>
+          <div class="stat"><span class="stat-num">30 May</span><span class="stat-label">Fecha Límite</span></div>
+        </div>
+        <p class="promo-desc">Completa <strong class="gold">200 viajes</strong> y gana un <strong class="navy">bono de $200</strong> depositado directamente en tu cuenta. Incluye todos los tipos de viajes. Oferta válida hasta el 30 de mayo — todos los conductores con licencia TLC son elegibles.</p>
+        <p class="fine-print">Oferta válida hasta el 30 de mayo de 2026 · Todos los tipos de viajes incluidos</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">¿Preguntas? Estamos aquí 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Despacho en vivo, siempre una persona real</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Escríbenos</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Sitio Web</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHINESE ============ -->
+<section id="zh" class="flyer" lang="zh">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">司机通讯</div>
+        <div class="edition-badge">2026 年 4 月</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>是您让纽约<br><em>保持前行。</em></h1>
+      <p class="hero-intro">感谢您成为 Classic Ryde 团队的一员。以下是您本月需要了解的所有信息：公司最新动态、司机表彰以及如何获得更多收入。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">公司动态</div>
+    <h2><em>Classic Ryde</em> 最新消息</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">运营</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>从 4 月 7 日起，Classic Ryde 将正式成为 New Horizon Counseling Center 的首选交通服务提供商。该机构在全市拥有 14 个分点，尤其在布鲁克林和远洛克威地区业务量较大。这是我们团队的重大机遇，也是您日常专业表现带来的直接成果。</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">政策</span>
+      <h4>周一车辆检查 — 现为强制要求</h4>
+      <p>即日起，所有司机必须在每周一完成车辆检查并提交，以保持账户处于活跃状态。提交时间为 <strong>上午 4:00 至 上午 8:00</strong>。请务必每周按时提交，以避免账户中断。</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">社区</span>
+      <h4>推荐司机 — 获得聘用奖金</h4>
+      <p>Classic Ryde 正在成长壮大，我们正在积极招聘新司机。认识合适的人选吗？推荐朋友加入，当他们完成首个 100 趟行程后，您将获得 <strong>聘用奖金</strong>。帮助我们建设团队，并获得相应的奖励。</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">司机风采</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">本月最佳司机 · 2026 年 4 月</div>
+        <p>William Lozada 是我们团队最优秀的代表。始终友善、敬业、准时。他在我们整个网络中完成的行程数量领先，并且每一位客户都给他打出了 <strong style="color:var(--navy)">5/5 的满分评价</strong>。他的可靠与专业树立了 Classic Ryde 司机的标杆。William，感谢您。</p>
+        <span class="tag">★ 5/5 评分 — 所有客户</span>
+        <span class="tag navy">行程领先者</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">四月活动</div>
+    <h2>您的 <em>增收</em> 机会</h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>顶级表现者奖金</h3>
+        <span class="april-badge">四月特惠</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">所需行程</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">奖金金额</span></div>
+          <div class="stat"><span class="stat-num">5/30</span><span class="stat-label">截止日期</span></div>
+        </div>
+        <p class="promo-desc">完成 <strong class="gold">200 趟行程</strong>，即可获得 <strong class="navy">$200 奖金</strong>，直接存入您的账户。所有行程类型均计入其中。活动截止至 5 月 30 日 — 所有持 TLC 牌照的 Classic Ryde 司机均可参加。</p>
+        <p class="fine-print">优惠有效期至 2026 年 5 月 30 日 · 所有行程类型均包含在内</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">有问题？我们 24/7 全天候为您服务。</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">真人调度，随时接听</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">电子邮箱</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">官方网站</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RUSSIAN ============ -->
+<section id="ru" class="flyer" lang="ru">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Рассылка для Водителей</div>
+        <div class="edition-badge">Апрель 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>Вы держите Нью-Йорк<br><em>в движении.</em></h1>
+      <p class="hero-intro">Спасибо, что вы часть команды Classic Ryde. Вот всё, что вам нужно знать в этом месяце: новости компании, признание заслуг водителей и как зарабатывать больше.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Новости Компании</div>
+    <h2>Что нового в <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Операции</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>Начиная с 7 апреля, Classic Ryde расширяется и становится предпочтительным поставщиком транспортных услуг для New Horizon Counseling Center — сети из 14 филиалов по всему городу с особенно высоким объёмом в Бруклине и Фар-Рокуэй. Это крупная возможность для нашей команды и прямой результат вашего ежедневного профессионализма.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Политика</span>
+      <h4>Понедельничный осмотр автомобиля — теперь обязателен</h4>
+      <p>С этого момента все водители обязаны проходить осмотр автомобиля каждый понедельник и отправлять его для сохранения активного статуса. Отправка принимается с <strong>4:00 до 8:00 утра</strong>. Пожалуйста, отправляйте его вовремя каждую неделю, чтобы избежать перерывов в работе аккаунта.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Сообщество</span>
+      <h4>Пригласите водителя — получите бонус</h4>
+      <p>Classic Ryde растёт и расширяется, и мы активно нанимаем новых водителей. Знаете кого-то подходящего? Пригласите друга и получите <strong>бонус за найм</strong>, как только он завершит свои первые 100 поездок. Помогите построить команду — и получите за это вознаграждение.</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">Водитель в Центре Внимания</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">Водитель Месяца · Апрель 2026</div>
+        <p>William Lozada — просто лучший среди нас. Всегда добрый, преданный делу, пунктуальный. Он лидирует во всей нашей сети по количеству выполненных поездок и имеет безупречный рейтинг <strong style="color:var(--navy)">5/5</strong> от каждого клиента. Его надёжность и профессионализм задают стандарт того, что значит быть водителем Classic Ryde. William, спасибо.</p>
+        <span class="tag">★ Рейтинг 5/5 — все клиенты</span>
+        <span class="tag navy">Лидер по поездкам</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Акция Апреля</div>
+    <h2>Ваш шанс <em>заработать больше</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Бонус лучшему водителю</h3>
+        <span class="april-badge">Предложение Апреля</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">Требуется Поездок</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">Сумма Бонуса</span></div>
+          <div class="stat"><span class="stat-num">30 мая</span><span class="stat-label">Крайний Срок</span></div>
+        </div>
+        <p class="promo-desc">Выполните <strong class="gold">200 поездок</strong> и получите <strong class="navy">бонус $200</strong>, зачисленный прямо на ваш счёт. Учитываются все типы поездок. Предложение действует до 30 мая — все водители Classic Ryde с лицензией TLC имеют право на участие.</p>
+        <p class="fine-print">Предложение действительно до 30 мая 2026 года · Включены все типы поездок</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Вопросы? Мы работаем 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Живой диспетчер, всегда настоящий человек</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Напишите нам</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Сайт</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENGALI ============ -->
+<section id="bn" class="flyer" lang="bn">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">চালকদের নিউজলেটার</div>
+        <div class="edition-badge">এপ্রিল ২০২৬</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>আপনি নিউইয়র্ককে<br><em>চলমান রাখেন।</em></h1>
+      <p class="hero-intro">Classic Ryde টিমের অংশ হওয়ার জন্য ধন্যবাদ। এই মাসে আপনার যা জানা প্রয়োজন তার সবকিছু এখানে: কোম্পানির আপডেট, চালকদের স্বীকৃতি এবং আরও আয় করার উপায়।</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">কোম্পানির আপডেট</div>
+    <h2><em>Classic Ryde</em>-এ নতুন কী</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">অপারেশনস</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>৭ এপ্রিল থেকে, Classic Ryde সম্প্রসারিত হয়ে New Horizon Counseling Center-এর পছন্দের পরিবহন প্রদানকারী হয়ে উঠছে। এটি শহর জুড়ে ১৪টি লোকেশনের একটি নেটওয়ার্ক, যেখানে ব্রুকলিন ও ফার রকঅ্যাওয়েতে বিশেষ করে উচ্চ ভলিউম রয়েছে। এটি আমাদের টিমের জন্য একটি বড় সুযোগ এবং আপনি প্রতিদিন যে পেশাদারিত্ব নিয়ে আসেন তার সরাসরি ফল।</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">নীতি</span>
+      <h4>সোমবারের গাড়ি পরিদর্শন — এখন বাধ্যতামূলক</h4>
+      <p>তাৎক্ষণিকভাবে কার্যকর, সক্রিয় থাকার জন্য সকল চালককে প্রতি সোমবার গাড়ি পরিদর্শন সম্পন্ন করে জমা দিতে হবে। জমা দেওয়ার সময়: <strong>সকাল ৪:০০ থেকে সকাল ৮:০০</strong>। আপনার অ্যাকাউন্টে কোনো বাধা এড়াতে প্রতি সপ্তাহে সময়মতো জমা দিতে নিশ্চিত হন।</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">কমিউনিটি</span>
+      <h4>একজন চালককে রেফার করুন — নিয়োগ বোনাস পান</h4>
+      <p>Classic Ryde বৃদ্ধি পাচ্ছে এবং সম্প্রসারিত হচ্ছে, এবং আমরা সক্রিয়ভাবে নতুন চালক নিয়োগ করছি। ভালো কাউকে চেনেন? একজন বন্ধুকে রেফার করুন এবং তিনি প্রথম ১০০টি ট্রিপ সম্পন্ন করলে একটি <strong>নিয়োগ বোনাস</strong> পান। টিম গড়ে তুলতে সাহায্য করুন — এবং এর জন্য পুরস্কৃত হন।</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">চালক স্পটলাইট</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">মাসের সেরা চালক · এপ্রিল ২০২৬</div>
+        <p>William Lozada হলেন আমাদের সবচেয়ে সেরা চালক। সর্বদা দয়ালু, সর্বদা নিবেদিত, সর্বদা সময়মতো। তিনি সম্পন্ন ট্রিপের সংখ্যায় আমাদের পুরো নেটওয়ার্কে শীর্ষে আছেন এবং প্রতিটি ক্লায়েন্ট থেকে নিখুঁত <strong style="color:var(--navy)">৫/৫ রেটিং</strong> পেয়েছেন। তাঁর নির্ভরযোগ্যতা ও পেশাদারিত্ব একজন Classic Ryde চালক হওয়ার মান নির্ধারণ করে। William, ধন্যবাদ।</p>
+        <span class="tag">★ ৫/৫ রেটিং — সকল ক্লায়েন্ট</span>
+        <span class="tag navy">ট্রিপ লিডার</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">এপ্রিল প্রোমোশন</div>
+    <h2>আরও <em>আয়ের সুযোগ</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>শীর্ষ পারফর্মার বোনাস</h3>
+        <span class="april-badge">এপ্রিল অফার</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">২০০</span><span class="stat-label">প্রয়োজনীয় ট্রিপ</span></div>
+          <div class="stat navy"><span class="stat-num">$২০০</span><span class="stat-label">বোনাসের পরিমাণ</span></div>
+          <div class="stat"><span class="stat-num">৩০ মে</span><span class="stat-label">শেষ তারিখ</span></div>
+        </div>
+        <p class="promo-desc"><strong class="gold">২০০টি ট্রিপ</strong> সম্পন্ন করুন এবং সরাসরি আপনার অ্যাকাউন্টে <strong class="navy">$২০০ বোনাস</strong> পান। সব ধরনের ট্রিপ গণ্য হবে। অফার ৩০ মে পর্যন্ত বৈধ — সব TLC-লাইসেন্সধারী Classic Ryde চালক যোগ্য।</p>
+        <p class="fine-print">অফার ৩০ মে, ২০২৬ পর্যন্ত বৈধ · সব ধরনের ট্রিপ অন্তর্ভুক্ত</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">প্রশ্ন আছে? আমরা ২৪/৭ এখানে আছি।</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">সরাসরি ডিসপ্যাচ, সর্বদা একজন প্রকৃত ব্যক্তি</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">ইমেইল করুন</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">ওয়েবসাইট</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HAITIAN CREOLE ============ -->
+<section id="ht" class="flyer" lang="ht">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Bilten Chofè</div>
+        <div class="edition-badge">Avril 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>Ou Kenbe New York<br><em>ap Mache.</em></h1>
+      <p class="hero-intro">Mèsi paske ou fè pati ekip Classic Ryde. Men tout sa ou bezwen konnen pou mwa sa a: nouvèl konpayi an, rekonesans pou chofè yo, epi kòman pou fè plis lajan.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Mizajou Konpayi</div>
+    <h2>Sa Ki Nouvo nan <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Operasyon</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>Kòmanse 7 avril, Classic Ryde ap agrandi pou li vin founisè transpò prefere pou New Horizon Counseling Center, yon rezo 14 lokasyon atravè vil la ak yon volim espesyalman wo nan Brooklyn ak Far Rockaway. Sa a se yon gwo opòtinite pou ekip nou an epi li se yon rezilta dirèk nan pwofesyonalis ou pote chak jou.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Politik</span>
+      <h4>Enspeksyon Machin Lendi — Kounye a Obligatwa</h4>
+      <p>Efektif imedyatman, tout chofè dwe fè enspeksyon machin chak Lendi epi soumèt li pou rete aktif. Soumisyon yo aksepte ant <strong>4:00 AM ak 8:00 AM</strong>. Tanpri asire w ke ou voye li alè chak semèn pou evite nenpòt entèripsyon nan kont ou.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Kominote</span>
+      <h4>Refere yon Chofè — Genyen yon Bonis</h4>
+      <p>Classic Ryde ap grandi epi agrandi, epi nou ap aktivman anboche nouvo chofè yo. Ou konnen yon moun ki ekselan? Refere yon zanmi epi genyen yon <strong>bonis anbochaj</strong> lè li fin konplete 100 premye vwayaj li yo. Ede nou bati ekip la — epi resevwa rekonpans pou sa.</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">Espotlaj Chofè</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">Chofè nan Mwa · Avril 2026</div>
+        <p>William Lozada se tou senpleman sa ki pi bon nou genyen. Toujou janti, toujou dedye, toujou alè. Li mennen tout rezo nou an nan vwayaj konplete epi li kenbe yon nòt pafè <strong style="color:var(--navy)">5/5</strong> nan chak kliyan. Relyabilite li ak pwofesyonalis li etabli estanda pou sa vle di pou ou yon chofè Classic Ryde. William, mèsi.</p>
+        <span class="tag">★ Nòt 5/5 — Tout Kliyan yo</span>
+        <span class="tag navy">Lidè Vwayaj</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Pwomosyon Avril</div>
+    <h2>Chans Ou pou <em>Fè Plis Lajan</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Bonis Pou Pi Bon Pèrfòmans</h3>
+        <span class="april-badge">Ofè Avril</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">Vwayaj Egzije</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">Pèman Bonis</span></div>
+          <div class="stat"><span class="stat-num">30 Me</span><span class="stat-label">Dat Limit</span></div>
+        </div>
+        <p class="promo-desc">Konplete <strong class="gold">200 vwayaj</strong> epi genyen yon <strong class="navy">bonis $200</strong> depoze dirèkteman nan kont ou. Tout kalite vwayaj konte. Ofè valab jiska 30 me — tout chofè Classic Ryde ki gen lisans TLC kalifye.</p>
+        <p class="fine-print">Ofè valab jiska 30 me 2026 · Tout kalite vwayaj enkli</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Gen kesyon? Nou la 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Dispatch an dirèk, toujou yon moun reyèl</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Voye yon imèl</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Sit wèb</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KOREAN ============ -->
+<section id="ko" class="flyer" lang="ko">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">운전자 뉴스레터</div>
+        <div class="edition-badge">2026년 4월</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>당신이 뉴욕을<br><em>움직입니다.</em></h1>
+      <p class="hero-intro">Classic Ryde 팀의 일원이 되어주셔서 감사합니다. 이번 달 여러분이 알아두셔야 할 모든 정보를 소개합니다: 회사 소식, 운전자 표창, 그리고 더 많이 버는 방법.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">회사 업데이트</div>
+    <h2><em>Classic Ryde</em>의 새로운 소식</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">운영</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>4월 7일부터 Classic Ryde는 New Horizon Counseling Center의 우선 교통 제공업체로 확장됩니다. 이 센터는 뉴욕시 전역에 14개 지점을 운영하며, 특히 브루클린과 파 록어웨이 지역의 이용량이 많습니다. 이는 우리 팀에게 큰 기회이며, 여러분이 매일 보여주시는 전문성의 직접적인 결과입니다.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">정책</span>
+      <h4>월요일 차량 점검 — 이제 필수</h4>
+      <p>즉시 시행됩니다. 모든 운전자는 매주 월요일 차량 점검을 완료하고 제출해야 활성 상태를 유지할 수 있습니다. 제출 시간은 <strong>오전 4:00부터 오전 8:00까지</strong>입니다. 계정에 지장이 없도록 매주 정시에 제출해 주세요.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">커뮤니티</span>
+      <h4>운전자 추천 — 채용 보너스 지급</h4>
+      <p>Classic Ryde는 성장하며 확장 중이며, 새로운 운전자를 적극 채용하고 있습니다. 훌륭한 분을 알고 계신가요? 친구를 추천하시고 그 친구가 첫 100회 운행을 완료하면 <strong>채용 보너스</strong>를 받으세요. 팀 구축에 기여하시고 보상받으세요.</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">이달의 운전자</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">이달의 운전자 · 2026년 4월</div>
+        <p>William Lozada 님은 우리 팀의 최고입니다. 언제나 친절하고, 헌신적이며, 정시에 도착합니다. 우리 전체 네트워크에서 가장 많은 운행을 완료했으며, 모든 고객으로부터 완벽한 <strong style="color:var(--navy)">5/5 평점</strong>을 받고 계십니다. 그의 신뢰성과 전문성은 Classic Ryde 운전자가 되는 기준을 설정합니다. William 님, 감사합니다.</p>
+        <span class="tag">★ 5/5 평점 — 전 고객</span>
+        <span class="tag navy">운행 1위</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">4월 프로모션</div>
+    <h2>더 <em>벌 수 있는</em> 기회</h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>최고 실적자 보너스</h3>
+        <span class="april-badge">4월 특별 제안</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">필요 운행 수</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">보너스 지급액</span></div>
+          <div class="stat"><span class="stat-num">5월 30일</span><span class="stat-label">마감일</span></div>
+        </div>
+        <p class="promo-desc"><strong class="gold">200회 운행</strong>을 완료하시고 <strong class="navy">$200 보너스</strong>를 계정으로 직접 받으세요. 모든 운행 유형이 포함됩니다. 5월 30일까지 유효 — TLC 면허 보유 Classic Ryde 운전자 모두 참여 가능합니다.</p>
+        <p class="fine-print">2026년 5월 30일까지 유효 · 모든 운행 유형 포함</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">문의사항이 있으신가요? 24시간 연중무휴 운영합니다.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">실시간 디스패치, 항상 실제 상담원 연결</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">이메일</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">웹사이트</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARABIC (RTL) ============ -->
+<section id="ar" class="flyer" lang="ar" dir="rtl">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">نشرة السائقين</div>
+        <div class="edition-badge">أبريل 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>أنتم من تُحركون<br><em>نيويورك.</em></h1>
+      <p class="hero-intro">شكراً لانضمامكم إلى فريق Classic Ryde. إليكم كل ما تحتاجون لمعرفته هذا الشهر: أخبار الشركة، تكريم السائقين، وكيفية زيادة أرباحكم.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">تحديثات الشركة</div>
+    <h2>جديد في <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">العمليات</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>اعتباراً من 7 أبريل، تتوسع Classic Ryde لتصبح مزود النقل المفضل لـ New Horizon Counseling Center، وهي شبكة من 14 موقعاً في جميع أنحاء المدينة مع حجم مرتفع بشكل خاص في بروكلين وفار روكاواي. هذه فرصة كبيرة لفريقنا ونتيجة مباشرة للاحترافية التي تقدمونها كل يوم.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">السياسة</span>
+      <h4>فحص المركبة يوم الاثنين — أصبح إلزامياً</h4>
+      <p>سارياً فوراً، يجب على جميع السائقين إكمال فحص المركبة كل يوم اثنين وتقديمه للبقاء نشطين. يُقبل التقديم بين <strong>الساعة 4:00 صباحاً و 8:00 صباحاً</strong>. يرجى التأكد من إرساله في الوقت المحدد كل أسبوع لتجنب أي انقطاع في حسابك.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">المجتمع</span>
+      <h4>أحِل سائقاً — اكسب مكافأة توظيف</h4>
+      <p>تنمو Classic Ryde وتتوسع، ونحن نقوم بتوظيف سائقين جدد بنشاط. هل تعرف شخصاً رائعاً؟ أحِل صديقاً واكسب <strong>مكافأة توظيف</strong> بمجرد أن يكمل أول 100 رحلة له. ساعدنا في بناء الفريق — وكن مُكرَّماً على ذلك.</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">تسليط الضوء على السائق</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">سائق الشهر · أبريل 2026</div>
+        <p>ويليام لوزادا هو ببساطة الأفضل لدينا. دائماً لطيف، دائماً متفانٍ، دائماً في الوقت المحدد. يتصدر شبكتنا بالكامل في عدد الرحلات المكتملة ويحمل تقييماً مثالياً <strong style="color:var(--navy)">5/5</strong> من كل عميل. اعتماديته واحترافه يضعان المعيار لمعنى أن تكون سائقاً في Classic Ryde. شكراً لك يا ويليام.</p>
+        <span class="tag">★ تقييم 5/5 — جميع العملاء</span>
+        <span class="tag navy">المتصدر في الرحلات</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">عرض أبريل</div>
+    <h2>فرصتكم <em>لكسب المزيد</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>مكافأة الأداء الأفضل</h3>
+        <span class="april-badge">عرض أبريل</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">الرحلات المطلوبة</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">قيمة المكافأة</span></div>
+          <div class="stat"><span class="stat-num">30 مايو</span><span class="stat-label">الموعد النهائي</span></div>
+        </div>
+        <p class="promo-desc">أكمل <strong class="gold">200 رحلة</strong> واكسب <strong class="navy">مكافأة 200 دولار</strong> تُودع مباشرة في حسابك. جميع أنواع الرحلات محسوبة. العرض ساري حتى 30 مايو — جميع سائقي Classic Ryde المرخصين من TLC مؤهلون.</p>
+        <p class="fine-print">العرض ساري حتى 30 مايو 2026 · جميع أنواع الرحلات مشمولة</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">أسئلة؟ نحن هنا على مدار الساعة.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">إرسال حي، دائماً شخص حقيقي</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">راسلنا</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">الموقع الإلكتروني</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ URDU (RTL) ============ -->
+<section id="ur" class="flyer" lang="ur" dir="rtl">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">ڈرائیور نیوز لیٹر</div>
+        <div class="edition-badge">اپریل 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>آپ نیویارک کو<br><em>چلاتے ہیں۔</em></h1>
+      <p class="hero-intro">Classic Ryde ٹیم کا حصہ بننے کے لیے شکریہ۔ اس ماہ آپ کو جو کچھ جاننا ضروری ہے وہ یہاں ہے: کمپنی کی تازہ کاریاں، ڈرائیوروں کی پہچان، اور زیادہ کمانے کا طریقہ۔</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">کمپنی کی تازہ کاریاں</div>
+    <h2><em>Classic Ryde</em> میں نیا کیا ہے</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">آپریشنز</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>7 اپریل سے Classic Ryde نیو ہورائزن کاؤنسلنگ سینٹر کا ترجیحی ٹرانسپورٹیشن فراہم کنندہ بننے کے لیے توسیع کر رہا ہے، جو شہر بھر میں 14 مقامات کا ایک نیٹ ورک ہے جس میں خاص طور پر بروکلین اور فار راکاوے میں زیادہ حجم ہے۔ یہ ہماری ٹیم کے لیے ایک بڑا موقع ہے اور اس پیشہ ورانہ مہارت کا براہِ راست نتیجہ ہے جو آپ ہر روز لاتے ہیں۔</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">پالیسی</span>
+      <h4>پیر کے دن گاڑی کا معائنہ — اب لازمی</h4>
+      <p>فوراً نافذ، تمام ڈرائیوروں کو فعال رہنے کے لیے ہر پیر کو گاڑی کا معائنہ مکمل کر کے جمع کرانا ہوگا۔ جمع کرنے کا وقت <strong>صبح 4:00 سے صبح 8:00 بجے تک</strong> ہے۔ براہِ کرم یقینی بنائیں کہ آپ اسے ہر ہفتے وقت پر بھیجیں تاکہ آپ کے اکاؤنٹ میں کوئی رکاوٹ نہ آئے۔</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">کمیونٹی</span>
+      <h4>ڈرائیور کا حوالہ دیں — ہائرنگ بونس حاصل کریں</h4>
+      <p>Classic Ryde بڑھ رہی ہے اور پھیل رہی ہے، اور ہم فعال طور پر نئے ڈرائیور بھرتی کر رہے ہیں۔ کسی اچھے شخص کو جانتے ہیں؟ کسی دوست کا حوالہ دیں اور جب وہ اپنے پہلے 100 ٹرپس مکمل کر لیں تو <strong>ہائرنگ بونس</strong> حاصل کریں۔ ٹیم کی تعمیر میں مدد کریں — اور اس کے لیے انعام پائیں۔</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">ڈرائیور سپاٹ لائٹ</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">مہینے کا ڈرائیور · اپریل 2026</div>
+        <p>ولیم لوزاڈا سادہ لفظوں میں ہمارا بہترین ڈرائیور ہے۔ ہمیشہ مہربان، ہمیشہ وقف، ہمیشہ وقت پر۔ وہ ہمارے پورے نیٹ ورک میں مکمل شدہ ٹرپس میں سب سے آگے ہیں اور ہر کلائنٹ سے مکمل <strong style="color:var(--navy)">5/5 ریٹنگ</strong> رکھتے ہیں۔ ان کی قابلِ اعتماد اور پیشہ ورانہ مہارت Classic Ryde کا ڈرائیور ہونے کا معیار قائم کرتی ہے۔ ولیم، شکریہ۔</p>
+        <span class="tag">★ 5/5 ریٹنگ — تمام کلائنٹس</span>
+        <span class="tag navy">ٹرپ لیڈر</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">اپریل پروموشن</div>
+    <h2>زیادہ <em>کمانے کا موقع</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>ٹاپ پرفارمر بونس</h3>
+        <span class="april-badge">اپریل کی پیشکش</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">مطلوبہ ٹرپس</span></div>
+          <div class="stat navy"><span class="stat-num">$200</span><span class="stat-label">بونس کی ادائیگی</span></div>
+          <div class="stat"><span class="stat-num">30 مئی</span><span class="stat-label">آخری تاریخ</span></div>
+        </div>
+        <p class="promo-desc"><strong class="gold">200 ٹرپس</strong> مکمل کریں اور <strong class="navy">$200 بونس</strong> حاصل کریں جو براہِ راست آپ کے اکاؤنٹ میں جمع ہوگا۔ تمام قسم کے ٹرپس شامل ہیں۔ پیشکش 30 مئی تک درست ہے — TLC لائسنس یافتہ Classic Ryde کے تمام ڈرائیور اہل ہیں۔</p>
+        <p class="fine-print">پیشکش 30 مئی 2026 تک درست ہے · تمام اقسام کے ٹرپس شامل ہیں</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">سوالات ہیں؟ ہم 24/7 حاضر ہیں۔</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">براہِ راست ڈسپیچ، ہمیشہ ایک حقیقی شخص</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">ای میل کریں</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">ویب سائٹ</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FRENCH ============ -->
+<section id="fr" class="flyer" lang="fr">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <div class="logo"><span class="c">C</span><span class="r">R</span></div>
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Bulletin des Chauffeurs</div>
+        <div class="edition-badge">Avril 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>Vous Faites Avancer<br><em>New York.</em></h1>
+      <p class="hero-intro">Merci de faire partie de l'équipe Classic Ryde. Voici tout ce que vous devez savoir ce mois-ci : nouvelles de l'entreprise, reconnaissance des chauffeurs, et comment gagner plus.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Mises à Jour de l'Entreprise</div>
+    <h2>Nouveautés chez <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Opérations</span>
+      <h4>New Horizon Counseling Center</h4>
+      <p>À partir du 7 avril, Classic Ryde s'élargit pour devenir le fournisseur de transport privilégié du New Horizon Counseling Center, un réseau de 14 sites à travers la ville avec un volume particulièrement élevé à Brooklyn et Far Rockaway. C'est une opportunité majeure pour notre équipe et le résultat direct du professionnalisme que vous apportez chaque jour.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Politique</span>
+      <h4>Inspection du Véhicule du Lundi — Désormais Obligatoire</h4>
+      <p>À compter de maintenant, tous les chauffeurs doivent effectuer l'inspection du véhicule chaque lundi et la soumettre pour rester actifs. Les soumissions sont acceptées entre <strong>4h00 et 8h00 du matin</strong>. Assurez-vous de l'envoyer à temps chaque semaine pour éviter toute interruption de votre compte.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Communauté</span>
+      <h4>Recommandez un Chauffeur — Gagnez une Prime</h4>
+      <p>Classic Ryde grandit et s'étend, et nous recrutons activement de nouveaux chauffeurs. Vous connaissez quelqu'un de formidable ? Recommandez un ami et gagnez une <strong>prime d'embauche</strong> dès qu'il termine ses 100 premières courses. Aidez-nous à constituer l'équipe — et soyez récompensé pour cela.</p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="spot-row">
+      <div class="spot-avatar"><span>WL</span></div>
+      <div class="spot-content">
+        <div class="eyebrow">Chauffeur à l'Honneur</div>
+        <h2>William Lozada <span class="num">#678</span></h2>
+        <div class="spot-subtitle">Chauffeur du Mois · Avril 2026</div>
+        <p>William Lozada est tout simplement le meilleur que nous ayons. Toujours aimable, toujours dévoué, toujours à l'heure. Il est en tête de tout notre réseau en courses effectuées et maintient une note parfaite de <strong style="color:var(--navy)">5/5</strong> de la part de chaque client. Sa fiabilité et son professionnalisme établissent la norme de ce que signifie être chauffeur chez Classic Ryde. William, merci.</p>
+        <span class="tag">★ Note 5/5 — Tous les Clients</span>
+        <span class="tag navy">Leader des Courses</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Promotion d'Avril</div>
+    <h2>Votre Chance de <em>Gagner Plus</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Prime du Meilleur Chauffeur</h3>
+        <span class="april-badge">Offre d'Avril</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">200</span><span class="stat-label">Courses Requises</span></div>
+          <div class="stat navy"><span class="stat-num">200 $</span><span class="stat-label">Montant de la Prime</span></div>
+          <div class="stat"><span class="stat-num">30 mai</span><span class="stat-label">Date Limite</span></div>
+        </div>
+        <p class="promo-desc">Complétez <strong class="gold">200 courses</strong> et gagnez une <strong class="navy">prime de 200 $</strong> déposée directement sur votre compte. Tous les types de courses comptent. Offre valable jusqu'au 30 mai — tous les chauffeurs Classic Ryde titulaires de la licence TLC sont éligibles.</p>
+        <p class="fine-print">Offre valable jusqu'au 30 mai 2026 · Tous les types de courses inclus</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Des questions ? Nous sommes là 24h/24, 7j/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Répartition en direct, toujours une personne réelle</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Écrivez-nous</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Site Web</div>
+      <a href="https://www.classicryde.com/driver">www.classicryde.com/driver</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ SHARED LEGAL FOOTER ============ -->
+<footer class="legal">
+  <p>&copy; 2026 Classic Car Service DBA Classic Ryde · All rights reserved</p>
+  <p>276 Greenpoint Ave, Brooklyn NY 11222 Suite 251 · <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a> · <a class="navy" href="https://www.classicryde.com/driver">www.classicryde.com/driver</a></p>
+  <p>To unsubscribe, reply with "Unsubscribe" in the subject line. / Para cancelar, responda con "Unsubscribe".</p>
+  <div class="badges">
+    <span class="badge-item">Medicaid Enrolled</span>
+    <span class="badge-item">TLC Licensed</span>
+    <span class="badge-item">24/7 Dispatch</span>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const buttons = document.querySelectorAll('.lang-bar button');
+    const flyers  = document.querySelectorAll('.flyer');
+    function showLang(lang) {
+      let found = false;
+      flyers.forEach(f => { const active = f.id === lang; f.classList.toggle('active', active); if (active) found = true; });
+      if (!found) return;
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      document.documentElement.lang = lang;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      try { if (history.replaceState) history.replaceState(null, '', '#' + lang); } catch (e) { /* sandboxed preview — safe to ignore */ }
+    }
+    buttons.forEach(b => b.addEventListener('click', () => showLang(b.dataset.lang)));
+    try {
+      const initial = (window.location.hash || '').replace('#', '');
+      if (initial) showLang(initial);
+    } catch (e) { /* sandboxed preview — safe to ignore */ }
+  })();
+</script>
+
+</body>
+</html>
