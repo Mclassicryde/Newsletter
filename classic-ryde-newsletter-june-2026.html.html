@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Ryde, Driver Newsletter, June 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B3A6B;
+    --navy-dark: #0c3b66;
+    --gold: #C9A97A;
+    --gold-bright: #d4b06a;
+    --bg: #F0F0F0;
+    --white: #FFFFFF;
+    --off-white: #FAFAFA;
+    --lightblue: #F5F8FF;
+    --border: #EEEEEE;
+    --text: #1a1a1a;
+    --text-muted: #555555;
+    --text-light: #888888;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ========= Language Bar ========= */
+  .lang-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 3px solid var(--gold);
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+  .lang-bar button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    color: #ffffff !important;
+    border: 1px solid rgba(201,169,122,0.55);
+    padding: 11px 18px;
+    border-radius: 26px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    line-height: 1.2;
+    margin: 0;
+    outline: none;
+    display: inline-block;
+  }
+  .lang-bar button:hover { background: rgba(201,169,122,0.18); border-color: var(--gold); }
+  .lang-bar button.active { background: var(--gold); color: var(--navy) !important; border-color: var(--gold); }
+
+  /* ========= Layout ========= */
+  main { padding: 24px 10px 0; }
+  .flyer {
+    max-width: 640px;
+    margin: 0 auto 24px;
+    background: var(--white);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.08);
+    display: none;
+    animation: fadeIn 0.35s ease;
+    overflow: hidden;
+  }
+  .flyer.active { display: block; }
+  @keyframes fadeIn { from {opacity:0;transform:translateY(10px);} to {opacity:1;transform:translateY(0);} }
+
+  /* ========= Hero ========= */
+  .hero { background: var(--navy); padding: 40px 36px 32px; color: #fff; }
+  .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand-row { display: flex; align-items: center; gap: 14px; }
+  .logo {
+    width: 64px; height: 64px; background: #f3f3f3; border-radius: 50%;
+    text-align: center; font-size: 0; line-height: 64px;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .logo-img { width: 64px; height: 64px; border-radius: 50%; display: block; flex-shrink: 0; }
+
+  .logo .c {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px; font-weight: 400; color: var(--gold-bright);
+    line-height: 1; display: inline-block; vertical-align: top;
+    padding-top: 6px; padding-left: 3px; margin-right: -8px;
+  }
+  .logo .r {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 37px; font-weight: 700; color: var(--navy-dark);
+    line-height: 1; display: inline-block; vertical-align: bottom;
+    padding-bottom: 5px;
+  }
+  .brand-text-wrap { line-height: 1; }
+  .brand-text-wrap .classic { font-family: Georgia, serif; font-size: 26px; color: var(--gold); letter-spacing: 1px; }
+  .brand-text-wrap .ryde { font-family: Arial, sans-serif; font-size: 20px; color: #fff; font-weight: 700; letter-spacing: 3px; }
+  .edition { text-align: right; }
+  .edition-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .edition-badge { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 5px 14px; display: inline-block; }
+  .hero-body { margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,169,122,0.35); }
+  .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: normal; line-height: 1.2; margin-bottom: 14px; color: #fff;}
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-intro { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+  /* ========= Generic Section ========= */
+  .section { padding: 36px 36px; background: var(--white); border-bottom: 1px solid var(--border); }
+  .section-light { background: var(--lightblue); border-top: 3px solid var(--navy); border-bottom: 1px solid #DDDDDD; }
+
+  .eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .section h2 { font-family: Georgia, serif; font-size: 24px; font-weight: normal; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+  .section h2 em { font-style: italic; color: var(--gold); }
+  .accent-bar { width: 40px; height: 2px; background: var(--gold); margin-bottom: 20px; }
+
+  /* ========= Update Cards ========= */
+  .update-card { background: var(--off-white); padding: 18px 20px; margin-bottom: 14px; border-left: 3px solid var(--gold); }
+  .update-card.navy-border { border-left-color: var(--navy); }
+  .pill { font-family: Arial; font-size: 8px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: var(--gold); padding: 3px 10px; display: inline-block; margin-bottom: 10px; }
+  .pill.navy { background: var(--navy); }
+  .update-card h4 { font-family: Arial; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--navy); margin-bottom: 6px; }
+  .update-card p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+
+  /* ========= Driver Spotlight ========= */
+  .spot-row { display: flex; gap: 22px; align-items: flex-start; }
+  .spot-avatar { width: 80px; height: 80px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .spot-avatar span { font-family: Georgia, serif; font-size: 26px; font-weight: 700; color: var(--gold); }
+  .spot-content { flex: 1; min-width: 0; }
+  .spot-content h2 { margin-bottom: 2px; }
+  .spot-content h2 .num { font-size: 14px; color: #999; font-family: Arial; }
+  .spot-subtitle { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 14px; }
+  .spot-content p { font-size: 13px; color: #444; line-height: 1.8; margin-bottom: 16px; }
+  .tag { font-family: Arial; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; display: inline-block; margin-right: 6px; margin-bottom: 4px; border: 1px solid var(--gold); color: var(--gold); }
+  .tag.navy { border-color: var(--navy); color: var(--navy); }
+
+  /* ========= Promotion Box ========= */
+  .promo-box { border: 1px solid #DDDDDD; }
+  .promo-header { background: var(--navy); padding: 16px 22px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .promo-header h3 { font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0; }
+  .april-badge { font-size: 8px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 4px 12px; }
+  .promo-body { background: var(--off-white); padding: 22px; }
+  .stats { display: flex; gap: 10px; margin-bottom: 18px; }
+  .stat { flex: 1; background: #fff; border: 1px solid #DDDDDD; border-top: 3px solid var(--gold); padding: 14px 6px; text-align: center; }
+  .stat.navy { border-top-color: var(--navy); }
+  .stat-num { font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 4px; }
+  .stat.navy .stat-num { color: var(--navy); }
+  .stat-label { font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #888; }
+  .promo-body .promo-desc { font-size: 13px; color: #444; line-height: 1.8; text-align: center; margin-bottom: 10px; }
+  .promo-body .promo-desc strong.gold { color: var(--gold); }
+  .promo-body .promo-desc strong.navy { color: var(--navy); }
+  .fine-print { font-size: 9px; color: #AAA; text-align: center; margin-top: 10px; }
+
+  /* ========= Contact Strip ========= */
+  .contact-strip { background: var(--navy); padding: 26px 36px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .contact-left .q { font-size: 10px; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+  .contact-left .phone { font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: var(--gold); line-height: 1.3; }
+  .contact-left .q2 { font-size: 9px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .contact-right { text-align: right; }
+  .contact-right .lbl { font-size: 9px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+  .contact-right a { font-size: 12px; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 10px; }
+  .contact-right a:last-child { margin-bottom: 0; }
+
+  /* ========= Legal Footer (shared) ========= */
+  .legal {
+    max-width: 640px; margin: 0 auto 40px; padding: 26px 36px; text-align: center;
+    background: #F8F8F8; border-top: 3px solid var(--gold); font-size: 10px;
+    color: var(--text-light); line-height: 1.8;
+  }
+  .legal p { margin-bottom: 4px; }
+  .legal a { color: var(--gold); text-decoration: none; }
+  .legal a.navy { color: var(--navy); }
+  .legal .badges { margin-top: 14px; display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; }
+  .legal .badge-item {
+    font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #888; border: 1px solid #DDD; padding: 4px 10px;
+  }
+
+  /* ========= RTL ========= */
+  [dir="rtl"] .hero h1, [dir="rtl"] .section h2, [dir="rtl"] .update-card h4,
+  [dir="rtl"] .update-card p, [dir="rtl"] .hero-intro { text-align: right; }
+  [dir="rtl"] .update-card { border-left: none; border-right: 3px solid var(--gold); }
+  [dir="rtl"] .update-card.navy-border { border-right-color: var(--navy); }
+  [dir="rtl"] .edition { text-align: left; }
+  [dir="rtl"] .contact-right { text-align: left; }
+  [dir="rtl"] .spot-content h2, [dir="rtl"] .spot-content p, [dir="rtl"] .spot-subtitle { text-align: right; }
+
+  /* ========= Mobile ========= */
+  @media (max-width: 600px) {
+    .lang-bar { padding: 10px 6px; gap: 5px; }
+    .lang-bar button { padding: 9px 13px; font-size: 14px; }
+    .hero { padding: 28px 22px; }
+    .hero h1 { font-size: 28px; }
+    .section { padding: 28px 22px; }
+    .contact-strip { padding: 22px; }
+    .legal { padding: 22px; margin-bottom: 24px; }
+    .stats { flex-direction: column; }
+    .spot-row { flex-direction: column; gap: 16px; }
+    .edition { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="lang-bar" role="navigation" aria-label="Language selection">
+  <button data-lang="en" class="active">English</button>
+  <button data-lang="es">Español</button>
+  <button data-lang="zh">中文</button>
+  <button data-lang="ru">Русский</button>
+  <button data-lang="bn">বাংলা</button>
+  <button data-lang="ht">Kreyòl</button>
+  <button data-lang="ko">한국어</button>
+  <button data-lang="ar">العربية</button>
+  <button data-lang="ur">اردو</button>
+  <button data-lang="fr">Français</button>
+  <button data-lang="pa">ਪੰਜਾਬੀ</button>
+</nav>
+
+<main>
+
+<!-- ============ ENGLISH ============ -->
+<section id="en" class="flyer active" lang="en">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">June 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>You Keep New York<br><em>Moving.</em></h1>
+      <p class="hero-intro">Thank you for being part of the Classic Ryde team. Here is everything you need to know this month: company updates, driver recognition, and how to earn more.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">June Highlight</div>
+    <h2>Refer a Driver, <em>Earn $100</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Driver Referral Bonus</h3>
+        <span class="april-badge">New for June</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">Trips by Referred Driver</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">Paid to You</span></div>
+        </div>
+        <p class="promo-desc">Refer a new driver to Classic Ryde. When they complete <strong class="gold">100 trips</strong>, you earn <strong class="navy">$100</strong> paid directly to your account. No cap, refer as many drivers as you want. Have a friend who drives? Send them to <strong>www.classicryde.com/drive</strong> or call dispatch at <strong>718-777-7800</strong> and mention your driver number so we tag the referral.</p>
+        <p class="fine-print">Bonus paid after the referred driver completes 100 trips with Classic Ryde. New referrals only.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Company Updates</div>
+    <h2>What is New at <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+
+    <div class="update-card">
+      <span class="pill">Operations</span>
+      <h4>Shared Ride Program is Live</h4>
+      <p>Classic Ryde launched the <strong style="color:var(--navy)">Shared Ride Program</strong> on May 26. When you see a trip tagged <strong>P1, D1 / P2, D2</strong> on the app, that is a shared ride. We pair short trips (under 8 miles) heading the same direction so you complete more trips per hour, earn more, and our passengers get faster service. Watch for these in the app and accept when the route makes sense for you.</p>
+    </div>
+        <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Policy &middot; Required</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">Three Buttons. Every Trip. Every Time.</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">Every Medicaid trip is tracked by GPS. Trips without proper time-stamps and coordinates <strong style="color:var(--gold)">can be denied for payment</strong>, which costs you and the base.</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">On-location</strong> when you arrive at pickup</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">Pick-up</strong> when the passenger is in the vehicle</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; <strong style="color:var(--gold)">Drop-off</strong> when the passenger exits</p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">Protect your earnings.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Policy</span>
+      <h4>Clean Cabin Before Every Shift</h4>
+      <p>Before you start your day: check the <strong style="color:var(--navy)">interior smell</strong>, wipe down surfaces, clear the trunk, and remove personal clutter from the back seat. Your vehicle is the first impression a passenger gets of Classic Ryde. Make it count.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Community</span>
+      <h4>Welcome to Our Newest Drivers</h4>
+      <p>Classic Ryde welcomed <strong style="color:var(--navy)">more than 30 new drivers</strong> in May, our biggest hiring month yet. Say hello on the road, share what you have learned, and help them get up to speed. Together, we keep New York moving.</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; Driver of the Month &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">DRIVER #209 · JUNE 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"He is the kind of driver every passenger wants to request again."</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">This month Bacilio earned <strong style="color:var(--navy)">two unprompted compliments from passengers</strong>. Robyn V. and Dorothea both called Sales on their own to tell us he is excellent and exactly the driver they would request again. Dispatch flagged the same praise a few days later. Three independent voices, same week, same message.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">Passengers do not call to compliment ordinary service. Bacilio is the standard Classic Ryde is built on. Drivers like him are the reason we hold a <strong style="color:var(--navy)">4.6 star rating</strong> across more than <strong style="color:var(--navy)">700 reviews</strong>. <strong style="color:var(--navy)">Thank you, Bacilio.</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; Driver of the Month Reward &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">$100 Gift Card</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; TOP DRIVER</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">PASSENGER FAVORITE</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ANSWERS PHONE</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">REQUESTED BY RIDERS</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">Driver Safety</div>
+    <h2>Stay Cool, Keep Your <em>Passengers Safe</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Summer Heat Advisory</span>
+      <h4>AC, Hydration, and Your Most Vulnerable Riders</h4>
+      <p>Summer temperatures are climbing. Before every shift, check that your <strong style="color:var(--navy)">AC is working</strong>. Carry water and stay hydrated yourself.</p>
+      <p style="margin-top:10px;">For elderly NEMT clients, especially dialysis patients, cabin temperature is a real health risk. <strong style="color:var(--navy)">Heat stroke after dialysis is dangerous and can be fatal.</strong> Keep the AC running, never leave a senior passenger waiting in direct sun, and watch for warning signs (confusion, heavy sweating, dizziness, weakness). If a passenger seems unwell, call dispatch at 718-777-7800 right away.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; Fraud Awareness &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">Protect Your Account,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">Protect the Base</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Federal Offense</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Medicaid Fraud Is a Crime</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Medicaid fraud is a federal offense.</strong> It carries real jail time and significant fines for the driver, not just the company. There is no gray area here. False completions, padded mileage, and ghost trips are crimes against the federal government.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">Trip Reviews</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Every Trip Is Reviewed</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">Pick-ups and drop-offs are cross-checked against GPS, dispatch logs, and facility records. False pick-ups, also called <strong style="color:#C9A97A;">ghost trips</strong>, where no passenger is in the vehicle, are flagged immediately and reported. If a trip does not pay correctly, call dispatch at <strong style="color:#C9A97A;">718-777-7800</strong>. We will review it with you. Do not adjust it on your own.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">See something suspicious? Report it to dispatch right away. Protecting the network protects every driver's earnings, and your freedom.</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">Important Industry News</div>
+    <h2>What is Moving the <em>NYC Market</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">From AutoMarketplace</span>
+      <h4>Market Intelligence for NYC Taxi and FHV Drivers</h4>
+      <p>AutoMarketplace publishes regular market analysis for NYC's Taxi and For-Hire Vehicle economy, covering TLC regulation changes, medallion market trends, insurance updates, and rider demand patterns. Worth keeping an eye on if you want to understand where the industry is going and how it affects your earnings.</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">Read more at automarketplace.substack.com &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Questions? We are here 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Live dispatch, always a real person.</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Email us</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Website</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPANISH ============ -->
+<section id="es" class="flyer" lang="es">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Bolet&iacute;n para Conductores</div>
+        <div class="edition-badge">Junio 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>T&uacute; Mantienes Nueva York<br><em>En Movimiento.</em></h1>
+      <p class="hero-intro">Gracias por ser parte del equipo de Classic Ryde. Aqu&iacute; encontrar&aacute;s todo lo que necesitas saber este mes: actualizaciones de la empresa, reconocimiento a conductores y c&oacute;mo ganar m&aacute;s.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Destacado de Junio</div>
+    <h2>Refiere a un Conductor, <em>Gana $100</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Bono por Referir Conductores</h3>
+        <span class="april-badge">Nuevo en Junio</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">Viajes del Conductor Referido</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">Pagado a Ti</span></div>
+        </div>
+        <p class="promo-desc">Refiere a un nuevo conductor a Classic Ryde. Cuando complete <strong class="gold">100 viajes</strong>, ganas <strong class="navy">$100</strong> depositados directamente en tu cuenta. Sin l&iacute;mite, refiere a tantos conductores como quieras. &iquest;Tienes un amigo que maneja? Env&iacute;alo a <strong>www.classicryde.com/drive</strong> o llama a despacho al <strong>718-777-7800</strong> y menciona tu n&uacute;mero de conductor para registrar la referencia.</p>
+        <p class="fine-print">Bono pagado despu&eacute;s de que el conductor referido complete 100 viajes con Classic Ryde. Solo nuevas referencias.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Actualizaciones de la Empresa</div>
+    <h2>Novedades en <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Operaciones</span>
+      <h4>El Programa de Viajes Compartidos ya est&aacute; Activo</h4>
+      <p>Classic Ryde lanz&oacute; el <strong style="color:var(--navy)">Programa de Viajes Compartidos</strong> el 26 de mayo. Cuando veas un viaje etiquetado <strong>P1, D1 / P2, D2</strong> en la app, eso es un viaje compartido. Combinamos viajes cortos (menos de 8 millas) que van en la misma direcci&oacute;n para que completes m&aacute;s viajes por hora, ganes m&aacute;s y los pasajeros reciban un servicio m&aacute;s r&aacute;pido. B&uacute;scalos en la app y ac&eacute;ptalos cuando la ruta te convenga.</p>
+    </div>
+        <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Pol&iacute;tica &middot; Obligatorio</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">Tres botones. Cada viaje. Siempre.</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">Cada viaje de Medicaid se rastrea por GPS. Los viajes sin marcas de tiempo y coordenadas correctas <strong style="color:var(--gold)">pueden ser rechazados para pago</strong>, lo que te cuesta a ti y a la base.</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">En-Ubicaci&oacute;n</strong> al llegar al lugar de recogida</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">Recogida</strong> cuando el pasajero est&eacute; en el veh&iacute;culo</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; <strong style="color:var(--gold)">Entrega</strong> cuando el pasajero salga</p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">Protege tus ingresos.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Pol&iacute;tica</span>
+      <h4>Cabina Limpia Antes de Cada Turno</h4>
+      <p>Antes de comenzar el d&iacute;a: revisa el <strong style="color:var(--navy)">olor interior</strong>, limpia las superficies, vac&iacute;a la cajuela y quita cualquier desorden personal del asiento trasero. Tu veh&iacute;culo es la primera impresi&oacute;n que un pasajero tiene de Classic Ryde. Que cuente.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Comunidad</span>
+      <h4>Bienvenida a Nuestros Nuevos Conductores</h4>
+      <p>En mayo Classic Ryde dio la bienvenida a <strong style="color:var(--navy)">m&aacute;s de 30 nuevos conductores</strong>, nuestro mayor mes de contrataci&oacute;n hasta ahora. Sal&uacute;dalos en la calle, comparte lo que has aprendido y ay&uacute;dalos a ponerse al d&iacute;a. Juntos, mantenemos a Nueva York en movimiento.</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; Conductor del Mes &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">CONDUCTOR #209 · JUNIO 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"Es el tipo de conductor que cualquier pasajero quiere pedir de nuevo."</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">Este mes Bacilio recibi&oacute; <strong style="color:var(--navy)">dos elogios espont&aacute;neos de pasajeros</strong>. Robyn V. y Dorothea llamaron a Ventas por su cuenta para decirnos que es excelente y exactamente el conductor que pedir&iacute;an de nuevo. Despacho registr&oacute; el mismo elogio unos d&iacute;as despu&eacute;s. Tres voces independientes, la misma semana, el mismo mensaje.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">Los pasajeros no llaman para elogiar un servicio com&uacute;n. Bacilio es el est&aacute;ndar sobre el que se construye Classic Ryde. Conductores como &eacute;l son la raz&oacute;n por la que mantenemos una <strong style="color:var(--navy)">calificaci&oacute;n de 4.6 estrellas</strong> con m&aacute;s de <strong style="color:var(--navy)">700 rese&ntilde;as</strong>. <strong style="color:var(--navy)">Gracias, Bacilio.</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; Premio del Conductor del Mes &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">Tarjeta de Regalo de $100</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; CONDUCTORA DESTACADA</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">FAVORITO DE PASAJEROS</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">CONTESTA EL TELÉFONO</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">PEDIDO POR PASAJEROS</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">Seguridad del Conductor</div>
+    <h2>Mant&eacute;n el Aire, Cuida a <em>Tus Pasajeros</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Alerta de Calor de Verano</span>
+      <h4>Aire Acondicionado, Hidrataci&oacute;n y Tus Pasajeros M&aacute;s Vulnerables</h4>
+      <p>Las temperaturas de verano est&aacute;n subiendo. Antes de cada turno, verifica que el <strong style="color:var(--navy)">aire acondicionado funcione</strong>. Lleva agua y manten te hidratado.</p>
+      <p style="margin-top:10px;">Para clientes NEMT mayores, especialmente pacientes de di&aacute;lisis, la temperatura del veh&iacute;culo es un riesgo real para la salud. <strong style="color:var(--navy)">El golpe de calor despu&eacute;s de di&aacute;lisis es peligroso y puede ser mortal.</strong> Mant&eacute;n el aire encendido, nunca dejes a un pasajero mayor esperando bajo el sol directo, y vigila las se&ntilde;ales de alerta (confusi&oacute;n, sudoraci&oacute;n excesiva, mareos, debilidad). Si un pasajero parece estar mal, llama de inmediato a despacho al 718-777-7800.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; Aviso sobre Fraude &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">Protege tu Cuenta,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">Protege la Base</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Delito Federal</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">El Fraude a Medicaid Es un Delito</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;">El <strong style="color:#FFFFFF;">fraude a Medicaid es un delito federal</strong>. Implica tiempo real en prisi&oacute;n y multas significativas para el conductor, no solo para la empresa. Aqu&iacute; no hay zona gris. Las finalizaciones falsas, el millaje inflado y los viajes fantasma son delitos contra el gobierno federal.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">Revisiones de Viajes</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Cada Viaje Se Revisa</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">Las recogidas y entregas se cruzan con GPS, registros de despacho y registros de la instalaci&oacute;n. Las recogidas falsas, tambi&eacute;n llamadas <strong style="color:#C9A97A;">viajes fantasma</strong>, donde no hay pasajero en el veh&iacute;culo, se detectan de inmediato y se reportan. Si un viaje no se paga correctamente, llama a despacho al <strong style="color:#C9A97A;">718-777-7800</strong>. Lo revisamos contigo. No lo ajustes por tu cuenta.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">&iquest;Notas algo sospechoso? Rep&oacute;rtalo a despacho de inmediato. Proteger la red protege las ganancias de cada conductor, y tu libertad.</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">Noticias Importantes del Sector</div>
+    <h2>Lo Que Mueve el <em>Mercado de NY</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">De AutoMarketplace</span>
+      <h4>Inteligencia de Mercado para Conductores de Taxi y FHV</h4>
+      <p>AutoMarketplace publica an&aacute;lisis regulares del mercado de Taxi y Veh&iacute;culos de Alquiler de Nueva York, cambios en regulaciones de TLC, tendencias del mercado de medallones, actualizaciones de seguros y patrones de demanda de pasajeros. Vale la pena seguirlos si quieres entender hacia d&oacute;nde va la industria y c&oacute;mo afecta tus ingresos.</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">Lee m&aacute;s en automarketplace.substack.com &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">&iquest;Preguntas? Estamos aqu&iacute; 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Despacho en vivo, siempre una persona real.</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Escr&iacute;benos</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Sitio Web</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHINESE ============ -->
+<section id="zh" class="flyer" lang="zh">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">司机通讯</div>
+        <div class="edition-badge">2026年6月</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>您让纽约<br><em>持续前行。</em></h1>
+      <p class="hero-intro">感谢您加入 Classic Ryde 团队。以下是本月需要了解的所有信息：公司动态、司机表彰以及如何赚取更多收入。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">6月亮点</div>
+    <h2>推荐司机，<em>奖励 $100</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>司机推荐奖金</h3>
+        <span class="april-badge">6月新活动</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">被推荐司机完成行程</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">支付给您</span></div>
+        </div>
+        <p class="promo-desc">向 Classic Ryde 推荐一位新司机。当他/她完成 <strong class="gold">100 次行程</strong>，您就能获得 <strong class="navy">$100</strong>，直接存入您的账户。不设上限，可推荐任意多位司机。有朋友开车？请他们访问 <strong>www.classicryde.com/drive</strong> 或拨打调度电话 <strong>718-777-7800</strong>，并提供您的司机编号以登记推荐。</p>
+        <p class="fine-print">被推荐司机在 Classic Ryde 完成 100 次行程后发放奖金。仅限新推荐。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">公司动态</div>
+    <h2>Classic Ryde 最新消息</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">运营</span>
+      <h4>共享乘车计划现已启动</h4>
+      <p>Classic Ryde 于 5 月 26 日推出<strong style="color:var(--navy)">共享乘车计划</strong>。当您在应用中看到行程标记为 <strong>P1, D1 / P2, D2</strong>，那就是共享行程。我们将同方向的短途行程（8 英里以内）配对，让您每小时完成更多行程，赚得更多，乘客也能享受更快的服务。请留意应用中的此类行程，并在路线合适时接受。</p>
+    </div>
+        <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">政策 &middot; 必须执行</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">三个按钮，每次行程，每次都要按。</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">每一次 Medicaid 行程都由 GPS 跟踪。没有正确时间戳和坐标的行程 <strong style="color:var(--gold)">可能被拒付</strong>，损失由您和基地共同承担。</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; 到达接送点时按 <strong style="color:var(--gold)">On-location</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; 乘客上车时按 <strong style="color:var(--gold)">Pick-up</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; 乘客下车时按 <strong style="color:var(--gold)">Drop-off</strong></p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">守护您的收入。</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">政策</span>
+      <h4>每班前保持车内整洁</h4>
+      <p>开工前：检查 <strong style="color:var(--navy)">车内气味</strong>，擦拭表面，清空后备箱，并将后座的个人物品收拾干净。您的车辆是乘客对 Classic Ryde 的第一印象，让它给乘客留下好印象。</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">社区</span>
+      <h4>欢迎我们的新司机</h4>
+      <p>5 月份 Classic Ryde 迎来了<strong style="color:var(--navy)">超过 30 位新司机</strong>，是我们迄今为止招聘人数最多的一个月。在路上遇到他们时打个招呼，分享您的经验，帮助他们尽快上手。携手并进，让纽约持续前行。</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; 本月最佳司机 &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">司机 #209 · 2026年6月</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"他正是每位乘客都希望再次指定的司机。"</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">本月，Bacilio 收到了 <strong style="color:var(--navy)">两位乘客自发的赞扬</strong>。Robyn V. 和 Dorothea 各自主动致电销售部，告诉我们他十分出色，是他们愿意再次指定的司机。几天后调度部门也记录了同样的好评。三个独立的声音，同一周，同一信息。</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">乘客不会为普通的服务专门来电致谢。Bacilio 是 Classic Ryde 所秉持的标准。像他这样的司机，是我们在超过 <strong style="color:var(--navy)">700 条评价</strong>中保持 <strong style="color:var(--navy)">4.6 星评分</strong>的原因。<strong style="color:var(--navy)">谢谢您，Bacilio。</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; 本月最佳司机奖励 &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">$100 礼品卡</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; 顶级司机</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">乘客喜爱</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">接听电话</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">乘客指定</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">司机安全</div>
+    <h2>保持凉爽，<em>守护乘客安全</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">夏季高温提醒</span>
+      <h4>空调、补水与您最脆弱的乘客</h4>
+      <p>夏季气温正在攀升。每班开始前，请检查您的 <strong style="color:var(--navy)">空调是否正常工作</strong>。随身携带水，自己也要保持水分。</p>
+      <p style="margin-top:10px;">对于年长的 NEMT 客户，尤其是透析患者，车内温度是真实的健康风险。<strong style="color:var(--navy)">透析后中暑十分危险，甚至可能致命。</strong>请保持空调运行，绝不要让老年乘客在直晒下等候，并留意警示信号（意识混乱、大量出汗、头晕、虚弱）。如发现乘客状态不佳，请立即拨打调度电话 718-777-7800。</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; 防欺诈提醒 &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">保护您的账户，<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">保护我们的车队</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">联邦犯罪</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Medicaid 欺诈是犯罪</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Medicaid 欺诈是联邦罪行</strong>。司机本人会面临真实的监禁与巨额罚款，不仅仅是公司承担责任。这里没有灰色地带。虚假完成、虚增里程和幽灵行程都属于针对联邦政府的犯罪。</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">行程审核</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">每次行程都会被审核</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">接客与下客均会与 GPS、调度日志和合作机构记录进行交叉核对。虚假接客（即 <strong style="color:#C9A97A;">幽灵行程</strong>，车内没有乘客的情况）会被立即标记并上报。如果某次行程未正确结算，请致电调度 <strong style="color:#C9A97A;">718-777-7800</strong>。我们会与您一起核查。请不要自行调整。</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">发现可疑情况？请立即报告调度。保护网络就是保护每位司机的收入，也是保护您的自由。</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">重要行业新闻</div>
+    <h2>纽约市场动态</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">来自 AutoMarketplace</span>
+      <h4>面向纽约出租车与 FHV 司机的市场情报</h4>
+      <p>AutoMarketplace 定期发布纽约出租车和租赁车经济的市场分析，涵盖 TLC 法规变化、出租车牌照市场趋势、保险更新和乘客需求规律。如果您想了解行业走向以及它如何影响您的收入，值得持续关注。</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">在 automarketplace.substack.com 了解更多 &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">有疑问？我们 24/7 全天候服务。</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">真人调度，随时接听。</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">邮箱</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">网站</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RUSSIAN ============ -->
+<section id="ru" class="flyer" lang="ru">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Рассылка для водителей</div>
+        <div class="edition-badge">Июнь 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>Вы держите Нью-Йорк<br><em>в движении.</em></h1>
+      <p class="hero-intro">Спасибо, что вы часть команды Classic Ryde. Здесь всё, что нужно знать в этом месяце: новости компании, признание водителей и как заработать больше.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Главное в июне</div>
+    <h2>Приведи водителя, <em>получи $100</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Бонус за реферала</h3>
+        <span class="april-badge">Новинка июня</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">Поездок реферала</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">Вам на счёт</span></div>
+        </div>
+        <p class="promo-desc">Приведите нового водителя в Classic Ryde. Когда он выполнит <strong class="gold">100 поездок</strong>, вы получите <strong class="navy">$100</strong> прямо на свой счёт. Без ограничений, приводите сколько хотите. Есть друг водитель? Отправьте его на <strong>www.classicryde.com/drive</strong> или попросите позвонить диспетчеру по <strong>718-777-7800</strong> и назвать ваш номер водителя, чтобы реферал был засчитан.</p>
+        <p class="fine-print">Бонус выплачивается после того, как реферал выполнит 100 поездок с Classic Ryde. Только новые рефералы.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Новости компании</div>
+    <h2>Что нового в <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Операции</span>
+      <h4>Запущена программа совместных поездок</h4>
+      <p>Classic Ryde запустил <strong style="color:var(--navy)">программу совместных поездок</strong> 26 мая. Когда вы видите поездку с пометкой <strong>P1, D1 / P2, D2</strong> в приложении, это совместная поездка. Мы объединяем короткие поездки (до 8 миль) в одном направлении, чтобы вы выполняли больше поездок в час, зарабатывали больше, а пассажиры получали более быстрый сервис. Следите за такими поездками в приложении и принимайте, когда маршрут вам подходит.</p>
+    </div>
+        <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Политика &middot; Обязательно</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">Три кнопки. Каждая поездка. Всегда.</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">Каждая поездка Medicaid отслеживается по GPS. Поездки без правильных временных меток и координат <strong style="color:var(--gold)">могут быть не оплачены</strong>, и это бьёт по вам и по базе.</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">On-location</strong> при прибытии на место подачи</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">Pick-up</strong> когда пассажир в машине</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; <strong style="color:var(--gold)">Drop-off</strong> когда пассажир выходит</p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">Защитите свой заработок.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Политика</span>
+      <h4>Чистый салон перед каждой сменой</h4>
+      <p>Перед началом дня: проверьте <strong style="color:var(--navy)">запах в салоне</strong>, протрите поверхности, освободите багажник и уберите личные вещи с заднего сиденья. Ваша машина это первое впечатление пассажира о Classic Ryde. Сделайте его хорошим.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Сообщество</span>
+      <h4>Приветствуем наших новых водителей</h4>
+      <p>В мае к Classic Ryde присоединились <strong style="color:var(--navy)">более 30 новых водителей</strong>, это наш самый большой месяц по найму. Здоровайтесь на дороге, делитесь опытом, помогайте им освоиться. Вместе мы держим Нью-Йорк в движении.</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; Водитель месяца &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">ВОДИТЕЛЬ #209 · ИЮНЬ 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"Это тот водитель, которого каждый пассажир хочет заказать снова."</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">В этом месяце Bacilio получил <strong style="color:var(--navy)">два спонтанных комплимента от пассажиров</strong>. Robyn V. и Dorothea сами позвонили в отдел продаж, чтобы сказать, что он отличный водитель, которого они хотели бы заказать снова. Через несколько дней диспетчерская отметила то же самое. Три независимых голоса, одна неделя, одно сообщение.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">Пассажиры не звонят, чтобы похвалить обычный сервис. Bacilio это стандарт, на котором построена Classic Ryde. Именно благодаря таким водителям, как он, у нас рейтинг <strong style="color:var(--navy)">4,6 звезды</strong> по более чем <strong style="color:var(--navy)">700 отзывам</strong>. <strong style="color:var(--navy)">Спасибо, Bacilio.</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; Награда водителя месяца &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">Подарочная карта $100</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; ЛУЧШИЙ ВОДИТЕЛЬ</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ЛЮБИМЕЦ ПАССАЖИРОВ</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ОТВЕЧАЕТ НА ЗВОНКИ</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ИХ ВЫБОР</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">Безопасность водителя</div>
+    <h2>Сохраняйте прохладу, <em>берегите пассажиров</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Предупреждение о летней жаре</span>
+      <h4>Кондиционер, вода и ваши самые уязвимые пассажиры</h4>
+      <p>Летние температуры растут. Перед каждой сменой проверяйте, <strong style="color:var(--navy)">работает ли кондиционер</strong>. Берите с собой воду и пейте сами.</p>
+      <p style="margin-top:10px;">Для пожилых клиентов NEMT, особенно для пациентов на диализе, температура в салоне это реальный риск для здоровья. <strong style="color:var(--navy)">Тепловой удар после диализа опасен и может быть смертельным.</strong> Держите кондиционер включённым, никогда не оставляйте пожилого пассажира ждать под прямыми солнечными лучами и следите за признаками (спутанность сознания, обильное потоотделение, головокружение, слабость). Если пассажир выглядит плохо, сразу звоните диспетчеру 718-777-7800.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; Защита от мошенничества &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">Защитите свой аккаунт,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">защитите базу</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Федеральное преступление</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Мошенничество с Medicaid это преступление</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Мошенничество с Medicaid это федеральное преступление</strong>. Оно предусматривает реальный тюремный срок и значительные штрафы для водителя, а не только для компании. Серой зоны здесь нет. Ложные завершения поездок, накрутка пробега и поездки-призраки это преступления против федерального правительства.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">Проверки поездок</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Каждая поездка проверяется</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">Подачи и высадки сверяются с GPS, журналом диспетчера и записями учреждений. Ложные подачи, или <strong style="color:#C9A97A;">поездки-призраки</strong>, когда пассажира нет в машине, помечаются и сообщаются немедленно. Если поездка не была оплачена правильно, позвоните диспетчеру по <strong style="color:#C9A97A;">718-777-7800</strong>. Мы разберём это вместе. Не вносите изменения сами.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">Заметили что-то подозрительное? Сразу сообщите диспетчеру. Защита сети это защита заработка каждого водителя и вашей свободы.</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">Важные отраслевые новости</div>
+    <h2>Что движет <em>рынком NYC</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">От AutoMarketplace</span>
+      <h4>Аналитика рынка для водителей такси и FHV в Нью-Йорке</h4>
+      <p>AutoMarketplace регулярно публикует аналитику рынка такси и автомобилей с водителем в Нью-Йорке: изменения в правилах TLC, тенденции рынка медальонов, обновления страхования и закономерности спроса пассажиров. Стоит следить, если вы хотите понимать, куда движется отрасль и как это влияет на ваш доход.</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">Подробнее на automarketplace.substack.com &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Вопросы? Мы здесь 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Живой диспетчер, всегда реальный человек.</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Напишите нам</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Сайт</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENGALI ============ -->
+<section id="bn" class="flyer" lang="bn">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">ড্রাইভার নিউজলেটার</div>
+        <div class="edition-badge">জুন ২০২৬</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>আপনি নিউ ইয়র্ককে<br><em>চলমান রাখেন।</em></h1>
+      <p class="hero-intro">Classic Ryde দলের অংশ হওয়ার জন্য ধন্যবাদ। এই মাসে যা জানা দরকার, কোম্পানির আপডেট, ড্রাইভারের স্বীকৃতি এবং কীভাবে আরও আয় করবেন, সবকিছু এখানে।</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">জুনের মূল আকর্ষণ</div>
+    <h2>একজন চালক রেফার করুন, <em>$100 আয় করুন</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>চালক রেফারেল বোনাস</h3>
+        <span class="april-badge">জুনের নতুন</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">রেফার করা চালকের ট্রিপ</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">আপনাকে প্রদান</span></div>
+        </div>
+        <p class="promo-desc">Classic Ryde-এ একজন নতুন চালক রেফার করুন। যখন তিনি <strong class="gold">100 ট্রিপ</strong> সম্পন্ন করবেন, আপনি <strong class="navy">$100</strong> পাবেন যা সরাসরি আপনার অ্যাকাউন্টে জমা হবে। কোনো সীমা নেই, যত খুশি চালক রেফার করুন। গাড়ি চালান এমন কোনো বন্ধু আছে? তাদের <strong>www.classicryde.com/drive</strong> এ পাঠান অথবা ডিসপ্যাচকে <strong>718-777-7800</strong> নম্বরে কল করতে বলুন এবং আপনার ড্রাইভার নম্বর উল্লেখ করুন যাতে আমরা রেফারেলটি ট্যাগ করতে পারি।</p>
+        <p class="fine-print">রেফার করা চালক Classic Ryde-এ 100 ট্রিপ সম্পন্ন করার পর বোনাস প্রদান করা হবে। শুধুমাত্র নতুন রেফারেল।</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">কোম্পানির আপডেট</div>
+    <h2>Classic Ryde এ নতুন কী?</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">পরিচালনা</span>
+      <h4>শেয়ারড রাইড প্রোগ্রাম এখন সচল</h4>
+      <p>Classic Ryde ২৬ মে <strong style="color:var(--navy)">শেয়ারড রাইড প্রোগ্রাম</strong> চালু করেছে। অ্যাপে যখন কোনো ট্রিপে <strong>P1, D1 / P2, D2</strong> ট্যাগ দেখবেন, সেটাই শেয়ারড রাইড। আমরা একই দিকের ছোট ট্রিপ (৮ মাইলের কম) একসাথে যুক্ত করি যাতে আপনি প্রতি ঘণ্টায় বেশি ট্রিপ করতে পারেন, বেশি আয় করেন, এবং যাত্রীরা দ্রুত সেবা পান। অ্যাপে এগুলো খেয়াল রাখুন, রুট মানালেই গ্রহণ করুন।</p>
+    </div>
+    <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">নীতি &middot; বাধ্যতামূলক</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">তিনটি বোতাম। প্রতি ট্রিপে। প্রতিবার।</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">প্রতিটি Medicaid ট্রিপ GPS দ্বারা ট্র্যাক করা হয়। সঠিক টাইম-স্ট্যাম্প ও কোঅর্ডিনেট ছাড়া ট্রিপের <strong style="color:var(--gold)">অর্থপ্রদান প্রত্যাখ্যান হতে পারে</strong>, যা আপনার এবং বেসের ক্ষতি।</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; পিকআপ স্থানে পৌঁছালে <strong style="color:var(--gold)">On-location</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; যাত্রী গাড়িতে উঠলে <strong style="color:var(--gold)">Pick-up</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; যাত্রী নেমে গেলে <strong style="color:var(--gold)">Drop-off</strong></p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">আপনার আয় রক্ষা করুন।</p>
+    </div>
+        <div class="update-card navy-border">
+      <span class="pill navy">নীতি</span>
+      <h4>প্রতি শিফটের আগে কেবিন পরিষ্কার রাখুন</h4>
+      <p>দিন শুরু করার আগে: <strong style="color:var(--navy)">গাড়ির ভেতরের গন্ধ</strong> পরীক্ষা করুন, পৃষ্ঠগুলি মুছুন, ট্রাঙ্ক খালি করুন এবং পেছনের সিট থেকে ব্যক্তিগত জিনিসপত্র সরান। আপনার গাড়িটিই যাত্রীর কাছে Classic Ryde এর প্রথম ছাপ। এটি কাজে লাগান।</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">কমিউনিটি</span>
+      <h4>আমাদের নতুন ড্রাইভারদের স্বাগতম</h4>
+      <p>মে মাসে Classic Ryde <strong style="color:var(--navy)">৩০ জনের বেশি নতুন চালক</strong> কে স্বাগত জানিয়েছে, এটি আমাদের সবচেয়ে বড় নিয়োগের মাস। রাস্তায় তাদের অভিবাদন জানান, যা শিখেছেন তা শেয়ার করুন, এবং তাদের দ্রুত মানিয়ে নিতে সাহায্য করুন। একসাথে, আমরা নিউ ইয়র্ককে চলমান রাখি।</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; মাসের সেরা চালক &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">চালক #209 · জুন ২০২৬</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"তিনি সেই ধরনের চালক যাকে প্রতিটি যাত্রী আবারও চাইতে চাইবে।"</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">এই মাসে Bacilio যাত্রীদের কাছ থেকে <strong style="color:var(--navy)">দুটি স্বতঃস্ফূর্ত প্রশংসা</strong> পেয়েছেন। Robyn V. এবং Dorothea উভয়েই নিজে থেকে সেলসে কল করে আমাদের জানিয়েছেন যে তিনি দুর্দান্ত এবং ঠিক সেই চালক যাকে তারা আবার চাইতেন। কয়েক দিন পর ডিসপ্যাচ লগেও একই প্রশংসা যুক্ত হয়েছে। তিনটি স্বতন্ত্র কণ্ঠ, একই সপ্তাহ, একই বার্তা।</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">যাত্রীরা সাধারণ পরিষেবার প্রশংসা করতে কল করে না। Bacilio হলেন সেই মান, যার উপর Classic Ryde গড়ে উঠেছে। তাঁর মতো চালকদের জন্যই আমরা <strong style="color:var(--navy)">৭০০-এর বেশি রিভিউ</strong>-তে <strong style="color:var(--navy)">৪.৬ স্টার রেটিং</strong> ধরে রেখেছি। <strong style="color:var(--navy)">ধন্যবাদ, Bacilio।</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; মাসের সেরা চালকের পুরস্কার &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">$100 গিফট কার্ড</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; শীর্ষ চালক</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">যাত্রীদের প্রিয়</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ফোন ধরেন</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">যাত্রীরা চান</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">চালক নিরাপত্তা</div>
+    <h2>ঠাণ্ডা থাকুন, <em>যাত্রীদের নিরাপদ রাখুন</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">গ্রীষ্মের তাপ সতর্কতা</span>
+      <h4>এসি, পানি এবং আপনার সবচেয়ে দুর্বল যাত্রী</h4>
+      <p>গ্রীষ্মের তাপমাত্রা বাড়ছে। প্রতিটি শিফটের আগে দেখে নিন আপনার <strong style="color:var(--navy)">এসি কাজ করছে কিনা</strong>। নিজের জন্য পানি সাথে রাখুন এবং পান করতে থাকুন।</p>
+      <p style="margin-top:10px;">বয়স্ক NEMT যাত্রী, বিশেষ করে ডায়ালাইসিস রোগীদের জন্য গাড়ির ভেতরের তাপমাত্রা সত্যিকারের স্বাস্থ্য ঝুঁকি। <strong style="color:var(--navy)">ডায়ালাইসিসের পরে হিট স্ট্রোক বিপজ্জনক এবং প্রাণঘাতী হতে পারে।</strong> এসি চালু রাখুন, কোনো বয়স্ক যাত্রীকে সরাসরি রোদে অপেক্ষায় রাখবেন না, এবং সতর্ক সংকেতগুলোর দিকে নজর রাখুন (বিভ্রান্তি, অতিরিক্ত ঘাম, মাথা ঘোরা, দুর্বলতা)। যাত্রী অসুস্থ মনে হলে সাথে সাথে ডিসপ্যাচকে 718-777-7800 নম্বরে কল করুন।</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; প্রতারণা সচেতনতা &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">আপনার অ্যাকাউন্ট সুরক্ষিত রাখুন,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">বেস সুরক্ষিত রাখুন</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">ফেডারেল অপরাধ</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Medicaid জালিয়াতি একটি অপরাধ</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Medicaid জালিয়াতি একটি ফেডারেল অপরাধ।</strong> এটি চালকের জন্যও সত্যিকারের জেল ও বড় জরিমানার ঝুঁকি বহন করে, শুধু কোম্পানির জন্য নয়। এখানে কোনো ধূসর এলাকা নেই। মিথ্যা সম্পন্ন করা, মাইলেজ বাড়িয়ে দেখানো এবং ভূত ট্রিপ ফেডারেল সরকারের বিরুদ্ধে অপরাধ।</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">ট্রিপ পর্যালোচনা</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">প্রতিটি ট্রিপ পর্যালোচনা করা হয়</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">পিকআপ এবং ড্রপ-অফ GPS, ডিসপ্যাচ লগ এবং ফ্যাসিলিটি রেকর্ডের সাথে মিলিয়ে দেখা হয়। মিথ্যা পিকআপ, যা <strong style="color:#C9A97A;">ভূত ট্রিপ</strong> নামেও পরিচিত (যেখানে গাড়িতে কোনো যাত্রী থাকে না), সঙ্গে সঙ্গে চিহ্নিত হয় এবং রিপোর্ট করা হয়। কোনো ট্রিপ সঠিকভাবে অর্থপ্রদান না হলে ডিসপ্যাচকে <strong style="color:#C9A97A;">718-777-7800</strong> নম্বরে কল করুন। আমরা আপনার সাথে এটি পর্যালোচনা করব। নিজে থেকে সমন্বয় করবেন না।</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">সন্দেহজনক কিছু দেখলেন? এখনই ডিসপ্যাচকে জানান। নেটওয়ার্ক সুরক্ষিত রাখা প্রত্যেক চালকের আয় এবং আপনার স্বাধীনতা সুরক্ষিত রাখে।</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">গুরুত্বপূর্ণ শিল্প সংবাদ</div>
+    <h2>NYC বাজারে কী চলছে</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">AutoMarketplace থেকে</span>
+      <h4>NYC ট্যাক্সি এবং FHV ড্রাইভারদের জন্য মার্কেট ইন্টেলিজেন্স</h4>
+      <p>AutoMarketplace নিয়মিতভাবে NYC এর ট্যাক্সি ও For-Hire Vehicle অর্থনীতি নিয়ে বিশ্লেষণ প্রকাশ করে, যাতে TLC নিয়ম পরিবর্তন, মেডালিয়ন মার্কেট ট্রেন্ড, ইনস্যুরেন্স আপডেট ও যাত্রী চাহিদার ধরন থাকে। শিল্প কোথায় যাচ্ছে এবং তা আপনার আয়কে কীভাবে প্রভাবিত করে তা বুঝতে চাইলে এটি অনুসরণ করুন।</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">আরও পড়ুন automarketplace.substack.com এ &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">প্রশ্ন? আমরা ২৪/৭ এখানে আছি।</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">লাইভ ডিসপ্যাচ, সবসময় একজন সত্যিকারের মানুষ।</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">আমাদের ইমেইল করুন</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">ওয়েবসাইট</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HAITIAN CREOLE ============ -->
+<section id="ht" class="flyer" lang="ht">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Bilten pou Chof&ograve;</div>
+        <div class="edition-badge">Jen 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>Ou Fè New York<br><em>Kontinye Mache.</em></h1>
+      <p class="hero-intro">Mèsi paske ou nan ekip Classic Ryde. Men tout sa ou bezwen konnen mwa sa a: nouvèl konpayi an, rekonesans pou chofè yo, ak fason pou ou genyen plis lajan.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Pwen Fò Jen</div>
+    <h2>Refere yon Chofè, <em>Genyen $100</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Bonis Refere Chofè</h3>
+        <span class="april-badge">Nouvo pou Jen</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">Vwayaj Chofè Refere a</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">Peye pou Ou</span></div>
+        </div>
+        <p class="promo-desc">Refere yon nouvo chofè bay Classic Ryde. Lè li fini <strong class="gold">100 vwayaj</strong>, ou genyen <strong class="navy">$100</strong> peye dirèkteman nan kont ou. Pa gen limit, refere otan chofè ou vle. Ou gen yon zanmi ki kondwi? Voye yo nan <strong>www.classicryde.com/drive</strong> oswa rele dispatch nan <strong>718-777-7800</strong> epi mansyone nimewo chofè w pou nou make referans lan.</p>
+        <p class="fine-print">Bonis peye apre chofè refere a fini 100 vwayaj ak Classic Ryde. Nouvo referans sèlman.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Nouvèl Konpayi an</div>
+    <h2>Kisa Nouvo nan <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Operasyon</span>
+      <h4>Pwogram Vwayaj Pataje a Aktif Kounye a</h4>
+      <p>Classic Ryde lanse <strong style="color:var(--navy)">Pwogram Vwayaj Pataje</strong> a 26 me. Lè ou wè yon vwayaj make <strong>P1, D1 / P2, D2</strong> nan aplikasyon an, sa se yon vwayaj pataje. Nou mete ansanm vwayaj kout (mwens pase 8 mil) ki ale nan menm direksyon pou ou ka fè plis vwayaj pa èdtan, ou ka genyen plis lajan, e pasaje yo jwenn sèvis pi rapid. Veye sou yo nan aplikasyon an epi aksepte lè wout la bon pou ou.</p>
+    </div>
+    <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Politik &middot; Obligatwa</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">Twa bouton. Chak vwayaj. Chak fwa.</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">Chak vwayaj Medicaid swiv pa GPS. Vwayaj san bon ts ak kowòdone <strong style="color:var(--gold)">kapab refize peman</strong>, sa koute ou ak baz la.</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">On-location</strong> lè ou rive nan pwen kòlèt la</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">Pick-up</strong> lè pasaje a nan machin nan</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; <strong style="color:var(--gold)">Drop-off</strong> lè pasaje a soti</p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">Pwoteje salè ou.</p>
+    </div>
+        <div class="update-card navy-border">
+      <span class="pill navy">Politik</span>
+      <h4>Kabin Pwòp Anvan Chak Chif</h4>
+      <p>Anvan ou kòmanse jou ou: tcheke <strong style="color:var(--navy)">odè anndan machin nan</strong>, siye sifas yo, vide kòf la, epi retire bagay pèsonèl nan syèj dèyè a. Machin ou se premye enpresyon pasaje a jwenn sou Classic Ryde. Fè li konte.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Kominote</span>
+      <h4>Akèy Chof&ograve; Nouvo Nou Yo</h4>
+      <p>Nan mwa me Classic Ryde te akeyi <strong style="color:var(--navy)">plis pase 30 nouvo chofè</strong>, sa se pi gwo mwa anbochaj nou jiska prezan. Salye yo sou wout la, pataje sa ou aprann, epi ede yo monte vitès. Ansanm, nou kenbe New York ap bouje.</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; Chofè Mwa a &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">CHOFE #209 · JEN 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"Li se kalite chofè chak pasaje ta vle mande ankò."</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">Mwa sa Bacilio resevwa <strong style="color:var(--navy)">de konpliman volontè nan men pasaje</strong>. Robyn V. ak Dorothea tou de rele Sales poukont yo pou di nou li ekselan epi se egzakteman chofè yo ta vle mande ankò. Kèk jou apre, dispatch make menm bagay la. Twa vwa endepandan, menm semèn, menm mesaj.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">Pasaje pa rele pou konplimante yon sèvis òdinè. Bacilio se nivo Classic Ryde bati sou li. Chofè tankou li se rezon ki fè nou gen yon <strong style="color:var(--navy)">nòt 4.6 zetwal</strong> sou plis pase <strong style="color:var(--navy)">700 revize</strong>. <strong style="color:var(--navy)">Mèsi, Bacilio.</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; Rekonpans Chofè Mwa a &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">Kat Kado $100</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; PI BON CHOFE</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">PREFERE PASAJE</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">REPONN TELEFON</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">PASAJE MANDE L</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">Sekirite Chofè</div>
+    <h2>Rete fre, <em>kenbe pasaje ou yo an sekirite</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Avi sou Chalè Ete</span>
+      <h4>Klima, dlo, ak pasaje ki pi vulnerab yo</h4>
+      <p>Tanperati ete a ap monte. Anvan chak chif, verifye ke <strong style="color:var(--navy)">klima w la ap mache</strong>. Pote dlo ak rete idrate.</p>
+      <p style="margin-top:10px;">Pou kliyan NEMT aje yo, espesyalman pasyan dyaliz yo, tanperati nan machin nan se yon risk reyèl pou sante. <strong style="color:var(--navy)">Chòk chalè apre dyaliz danjere epi li ka mòtèl.</strong> Kenbe klima a ap mache, pa janm kite yon pasaje aje ap tann anba solèy direk, epi siveye siy alèt yo (konfizyon, gwo swè, vètij, feblès). Si yon pasaje sanble li pa byen, rele dispatch nan 718-777-7800 tousuit.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; Konsyantizasyon Fwod &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">Pwoteje Kont Ou,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">Pwoteje Baz la</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Krim Federal</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Fwod Medicaid Se yon Krim</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Fwod Medicaid se yon krim federal.</strong> Li gen tan prizon reyèl ak amann enpòtan pou chofè a, pa sèlman pou konpayi an. Pa gen zòn gri isit la. Fo konplesyon, kilometraj ki gonfle, ak vwayaj fantom yo se krim kont gouvènman federal la.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">Revizyon Vwayaj</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Chak Vwayaj Revize</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">Kòlèt ak liv yo verifye ak GPS, rejis dispatch la, ak dosye etablisman an. Fo kòlèt yo, ki rele tou <strong style="color:#C9A97A;">vwayaj fantom</strong>, kote pa gen okenn pasaje nan machin nan, idantifye epi rapòte imedyatman. Si yon vwayaj pa peye kòrèkteman, rele dispatch nan <strong style="color:#C9A97A;">718-777-7800</strong>. N ap revize l avè w. Pa ajiste l poukont ou.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">Ou wè yon bagay sispèk? Rapòte l nan dispatch touswit. Pwoteje rezo a se pwoteje revni chak chofè, ak libète ou.</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">Nouvèl Endistri Enpòtan</div>
+    <h2>Kisa K ap Deplase <em>Mache NYC la</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Soti nan AutoMarketplace</span>
+      <h4>Ranseyman Mache pou Chofè Taksi ak FHV NYC</h4>
+      <p>AutoMarketplace pibliye analiz regilye sou ekonomi Taksi ak Vehikil pou Lwaye NYC, chanjman règleman TLC, tandans mache medayon yo, ajou asirans, ak abitid demann pasaje yo. Li vo pou suiv si w vle konprann kote endistri a ap ale ak fason sa afekte salè ou.</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">Li plis nan automarketplace.substack.com &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Kesyon? Nou la 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Dispatch dirèk, toujou yon vrè moun.</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Ekri nou</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Sit Wèb</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KOREAN ============ -->
+<section id="ko" class="flyer" lang="ko">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">기사 뉴스레터</div>
+        <div class="edition-badge">2026년 6월</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>당신이 뉴욕을<br><em>움직이게 합니다.</em></h1>
+      <p class="hero-intro">Classic Ryde 팀의 일원이 되어 주셔서 감사합니다. 이번 달에 알아야 할 모든 것, 회사 소식, 기사 표창, 그리고 더 많이 버는 방법을 안내합니다.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">6월의 핵심</div>
+    <h2>기사 추천하고 <em>$100 받기</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>기사 추천 보너스</h3>
+        <span class="april-badge">6월 신규</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">추천 기사 운행 수</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">귀하에게 지급</span></div>
+        </div>
+        <p class="promo-desc">Classic Ryde에 새로운 기사를 추천하세요. 추천한 기사가 <strong class="gold">100건의 운행</strong>을 완료하면, <strong class="navy">$100</strong>이 귀하의 계좌로 직접 입금됩니다. 한도 없음, 원하는 만큼 추천할 수 있습니다. 운전하는 친구가 있나요? <strong>www.classicryde.com/drive</strong>로 보내거나 디스패치 <strong>718-777-7800</strong>으로 전화하여 기사 번호를 알려 추천을 등록하세요.</p>
+        <p class="fine-print">추천 기사가 Classic Ryde에서 100건의 운행을 완료한 후 보너스 지급. 신규 추천에 한함.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">회사 소식</div>
+    <h2>Classic Ryde의 새로운 소식</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">운영</span>
+      <h4>합승 라이드 프로그램 시작</h4>
+      <p>Classic Ryde는 5월 26일 <strong style="color:var(--navy)">합승 라이드 프로그램</strong>을 시작했습니다. 앱에서 운행에 <strong>P1, D1 / P2, D2</strong> 태그가 보이면 합승 운행입니다. 같은 방향으로 가는 짧은 운행(8마일 이하)을 묶어 시간당 운행 수를 늘리고, 더 많이 벌고, 승객은 더 빠른 서비스를 받습니다. 앱에서 이런 운행을 확인하고 경로가 맞으면 수락하세요.</p>
+    </div>
+        <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">정책 &middot; 필수</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">세 개의 버튼. 매 운행. 매번.</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">모든 Medicaid 운행은 GPS로 추적됩니다. 정확한 타임스탬프와 좌표가 없는 운행은 <strong style="color:var(--gold)">지급이 거부될 수 있으며</strong>, 이는 기사님과 베이스 모두에게 손해입니다.</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; 픽업 장소에 도착하면 <strong style="color:var(--gold)">On-location</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; 승객이 차량에 탑승하면 <strong style="color:var(--gold)">Pick-up</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; 승객이 내리면 <strong style="color:var(--gold)">Drop-off</strong></p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">수입을 지키세요.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">정책</span>
+      <h4>근무 전 깨끗한 실내 유지</h4>
+      <p>하루를 시작하기 전: <strong style="color:var(--navy)">실내 냄새</strong>를 확인하고, 표면을 닦고, 트렁크를 비우고, 뒷좌석의 개인 물품을 정리하세요. 차량은 승객이 Classic Ryde를 처음 느끼는 인상입니다. 좋은 인상을 남기세요.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">커뮤니티</span>
+      <h4>신규 기사 여러분을 환영합니다</h4>
+      <p>5월에 Classic Ryde는 <strong style="color:var(--navy)">30명이 넘는 신규 기사</strong>를 맞이했습니다. 우리의 최대 채용 달입니다. 길에서 인사하고, 배운 것을 나누며, 그들이 빠르게 적응하도록 도와주세요. 함께, 우리는 뉴욕을 움직이게 합니다.</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; 이달의 기사 &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">기사 #209 · 2026년 6월</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"모든 승객이 다시 지명하고 싶어 하는 기사입니다."</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">이번 달 Bacilio는 승객들로부터 <strong style="color:var(--navy)">두 건의 자발적인 칭찬</strong>을 받았습니다. Robyn V.와 Dorothea가 각자 직접 영업부에 전화해 그가 훌륭하고 다시 지명하고 싶은 기사라고 전했습니다. 며칠 후 디스패치 기록에도 같은 칭찬이 남았습니다. 세 개의 독립된 목소리, 같은 주, 같은 메시지.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">승객은 평범한 서비스에 칭찬 전화를 걸지 않습니다. Bacilio는 Classic Ryde가 추구하는 기준입니다. 이런 기사들 덕분에 우리는 <strong style="color:var(--navy)">700개가 넘는 리뷰</strong>에서 <strong style="color:var(--navy)">4.6점 평점</strong>을 유지합니다. <strong style="color:var(--navy)">고맙습니다, Bacilio.</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; 이달의 기사 보상 &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">$100 기프트카드</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; 최고 기사</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">승객이 좋아함</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">전화 응답</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">다시 지명</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">기사 안전</div>
+    <h2>시원하게 유지하고 <em>승객의 안전을 지키세요</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">여름 폭염 주의보</span>
+      <h4>에어컨, 수분 섭취, 가장 취약한 승객</h4>
+      <p>여름 기온이 올라가고 있습니다. 매 근무 전, <strong style="color:var(--navy)">에어컨이 정상 작동하는지</strong> 확인하세요. 물을 휴대하고 본인도 수분을 충분히 섭취하세요.</p>
+      <p style="margin-top:10px;">고령 NEMT 고객, 특히 투석 환자에게 차량 내부 온도는 실제로 건강에 위협이 됩니다. <strong style="color:var(--navy)">투석 후 열사병은 위험하며 사망에 이를 수 있습니다.</strong> 에어컨을 계속 켜고, 어르신 승객을 직사광선 아래 기다리게 하지 말며, 경고 신호(혼란, 과도한 발한, 어지러움, 무기력)를 살피세요. 승객 상태가 좋지 않아 보이면 즉시 디스패치 718-777-7800으로 전화하세요.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; 사기 주의 &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">계정을 보호하고,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">베이스를 지키세요</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">연방 범죄</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Medicaid 사기는 범죄입니다</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Medicaid 사기는 연방 범죄입니다.</strong> 회사뿐만 아니라 기사 본인에게도 실제 징역형과 큰 벌금이 부과될 수 있습니다. 회색지대는 없습니다. 거짓 완료, 부풀린 주행거리, 유령 운행은 연방 정부에 대한 범죄입니다.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">운행 검토</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">모든 운행은 검토됩니다</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">픽업과 드롭오프는 GPS, 디스패치 로그, 시설 기록과 대조됩니다. 차량에 승객이 없는 거짓 픽업, 즉 <strong style="color:#C9A97A;">유령 운행</strong>은 즉시 표시되어 보고됩니다. 운행 금액이 잘못 지급된 경우 디스패치 <strong style="color:#C9A97A;">718-777-7800</strong>으로 전화하세요. 함께 검토합니다. 스스로 조정하지 마세요.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">수상한 점이 보이나요? 즉시 디스패치에 알리세요. 네트워크를 보호하는 것이 모든 기사의 수입과 당신의 자유를 지키는 길입니다.</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">중요 업계 뉴스</div>
+    <h2>NYC 시장 동향</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">AutoMarketplace 제공</span>
+      <h4>NYC 택시 및 FHV 기사를 위한 시장 정보</h4>
+      <p>AutoMarketplace는 뉴욕 택시 및 임대 차량 시장에 대한 정기 분석을 게시하며, TLC 규제 변경, 메달리언 시장 동향, 보험 업데이트, 승객 수요 패턴을 다룹니다. 업계가 어디로 향하는지, 그것이 수입에 어떤 영향을 미치는지 이해하려면 주목할 만한 자료입니다.</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">automarketplace.substack.com에서 더 읽기 &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">궁금한 점이 있으신가요? 24/7 대기 중입니다.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">실시간 디스패치, 언제나 실제 직원이 응답합니다.</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">이메일</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">웹사이트</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARABIC (RTL) ============ -->
+<section id="ar" class="flyer" lang="ar" dir="rtl">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">نشرة السائقين</div>
+        <div class="edition-badge">يونيو 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>أنت تُبقي نيويورك<br><em>تتحرك.</em></h1>
+      <p class="hero-intro">شكرًا لكونك جزءًا من فريق Classic Ryde. إليك كل ما تحتاج معرفته هذا الشهر، تحديثات الشركة، تكريم السائقين، وكيف تربح المزيد.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">أبرز ما في يونيو</div>
+    <h2>أحِل سائقًا، <em>اربح $100</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>مكافأة إحالة السائق</h3>
+        <span class="april-badge">جديد ليونيو</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">رحلات السائق المُحال</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">تُدفع لك</span></div>
+        </div>
+        <p class="promo-desc">أحِل سائقًا جديدًا إلى Classic Ryde. عندما يكمل <strong class="gold">100 رحلة</strong>، تربح <strong class="navy">$100</strong> تُودَع مباشرة في حسابك. لا يوجد حد أقصى، أحِل أي عدد تريد. هل لديك صديق يقود؟ أرسله إلى <strong>www.classicryde.com/drive</strong> أو اتصل بقسم التوزيع على <strong>718-777-7800</strong> واذكر رقم السائق الخاص بك لتسجيل الإحالة.</p>
+        <p class="fine-print">تُدفع المكافأة بعد أن يكمل السائق المُحال 100 رحلة مع Classic Ryde. الإحالات الجديدة فقط.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">تحديثات الشركة</div>
+    <h2>الجديد في Classic Ryde</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">العمليات</span>
+      <h4>برنامج الرحلات المشتركة بدأ العمل</h4>
+      <p>أطلقت Classic Ryde <strong style="color:var(--navy)">برنامج الرحلات المشتركة</strong> في 26 مايو. عندما ترى رحلة مُعلَّمة <strong>P1, D1 / P2, D2</strong> في التطبيق، فهذه رحلة مشتركة. نقوم بدمج الرحلات القصيرة (أقل من 8 أميال) المتجهة في نفس الاتجاه لتنجز رحلات أكثر في الساعة، وتكسب أكثر، ويحصل الركاب على خدمة أسرع. راقب هذه الرحلات في التطبيق ووافق عليها عندما يناسبك المسار.</p>
+    </div>
+    <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">السياسة &middot; إلزامي</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">ثلاثة أزرار. كل رحلة. في كل مرة.</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">كل رحلة Medicaid يتم تتبعها عبر GPS. الرحلات بدون طوابع زمنية وإحداثيات صحيحة <strong style="color:var(--gold)">قد تُرفض من الدفع</strong>، وهذا يكلفك ويكلف القاعدة.</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">On-location</strong> عند الوصول إلى مكان الالتقاط</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">Pick-up</strong> عند صعود الراكب</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; <strong style="color:var(--gold)">Drop-off</strong> عند نزول الراكب</p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">احمِ دخلك.</p>
+    </div>
+        <div class="update-card navy-border">
+      <span class="pill navy">السياسة</span>
+      <h4>مقصورة نظيفة قبل كل وردية</h4>
+      <p>قبل بدء يومك: تحقق من <strong style="color:var(--navy)">الرائحة الداخلية</strong>، امسح الأسطح، أفرغ صندوق السيارة، وأزل الفوضى الشخصية من المقعد الخلفي. سيارتك هي الانطباع الأول الذي يحصل عليه الراكب عن Classic Ryde. اجعله يستحق.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">المجتمع</span>
+      <h4>أهلًا بسائقينا الجدد</h4>
+      <p>في مايو رحّبت Classic Ryde بـ <strong style="color:var(--navy)">أكثر من 30 سائقًا جديدًا</strong>، وهو أكبر شهر توظيف لدينا حتى الآن. ألقِ التحية عليهم في الطريق، شارك ما تعلمته، وساعدهم على الاندماج بسرعة. معًا، نُحرِّك نيويورك.</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; سائق الشهر &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">سائق #209 · يونيو 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"هو نوع السائق الذي يرغب كل راكب في طلبه مرة أخرى."</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">حصل Bacilio هذا الشهر على <strong style="color:var(--navy)">إشادتين تلقائيتين من ركاب</strong>. اتصل كل من Robyn V. و Dorothea بقسم المبيعات من تلقاء أنفسهم ليخبرونا أنه ممتاز وأنه بالضبط السائق الذي يودون طلبه مرة أخرى. سجل قسم التوزيع الإشادة نفسها بعد أيام. ثلاثة أصوات مستقلة، الأسبوع نفسه، الرسالة نفسها.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">الركاب لا يتصلون لمدح الخدمة العادية. Bacilio هو المعيار الذي تأسست عليه Classic Ryde. سائقون مثله هم سبب احتفاظنا بتقييم <strong style="color:var(--navy)">4.6 نجوم</strong> على أكثر من <strong style="color:var(--navy)">700 تقييم</strong>. <strong style="color:var(--navy)">شكرًا لك يا Bacilio.</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; مكافأة سائق الشهر &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">بطاقة هدية بقيمة $100</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; سائق متميز</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">المفضل لدى الركاب</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">يردّ على الهاتف</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">مطلوب من الركاب</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">سلامة السائق</div>
+    <h2>حافظ على البرودة، <em>حافظ على سلامة ركابك</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">تنبيه حرارة الصيف</span>
+      <h4>التكييف والترطيب والركاب الأكثر هشاشة</h4>
+      <p>درجات حرارة الصيف ترتفع. قبل كل وردية، تحقق أن <strong style="color:var(--navy)">التكييف يعمل</strong>. احمل الماء واحرص على ترطيب نفسك.</p>
+      <p style="margin-top:10px;">بالنسبة لكبار السن من عملاء NEMT، خاصة مرضى غسيل الكلى، فإن درجة حرارة المقصورة تُعد خطرًا صحيًا حقيقيًا. <strong style="color:var(--navy)">ضربة الشمس بعد غسيل الكلى خطيرة وقد تكون قاتلة.</strong> أبقِ التكييف يعمل، ولا تترك راكبًا مسنًا ينتظر تحت الشمس المباشرة، وراقب علامات التحذير (تشوش، تعرّق غزير، دوار، ضعف). إذا بدا الراكب متوعكًا، اتصل بقسم التوزيع فورًا على 718-777-7800.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; تنبيه ضد الاحتيال &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">احمِ حسابك،<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">احمِ القاعدة</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">جريمة فيدرالية</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">احتيال Medicaid جريمة</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">احتيال Medicaid جريمة فيدرالية.</strong> يترتب عليه سجن فعلي وغرامات كبيرة للسائق نفسه، وليس للشركة فقط. لا توجد منطقة رمادية هنا. الإكمال الكاذب وتضخيم المسافة والرحلات الوهمية كلها جرائم ضد الحكومة الفيدرالية.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">مراجعة الرحلات</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">تتم مراجعة كل رحلة</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">تتم مطابقة الالتقاطات والإنزال مع GPS وسجلات قسم التوزيع وسجلات المنشأة. الالتقاطات الكاذبة، المعروفة أيضًا باسم <strong style="color:#C9A97A;">الرحلات الوهمية</strong>، حيث لا يوجد راكب في السيارة، يتم رصدها والإبلاغ عنها فورًا. إذا لم تُدفع رحلة بشكل صحيح، اتصل بقسم التوزيع على <strong style="color:#C9A97A;">718-777-7800</strong>. سنراجعها معك. لا تقم بتعديلها بنفسك.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">هل لاحظت شيئًا مريبًا؟ أبلغ قسم التوزيع فورًا. حماية الشبكة تعني حماية دخل كل سائق، وحريتك.</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">أخبار الصناعة المهمة</div>
+    <h2>ما يحرّك سوق نيويورك</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">من AutoMarketplace</span>
+      <h4>معلومات السوق لسائقي سيارات الأجرة و FHV في نيويورك</h4>
+      <p>تنشر AutoMarketplace تحليلات دورية لسوق سيارات الأجرة والسيارات المستأجرة في نيويورك، تشمل تغييرات لوائح TLC، اتجاهات سوق الميداليات، تحديثات التأمين، وأنماط طلب الركاب. تستحق المتابعة إذا أردت فهم اتجاه القطاع وكيف يؤثر على دخلك.</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">اقرأ المزيد على automarketplace.substack.com &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">لديك أسئلة؟ نحن هنا على مدار الساعة.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">إرسال مباشر، شخص حقيقي دائمًا.</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">راسلنا</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">الموقع</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ URDU (RTL) ============ -->
+<section id="ur" class="flyer" lang="ur" dir="rtl">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">ڈرائیور نیوز لیٹر</div>
+        <div class="edition-badge">جون 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>آپ نیو یارک کو<br><em>چلتا رکھتے ہیں۔</em></h1>
+      <p class="hero-intro">Classic Ryde کی ٹیم کا حصہ بننے کا شکریہ۔ اس مہینے جو کچھ آپ کو جاننا چاہیے، کمپنی کی اپ ڈیٹس، ڈرائیور کی تعریف، اور زیادہ کمانے کے طریقے، سب یہاں ہے۔</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">جون کی جھلک</div>
+    <h2>ایک ڈرائیور ریفر کریں، <em>$100 کمائیں</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>ڈرائیور ریفرل بونس</h3>
+        <span class="april-badge">جون میں نیا</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">ریفر کیے ڈرائیور کی سواریاں</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">آپ کو ادائیگی</span></div>
+        </div>
+        <p class="promo-desc">Classic Ryde کو ایک نیا ڈرائیور ریفر کریں۔ جب وہ <strong class="gold">100 سواریاں</strong> مکمل کر لے، آپ کو <strong class="navy">$100</strong> ملیں گے جو براہِ راست آپ کے اکاؤنٹ میں جمع ہوں گے۔ کوئی حد نہیں، جتنے چاہیں ڈرائیور ریفر کریں۔ کوئی ڈرائیور دوست ہے؟ انہیں <strong>www.classicryde.com/drive</strong> پر بھیجیں یا ڈسپیچ کو <strong>718-777-7800</strong> پر کال کر کے اپنا ڈرائیور نمبر بتائیں تاکہ ہم ریفرل ٹیگ کر سکیں۔</p>
+        <p class="fine-print">ریفر کیے گئے ڈرائیور کے Classic Ryde کے ساتھ 100 سواریاں مکمل کرنے پر بونس ادا کیا جائے گا۔ صرف نئے ریفرل۔</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">کمپنی اپ ڈیٹس</div>
+    <h2>Classic Ryde میں نیا کیا ہے</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">آپریشن</span>
+      <h4>شیئرڈ رائیڈ پروگرام اب فعال</h4>
+      <p>Classic Ryde نے 26 مئی کو <strong style="color:var(--navy)">شیئرڈ رائیڈ پروگرام</strong> شروع کیا۔ جب آپ ایپ میں سفر پر <strong>P1, D1 / P2, D2</strong> لگا دیکھیں تو یہ شیئرڈ رائیڈ ہے۔ ہم ایک ہی سمت میں جانے والے چھوٹے سفر (8 میل سے کم) ملا دیتے ہیں تاکہ آپ فی گھنٹہ زیادہ ٹرپ کر سکیں، زیادہ کما سکیں، اور مسافر بھی تیز خدمت پائیں۔ ایپ میں ان پر نظر رکھیں اور جب راستہ مناسب ہو تو قبول کر لیں۔</p>
+    </div>
+    <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">پالیسی &middot; لازمی</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">تین بٹن۔ ہر سواری۔ ہر بار۔</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">ہر Medicaid سواری GPS سے ٹریک ہوتی ہے۔ درست ٹائم اسٹیمپ اور کوآرڈینیٹس کے بغیر سواریاں <strong style="color:var(--gold)">ادائیگی سے مسترد ہو سکتی ہیں</strong>، جو آپ اور بیس دونوں کا نقصان ہے۔</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; پک اپ پر پہنچنے پر <strong style="color:var(--gold)">On-location</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; مسافر گاڑی میں بیٹھنے پر <strong style="color:var(--gold)">Pick-up</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; مسافر اترنے پر <strong style="color:var(--gold)">Drop-off</strong></p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">اپنی کمائی کا تحفظ کریں۔</p>
+    </div>
+        <div class="update-card navy-border">
+      <span class="pill navy">پالیسی</span>
+      <h4>ہر شفٹ سے پہلے صاف کیبن</h4>
+      <p>دن شروع کرنے سے پہلے: <strong style="color:var(--navy)">اندرونی بو</strong> چیک کریں، سطحیں صاف کریں، ٹرنک خالی کریں، اور پچھلی نشست سے ذاتی سامان ہٹا دیں۔ آپ کی گاڑی مسافر کا Classic Ryde کے بارے میں پہلا تاثر ہے۔ اسے یادگار بنائیں۔</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">کمیونٹی</span>
+      <h4>اپنے نئے ڈرائیورز کا خیرمقدم</h4>
+      <p>مئی میں Classic Ryde نے <strong style="color:var(--navy)">30 سے زائد نئے ڈرائیورز</strong> کا خیرمقدم کیا، یہ ہماری اب تک کی سب سے بڑی بھرتی کا مہینہ ہے۔ سڑک پر انہیں سلام کریں، اپنا تجربہ بانٹیں، اور انہیں جلدی سے ایڈجسٹ ہونے میں مدد دیں۔ مل کر، ہم نیویارک کو رواں رکھتے ہیں۔</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; مہینے کا ڈرائیور &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">ڈرائیور #209 · جون 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"وہ ایسا ڈرائیور ہے جسے ہر مسافر دوبارہ مانگنا چاہے گا۔"</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">اس مہینے Bacilio کو مسافروں سے <strong style="color:var(--navy)">دو غیر طلبیدہ تعریفیں</strong> ملی ہیں۔ Robyn V. اور Dorothea دونوں نے خود سیلز کو فون کر کے بتایا کہ وہ بہترین ہیں اور بالکل وہی ڈرائیور ہیں جنہیں وہ دوبارہ مانگنا چاہیں گی۔ چند دن بعد ڈسپیچ نے بھی یہی تعریف لاگ کی۔ تین آزاد آوازیں، ایک ہی ہفتہ، ایک ہی پیغام۔</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">مسافر معمول کی خدمت کی تعریف کے لیے کال نہیں کرتے۔ Bacilio وہ معیار ہے جس پر Classic Ryde بنی ہے۔ ان جیسے ڈرائیوروں کی بدولت ہم <strong style="color:var(--navy)">700 سے زائد ریویوز</strong> پر <strong style="color:var(--navy)">4.6 اسٹار ریٹنگ</strong> برقرار رکھتے ہیں۔ <strong style="color:var(--navy)">شکریہ، Bacilio۔</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; مہینے کے ڈرائیور کا انعام &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">$100 گفٹ کارڈ</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; ٹاپ ڈرائیور</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">مسافروں کا پسندیدہ</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">فون اٹھاتا/اٹھاتی ہے</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">مسافروں کی پسند</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">ڈرائیور کی حفاظت</div>
+    <h2>خود کو ٹھنڈا رکھیں، <em>مسافروں کو محفوظ رکھیں</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">گرمی کی وارننگ</span>
+      <h4>اے سی، پانی اور آپ کے سب سے کمزور مسافر</h4>
+      <p>گرمیوں کا درجہ حرارت بڑھ رہا ہے۔ ہر شفٹ سے پہلے یہ یقینی بنائیں کہ آپ کا <strong style="color:var(--navy)">اے سی کام کر رہا ہے</strong>۔ پانی ساتھ رکھیں اور خود بھی ہائیڈریٹ رہیں۔</p>
+      <p style="margin-top:10px;">بزرگ NEMT مسافروں، خاص طور پر ڈائلیسز کے مریضوں کے لیے، کیبن کا درجہ حرارت اصل صحت کا خطرہ ہے۔ <strong style="color:var(--navy)">ڈائلیسز کے بعد ہیٹ اسٹروک خطرناک اور جان لیوا ہو سکتا ہے۔</strong> اے سی چالو رکھیں، کسی بزرگ مسافر کو براہِ راست دھوپ میں انتظار نہ کرائیں، اور وارننگ علامات (الجھن، زیادہ پسینہ، چکر، کمزوری) پر نظر رکھیں۔ اگر مسافر بیمار لگے تو فوراً ڈسپیچ کو 718-777-7800 پر کال کریں۔</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; فراڈ سے آگاہی &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">اپنا اکاؤنٹ محفوظ رکھیں،<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">بیس کو محفوظ رکھیں</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">وفاقی جرم</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Medicaid فراڈ ایک جرم ہے</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Medicaid فراڈ ایک وفاقی جرم ہے۔</strong> صرف کمپنی ہی نہیں، ڈرائیور کو بھی حقیقی قید اور بھاری جرمانہ ہو سکتا ہے۔ یہاں کوئی گرے ایریا نہیں۔ جھوٹی تکمیل، بڑھا چڑھا کر دکھایا گیا مائلیج، اور گھوسٹ ٹرپس وفاقی حکومت کے خلاف جرائم ہیں۔</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">ٹرپ کا جائزہ</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">ہر ٹرپ کا جائزہ لیا جاتا ہے</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">پک اپ اور ڈراپ آف کو GPS، ڈسپیچ لاگ، اور فیسلٹی ریکارڈ سے ملا کر چیک کیا جاتا ہے۔ جھوٹی پک اپ، جنہیں <strong style="color:#C9A97A;">گھوسٹ ٹرپ</strong> بھی کہا جاتا ہے (جہاں گاڑی میں مسافر نہیں ہوتا)، فوراً نشان زد ہو کر رپورٹ کی جاتی ہیں۔ کسی ٹرپ کی ادائیگی درست نہ ہو تو ڈسپیچ کو <strong style="color:#C9A97A;">718-777-7800</strong> پر کال کریں۔ ہم آپ کے ساتھ مل کر جائزہ لیں گے۔ خود تبدیلی نہ کریں۔</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">کچھ مشکوک نظر آئے؟ فوراً ڈسپیچ کو بتائیں۔ نیٹ ورک کا تحفظ ہر ڈرائیور کی کمائی اور آپ کی آزادی کا تحفظ ہے۔</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">اہم انڈسٹری خبریں</div>
+    <h2>NYC مارکیٹ میں کیا چل رہا ہے</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">AutoMarketplace کی طرف سے</span>
+      <h4>NYC ٹیکسی اور FHV ڈرائیورز کے لیے مارکیٹ انٹیلیجنس</h4>
+      <p>AutoMarketplace باقاعدگی سے NYC کی ٹیکسی اور For-Hire Vehicle مارکیٹ کا تجزیہ شائع کرتا ہے، جس میں TLC ضوابط کی تبدیلیاں، میڈلیئن مارکیٹ کے رجحانات، انشورنس اپ ڈیٹس، اور مسافر طلب کے انداز شامل ہیں۔ اگر آپ یہ سمجھنا چاہتے ہیں کہ انڈسٹری کس طرف جا رہی ہے اور آپ کی کمائی پر اس کا کیا اثر ہے، تو فالو کرنا قابلِ قدر ہے۔</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">automarketplace.substack.com پر مزید پڑھیں &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">سوالات؟ ہم 24/7 موجود ہیں۔</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">براہِ راست ڈسپیچ، ہمیشہ ایک حقیقی شخص۔</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">ای میل کریں</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">ویب سائٹ</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FRENCH ============ -->
+<section id="fr" class="flyer" lang="fr">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Bulletin Chauffeur</div>
+        <div class="edition-badge">Juin 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>Vous Faites Avancer<br><em>New York.</em></h1>
+      <p class="hero-intro">Merci de faire partie de l'équipe Classic Ryde. Voici tout ce que vous devez savoir ce mois-ci, les mises à jour de l'entreprise, la reconnaissance des chauffeurs, et comment gagner plus.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Temps Fort de Juin</div>
+    <h2>Parrainez un chauffeur, <em>gagnez $100</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>Prime de Parrainage Chauffeur</h3>
+        <span class="april-badge">Nouveau pour Juin</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">Courses du parrainé</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">Versés à vous</span></div>
+        </div>
+        <p class="promo-desc">Parrainez un nouveau chauffeur chez Classic Ryde. Quand il termine <strong class="gold">100 courses</strong>, vous gagnez <strong class="navy">$100</strong> versés directement sur votre compte. Aucune limite, parrainez autant de chauffeurs que vous voulez. Un ami qui conduit ? Envoyez-le sur <strong>www.classicryde.com/drive</strong> ou demandez-lui d'appeler le dispatch au <strong>718-777-7800</strong> en mentionnant votre numéro de chauffeur pour enregistrer le parrainage.</p>
+        <p class="fine-print">Prime versée après que le chauffeur parrainé a complété 100 courses avec Classic Ryde. Nouveaux parrainages uniquement.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Mises à Jour de l'Entreprise</div>
+    <h2>Nouveautés chez <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Opérations</span>
+      <h4>Le Programme de Course Partagée est Actif</h4>
+      <p>Classic Ryde a lancé le <strong style="color:var(--navy)">Programme de Course Partagée</strong> le 26 mai. Lorsque vous voyez une course marquée <strong>P1, D1 / P2, D2</strong> dans l'application, c'est une course partagée. Nous regroupons les courses courtes (moins de 8 miles) allant dans la même direction pour que vous fassiez plus de courses par heure, gagniez plus, et que les passagers aient un service plus rapide. Surveillez-les dans l'application et acceptez quand l'itinéraire vous convient.</p>
+    </div>
+        <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Politique &middot; Obligatoire</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">Trois boutons. Chaque course. À chaque fois.</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">Chaque course Medicaid est suivie par GPS. Les courses sans horodatage ni coordonnées correctes <strong style="color:var(--gold)">peuvent être refusées au paiement</strong>, ce qui coûte à vous et à la base.</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">On-location</strong> à l'arrivée au point de prise en charge</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; <strong style="color:var(--gold)">Pick-up</strong> quand le passager est dans le véhicule</p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; <strong style="color:var(--gold)">Drop-off</strong> quand le passager descend</p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">Protégez vos revenus.</p>
+    </div>
+    <div class="update-card navy-border">
+      <span class="pill navy">Politique</span>
+      <h4>Habitacle propre avant chaque shift</h4>
+      <p>Avant de commencer votre journée : vérifiez l'<strong style="color:var(--navy)">odeur intérieure</strong>, essuyez les surfaces, videz le coffre, et retirez les affaires personnelles de la banquette arrière. Votre véhicule est la première impression que le passager a de Classic Ryde. Faites-la compter.</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">Communauté</span>
+      <h4>Bienvenue à Nos Nouveaux Chauffeurs</h4>
+      <p>En mai, Classic Ryde a accueilli <strong style="color:var(--navy)">plus de 30 nouveaux chauffeurs</strong>, notre plus gros mois d'embauche &agrave; ce jour. Saluez-les sur la route, partagez ce que vous avez appris, et aidez-les &agrave; prendre le rythme. Ensemble, nous gardons New York en mouvement.</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; Chauffeur du Mois &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">CHAUFFEUR #209 · JUIN 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"Il est le genre de chauffeur que chaque passager veut redemander."</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">Ce mois-ci, Bacilio a reçu <strong style="color:var(--navy)">deux compliments spontanés de passagers</strong>. Robyn V. et Dorothea ont appelé les ventes d'elles-mêmes pour nous dire qu'il est excellent et exactement le chauffeur qu'elles voudraient redemander. Le dispatch a noté les mêmes éloges quelques jours plus tard. Trois voix indépendantes, la même semaine, le même message.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">Les passagers n'appellent pas pour féliciter un service ordinaire. Bacilio est le standard sur lequel Classic Ryde est bâtie. Des chauffeurs comme lui sont la raison pour laquelle nous maintenons une <strong style="color:var(--navy)">note de 4,6 étoiles</strong> sur plus de <strong style="color:var(--navy)">700 avis</strong>. <strong style="color:var(--navy)">Merci, Bacilio.</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; Récompense Chauffeur du Mois &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">Carte cadeau de $100</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; TOP CHAUFFEUR</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">FAVORI DES PASSAGERS</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">REPOND AU TELEPHONE</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">REDEMANDE</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">Sécurité du Chauffeur</div>
+    <h2>Restez au frais, <em>protégez vos passagers</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">Alerte chaleur d'été</span>
+      <h4>Climatisation, hydratation et vos passagers les plus fragiles</h4>
+      <p>Les températures estivales augmentent. Avant chaque shift, vérifiez que votre <strong style="color:var(--navy)">climatisation fonctionne</strong>. Emportez de l'eau et restez hydraté.</p>
+      <p style="margin-top:10px;">Pour les clients NEMT âgés, particulièrement les patients dialysés, la température de l'habitacle est un vrai risque pour la santé. <strong style="color:var(--navy)">Le coup de chaleur après une dialyse est dangereux et peut être mortel.</strong> Gardez la climatisation en marche, ne laissez jamais un passager âgé attendre en plein soleil, et surveillez les signes (confusion, transpiration excessive, vertiges, faiblesse). Si un passager semble mal, appelez immédiatement le dispatch au 718-777-7800.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; Prévention de la Fraude &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">Protégez votre compte,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">protégez la base</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">Infraction Fédérale</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">La Fraude Medicaid Est un Crime</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">La fraude Medicaid est une infraction fédérale.</strong> Elle entraîne de la prison ferme et de lourdes amendes pour le chauffeur, pas seulement pour la compagnie. Il n'y a pas de zone grise. Les fausses validations, le kilométrage gonflé et les courses fantômes sont des crimes contre le gouvernement fédéral.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">Revue des courses</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Chaque course est revue</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">Les prises en charge et les dépôts sont recoupés avec le GPS, le journal du dispatch et les registres des établissements. Les fausses prises en charge, aussi appelées <strong style="color:#C9A97A;">courses fantômes</strong>, où aucun passager n'est dans le véhicule, sont repérées et signalées immédiatement. Si une course n'est pas payée correctement, appelez le dispatch au <strong style="color:#C9A97A;">718-777-7800</strong>. Nous l'examinerons avec vous. Ne l'ajustez pas vous-même.</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">Vous voyez quelque chose de suspect ? Signalez-le au dispatch tout de suite. Protéger le réseau protège les revenus de chaque chauffeur, et votre liberté.</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">Actualités Importantes du Secteur</div>
+    <h2>Ce Qui Bouge le <em>Marché de NYC</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">D'AutoMarketplace</span>
+      <h4>Intelligence du Marché pour les Chauffeurs Taxi et FHV de NYC</h4>
+      <p>AutoMarketplace publie régulièrement des analyses du marché des taxis et véhicules de location de New York, couvrant les changements de réglementation TLC, les tendances du marché des médaillons, les mises à jour des assurances et les modèles de demande des passagers. À suivre si vous voulez comprendre où va le secteur et comment cela affecte vos revenus.</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">Lire plus sur automarketplace.substack.com &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">Des questions? Nous sommes là 24/7.</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">Dispatch en direct, toujours une vraie personne.</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">Écrivez-nous</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">Site Web</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUNJABI ============ -->
+<section id="pa" class="flyer" lang="pa">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">ਡਰਾਈਵਰ ਨਿਊਜ਼ਲੈਟਰ</div>
+        <div class="edition-badge">ਜੂਨ 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h1>ਤੁਸੀਂ ਨਿਊ ਯਾਰਕ ਨੂੰ<br><em>ਚਲਦਾ ਰੱਖਦੇ ਹੋ।</em></h1>
+      <p class="hero-intro">Classic Ryde ਟੀਮ ਦਾ ਹਿੱਸਾ ਹੋਣ ਲਈ ਧੰਨਵਾਦ। ਇਸ ਮਹੀਨੇ ਜਾਣਨ ਯੋਗ ਸਭ ਕੁਝ, ਕੰਪਨੀ ਅਪਡੇਟ, ਡਰਾਈਵਰ ਮਾਨਤਾ, ਅਤੇ ਵੱਧ ਕਮਾਉਣ ਦੇ ਤਰੀਕੇ, ਇੱਥੇ ਹਨ।</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">ਜੂਨ ਦੀ ਖ਼ਾਸ ਖ਼ਬਰ</div>
+    <h2>ਇੱਕ ਡਰਾਈਵਰ ਰੈਫਰ ਕਰੋ, <em>$100 ਕਮਾਓ</em></h2>
+    <div class="accent-bar"></div>
+    <div class="promo-box">
+      <div class="promo-header">
+        <h3>ਡਰਾਈਵਰ ਰੈਫਰਲ ਬੋਨਸ</h3>
+        <span class="april-badge">ਜੂਨ ਲਈ ਨਵਾਂ</span>
+      </div>
+      <div class="promo-body">
+        <div class="stats">
+          <div class="stat"><span class="stat-num">100</span><span class="stat-label">ਰੈਫਰ ਕੀਤੇ ਡਰਾਈਵਰ ਦੀਆਂ ਟ੍ਰਿਪਾਂ</span></div>
+          <div class="stat navy"><span class="stat-num">$100</span><span class="stat-label">ਤੁਹਾਨੂੰ ਅਦਾ ਕੀਤਾ</span></div>
+        </div>
+        <p class="promo-desc">Classic Ryde ਨੂੰ ਇੱਕ ਨਵਾਂ ਡਰਾਈਵਰ ਰੈਫਰ ਕਰੋ। ਜਦੋਂ ਉਹ <strong class="gold">100 ਟ੍ਰਿਪਾਂ</strong> ਪੂਰੀਆਂ ਕਰ ਲੈਂਦਾ ਹੈ, ਤੁਹਾਨੂੰ <strong class="navy">$100</strong> ਮਿਲਣਗੇ, ਜੋ ਸਿੱਧਾ ਤੁਹਾਡੇ ਖਾਤੇ ਵਿੱਚ ਜਮ੍ਹਾਂ ਹੋਣਗੇ। ਕੋਈ ਹੱਦ ਨਹੀਂ, ਜਿੰਨੇ ਚਾਹੋ ਡਰਾਈਵਰ ਰੈਫਰ ਕਰੋ। ਕੋਈ ਡਰਾਈਵਰ ਦੋਸਤ ਹੈ? ਉਨ੍ਹਾਂ ਨੂੰ <strong>www.classicryde.com/drive</strong> ਉੱਤੇ ਭੇਜੋ ਜਾਂ ਡਿਸਪੈਚ ਨੂੰ <strong>718-777-7800</strong> ਉੱਤੇ ਕਾਲ ਕਰਨ ਲਈ ਕਹੋ ਅਤੇ ਆਪਣਾ ਡਰਾਈਵਰ ਨੰਬਰ ਦੱਸੋ ਤਾਂ ਜੋ ਅਸੀਂ ਰੈਫਰਲ ਟੈਗ ਕਰ ਸਕੀਏ।</p>
+        <p class="fine-print">ਰੈਫਰ ਕੀਤੇ ਡਰਾਈਵਰ ਵੱਲੋਂ Classic Ryde ਨਾਲ 100 ਟ੍ਰਿਪਾਂ ਪੂਰੀਆਂ ਕਰਨ ਤੋਂ ਬਾਅਦ ਬੋਨਸ ਅਦਾ ਕੀਤਾ ਜਾਵੇਗਾ। ਸਿਰਫ਼ ਨਵੇਂ ਰੈਫਰਲ।</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">ਕੰਪਨੀ ਅਪਡੇਟ</div>
+    <h2>Classic Ryde ਵਿੱਚ ਨਵਾਂ ਕੀ ਹੈ</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">ਆਪਰੇਸ਼ਨ</span>
+      <h4>ਸ਼ੇਅਰਡ ਰਾਈਡ ਪ੍ਰੋਗਰਾਮ ਚਾਲੂ</h4>
+      <p>Classic Ryde ਨੇ 26 ਮਈ ਨੂੰ <strong style="color:var(--navy)">ਸ਼ੇਅਰਡ ਰਾਈਡ ਪ੍ਰੋਗਰਾਮ</strong> ਸ਼ੁਰੂ ਕੀਤਾ। ਜਦੋਂ ਤੁਸੀਂ ਐਪ ਵਿੱਚ ਟ੍ਰਿਪ ਉੱਤੇ <strong>P1, D1 / P2, D2</strong> ਟੈਗ ਵੇਖੋ, ਤਾਂ ਉਹ ਸ਼ੇਅਰਡ ਰਾਈਡ ਹੈ। ਇੱਕੋ ਦਿਸ਼ਾ ਵਿੱਚ ਜਾਣ ਵਾਲੇ ਛੋਟੇ ਟ੍ਰਿਪ (8 ਮੀਲ ਤੋਂ ਘੱਟ) ਅਸੀਂ ਮਿਲਾਉਂਦੇ ਹਾਂ ਤਾਂ ਜੋ ਤੁਸੀਂ ਹਰ ਘੰਟੇ ਵੱਧ ਟ੍ਰਿਪ ਕਰ ਸਕੋ, ਵੱਧ ਕਮਾ ਸਕੋ ਅਤੇ ਯਾਤਰੀਆਂ ਨੂੰ ਵੀ ਤੇਜ਼ ਸੇਵਾ ਮਿਲੇ। ਐਪ ਵਿੱਚ ਇਨ੍ਹਾਂ ਉੱਤੇ ਨਿਗਾਹ ਰੱਖੋ ਅਤੇ ਜਦੋਂ ਰੂਟ ਠੀਕ ਲੱਗੇ, ਸਵੀਕਾਰ ਕਰੋ।</p>
+    </div>
+    <div class="update-card" style="background:#1B3A6B;border-left:6px solid #C9A97A;padding:24px 22px;">
+      <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">ਨੀਤੀ &middot; ਜ਼ਰੂਰੀ</span>
+      <h4 style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin:0 0 12px 0;text-transform:none;letter-spacing:0;">ਤਿੰਨ ਬਟਨ। ਹਰ ਟ੍ਰਿਪ। ਹਰ ਵਾਰ।</h4>
+      <p style="font-size:15px;color:#fff;line-height:1.7;margin:0 0 14px 0;">ਹਰ Medicaid ਟ੍ਰਿਪ GPS ਨਾਲ ਟਰੈਕ ਹੁੰਦੀ ਹੈ। ਸਹੀ ਟਾਈਮਸਟੈਂਪ ਅਤੇ ਕੋਆਰਡੀਨੇਟਸ ਤੋਂ ਬਿਨਾਂ ਟ੍ਰਿਪਾਂ ਦੀ <strong style="color:var(--gold)">ਅਦਾਇਗੀ ਰੱਦ ਹੋ ਸਕਦੀ ਹੈ</strong>, ਜੋ ਤੁਹਾਨੂੰ ਅਤੇ ਬੇਸ ਨੂੰ ਨੁਕਸਾਨ ਪਹੁੰਚਾਉਂਦੀ ਹੈ।</p>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;margin-bottom:12px;">
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; ਪਿਕਅੱਪ ਸਥਾਨ ਉੱਤੇ ਪਹੁੰਚਣ ਤੇ <strong style="color:var(--gold)">On-location</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0 0 4px 0;">&rarr;&nbsp; ਯਾਤਰੀ ਗੱਡੀ ਵਿੱਚ ਆਉਣ ਤੇ <strong style="color:var(--gold)">Pick-up</strong></p>
+        <p style="font-size:14px;color:#fff;line-height:1.8;margin:0;">&rarr;&nbsp; ਯਾਤਰੀ ਉਤਰਣ ਤੇ <strong style="color:var(--gold)">Drop-off</strong></p>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.7);font-style:italic;margin:0;">ਆਪਣੀ ਕਮਾਈ ਦੀ ਰੱਖਿਆ ਕਰੋ।</p>
+    </div>
+        <div class="update-card navy-border">
+      <span class="pill navy">ਨੀਤੀ</span>
+      <h4>ਹਰ ਸ਼ਿਫਟ ਤੋਂ ਪਹਿਲਾਂ ਸਾਫ਼ ਕੈਬਿਨ</h4>
+      <p>ਦਿਨ ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ: <strong style="color:var(--navy)">ਅੰਦਰਲੀ ਮਹਿਕ</strong> ਜਾਂਚੋ, ਸਤਹਾਂ ਪੂੰਝੋ, ਟ੍ਰੰਕ ਖਾਲੀ ਕਰੋ, ਅਤੇ ਪਿਛਲੀ ਸੀਟ ਤੋਂ ਨਿੱਜੀ ਸਾਮਾਨ ਹਟਾਓ। ਤੁਹਾਡੀ ਗੱਡੀ ਯਾਤਰੀ ਉੱਤੇ Classic Ryde ਦਾ ਪਹਿਲਾ ਪ੍ਰਭਾਵ ਹੈ। ਇਸ ਨੂੰ ਯਾਦਗਾਰ ਬਣਾਓ।</p>
+    </div>
+    <div class="update-card">
+      <span class="pill">ਕਮਿਊਨਿਟੀ</span>
+      <h4>ਆਪਣੇ ਨਵੇਂ ਡਰਾਈਵਰਾਂ ਨੂੰ ਜੀ ਆਇਆਂ</h4>
+      <p>ਮਈ ਵਿੱਚ Classic Ryde ਨੇ <strong style="color:var(--navy)">30 ਤੋਂ ਵੱਧ ਨਵੇਂ ਡਰਾਈਵਰਾਂ</strong> ਦਾ ਸੁਆਗਤ ਕੀਤਾ, ਇਹ ਸਾਡਾ ਹੁਣ ਤੱਕ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਭਰਤੀ ਮਹੀਨਾ ਹੈ। ਰਸਤੇ ਵਿੱਚ ਉਨ੍ਹਾਂ ਨੂੰ ਨਮਸਕਾਰ ਕਰੋ, ਜੋ ਸਿੱਖਿਆ ਹੈ ਉਹ ਸਾਂਝਾ ਕਰੋ, ਅਤੇ ਉਨ੍ਹਾਂ ਨੂੰ ਜਲਦੀ ਅਨੁਕੂਲ ਹੋਣ ਵਿੱਚ ਮਦਦ ਕਰੋ। ਇਕੱਠੇ, ਅਸੀਂ ਨਿਊਯਾਰਕ ਨੂੰ ਚੱਲਦਾ ਰੱਖਦੇ ਹਾਂ।</p>
+    </div>
+  </div>
+
+  <div class="section section-light" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9733; &nbsp; ਮਹੀਨੇ ਦਾ ਡਰਾਈਵਰ &nbsp; &#9733;</span>
+    </div>
+    <div style="padding:32px 36px 28px 36px;">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;background:#C9A97A;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;flex-shrink:0;">
+          <span style="font-family:Georgia,serif;font-size:34px;font-weight:bold;color:#1B3A6B;">BQ</span>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#fff;margin:0 0 4px 0;line-height:1.1;">Bacilio Quintero</h2>
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#C9A97A;margin:0;">ਡਰਾਈਵਰ #209 · ਜੂਨ 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;padding:28px 36px;border-top:4px solid #C9A97A;">
+      <p style="font-family:Georgia,serif;font-size:16px;font-style:italic;color:#1B3A6B;border-left:4px solid #C9A97A;padding-left:14px;margin:0 0 16px 0;line-height:1.5;">"ਉਹ ਉਹ ਡਰਾਈਵਰ ਹੈ ਜਿਸ ਨੂੰ ਹਰ ਯਾਤਰੀ ਦੁਬਾਰਾ ਮੰਗਣਾ ਚਾਹੇਗਾ।"</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 12px 0;">ਇਸ ਮਹੀਨੇ Bacilio ਨੂੰ ਯਾਤਰੀਆਂ ਤੋਂ <strong style="color:var(--navy)">ਦੋ ਅਣਮੰਗੀਆਂ ਤਾਰੀਫ਼ਾਂ</strong> ਮਿਲੀਆਂ। Robyn V. ਅਤੇ Dorothea ਦੋਵਾਂ ਨੇ ਆਪ ਸੇਲਜ਼ ਨੂੰ ਕਾਲ ਕਰ ਕੇ ਦੱਸਿਆ ਕਿ ਉਹ ਬਹੁਤ ਵਧੀਆ ਹੈ ਅਤੇ ਉਹੀ ਡਰਾਈਵਰ ਹੈ ਜਿਸਨੂੰ ਉਹ ਦੁਬਾਰਾ ਮੰਗਣਗੀਆਂ। ਕੁਝ ਦਿਨਾਂ ਬਾਅਦ ਡਿਸਪੈਚ ਨੇ ਵੀ ਉਹੀ ਤਾਰੀਫ਼ ਨੋਟ ਕੀਤੀ। ਤਿੰਨ ਸੁਤੰਤਰ ਆਵਾਜ਼ਾਂ, ਉਹੀ ਹਫ਼ਤਾ, ਉਹੀ ਸੁਨੇਹਾ।</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin:0 0 16px 0;">ਯਾਤਰੀ ਆਮ ਸੇਵਾ ਦੀ ਤਾਰੀਫ਼ ਲਈ ਕਾਲ ਨਹੀਂ ਕਰਦੇ। Bacilio ਉਹ ਮਿਆਰ ਹੈ ਜਿਸ ਉੱਤੇ Classic Ryde ਬਣਿਆ ਹੈ। ਉਸ ਵਰਗੇ ਡਰਾਈਵਰਾਂ ਦੀ ਵਜ੍ਹਾ ਨਾਲ ਅਸੀਂ <strong style="color:var(--navy)">700 ਤੋਂ ਵੱਧ ਸਮੀਖਿਆਵਾਂ</strong> ਉੱਤੇ <strong style="color:var(--navy)">4.6 ਸਟਾਰ ਰੇਟਿੰਗ</strong> ਕਾਇਮ ਰੱਖਦੇ ਹਾਂ। <strong style="color:var(--navy)">ਧੰਨਵਾਦ, Bacilio।</strong></p>
+      <div style="background:#1B3A6B;border:2px solid #C9A97A;padding:14px 18px;text-align:center;margin:0 0 16px 0;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#10052; ਮਹੀਨੇ ਦੇ ਡਰਾਈਵਰ ਦਾ ਇਨਾਮ &#10052;</div>
+        <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#fff;">$100 ਗਿਫਟ ਕਾਰਡ</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#1B3A6B;background:#C9A97A;padding:5px 12px;display:inline-block;">&#9733; ਸਿਖਰ ਡਰਾਈਵਰ</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ਯਾਤਰੀਆਂ ਦਾ ਪਸੰਦੀਦਾ</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ਫ਼ੋਨ ਚੁੱਕਦੀ/ਚੁੱਕਦਾ</span>
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;color:#fff;background:#1B3A6B;padding:5px 12px;display:inline-block;">ਫਿਰ ਮੰਗੋ</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="section">
+    <div class="eyebrow">ਡਰਾਈਵਰ ਸੁਰੱਖਿਆ</div>
+    <h2>ਠੰਡੇ ਰਹੋ, <em>ਆਪਣੇ ਯਾਤਰੀਆਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖੋ</em></h2>
+    <div class="accent-bar"></div>
+    <div class="update-card">
+      <span class="pill">ਗਰਮੀ ਦੀ ਚੇਤਾਵਨੀ</span>
+      <h4>ਏਸੀ, ਪਾਣੀ ਅਤੇ ਤੁਹਾਡੇ ਸਭ ਤੋਂ ਕਮਜ਼ੋਰ ਯਾਤਰੀ</h4>
+      <p>ਗਰਮੀ ਦਾ ਤਾਪਮਾਨ ਵਧ ਰਿਹਾ ਹੈ। ਹਰ ਸ਼ਿਫਟ ਤੋਂ ਪਹਿਲਾਂ ਜਾਂਚੋ ਕਿ ਤੁਹਾਡਾ <strong style="color:var(--navy)">ਏਸੀ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ</strong>। ਪਾਣੀ ਨਾਲ ਰੱਖੋ ਅਤੇ ਆਪ ਵੀ ਹਾਈਡ੍ਰੇਟ ਰਹੋ।</p>
+      <p style="margin-top:10px;">ਬਜ਼ੁਰਗ NEMT ਯਾਤਰੀਆਂ, ਖਾਸ ਕਰਕੇ ਡਾਇਲਾਸਿਸ ਮਰੀਜ਼ਾਂ ਲਈ, ਗੱਡੀ ਦੇ ਅੰਦਰ ਦਾ ਤਾਪਮਾਨ ਅਸਲੀ ਸਿਹਤ ਖ਼ਤਰਾ ਹੈ। <strong style="color:var(--navy)">ਡਾਇਲਾਸਿਸ ਤੋਂ ਬਾਅਦ ਹੀਟ ਸਟਰੋਕ ਖ਼ਤਰਨਾਕ ਅਤੇ ਜਾਨਲੇਵਾ ਹੋ ਸਕਦਾ ਹੈ।</strong> ਏਸੀ ਚਾਲੂ ਰੱਖੋ, ਕਿਸੇ ਬਜ਼ੁਰਗ ਯਾਤਰੀ ਨੂੰ ਸਿੱਧੀ ਧੁੱਪ ਵਿੱਚ ਉਡੀਕ ਨਾ ਕਰਵਾਓ, ਅਤੇ ਚੇਤਾਵਨੀ ਨਿਸ਼ਾਨੀਆਂ (ਉਲਝਣ, ਜ਼ਿਆਦਾ ਪਸੀਨਾ, ਚੱਕਰ, ਕਮਜ਼ੋਰੀ) ਉੱਤੇ ਨਜ਼ਰ ਰੱਖੋ। ਜੇ ਯਾਤਰੀ ਠੀਕ ਨਾ ਲੱਗੇ, ਤੁਰੰਤ ਡਿਸਪੈਚ ਨੂੰ 718-777-7800 ਉੱਤੇ ਕਾਲ ਕਰੋ।</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:#1B3A6B;padding:0;border:none;">
+    <div style="background:#C9A97A;padding:10px 36px;text-align:center;">
+      <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#1B3A6B;">&#9888; &nbsp; ਧੋਖਾਧੜੀ ਜਾਗਰੂਕਤਾ &nbsp; &#9888;</span>
+    </div>
+    <div style="padding:32px 36px 14px 36px;">
+      <h2 style="font-family:Georgia,serif;font-size:30px;font-weight:bold;color:#fff;margin:0 0 6px 0;line-height:1.15;letter-spacing:-0.5px;">ਆਪਣਾ ਖਾਤਾ ਸੁਰੱਖਿਅਤ ਰੱਖੋ,<br><em style="font-style:italic;color:#C9A97A;font-weight:bold;">ਬੇਸ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖੋ</em></h2>
+      <div style="width:60px;height:3px;background:#C9A97A;margin:8px 0 22px 0;"></div>
+    </div>
+    <div style="padding:0 36px 14px 36px;">
+      <div style="background:rgba(201,169,122,0.10);border-left:5px solid #C9A97A;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#C9A97A;padding:5px 14px;display:inline-block;margin-bottom:12px;">ਫੈਡਰਲ ਜੁਰਮ</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">Medicaid ਫਰਾਡ ਇੱਕ ਜੁਰਮ ਹੈ</h4>
+        <p style="font-size:15px;color:#fff;line-height:1.7;margin:0;"><strong style="color:#FFFFFF;">Medicaid ਫਰਾਡ ਇੱਕ ਫੈਡਰਲ ਜੁਰਮ ਹੈ।</strong> ਇਹ ਸਿਰਫ਼ ਕੰਪਨੀ ਨੂੰ ਨਹੀਂ, ਡਰਾਈਵਰ ਨੂੰ ਵੀ ਅਸਲੀ ਜੇਲ੍ਹ ਅਤੇ ਵੱਡੇ ਜੁਰਮਾਨੇ ਦਾ ਸਾਹਮਣਾ ਕਰਨਾ ਪੈ ਸਕਦਾ ਹੈ। ਇੱਥੇ ਕੋਈ ਗ੍ਰੇ ਏਰੀਆ ਨਹੀਂ। ਝੂਠੀ ਮੁਕੰਮਲਤਾ, ਵਧਾਏ ਮਾਈਲੇਜ, ਅਤੇ ਘੋਸਟ ਟ੍ਰਿਪਾਂ ਫੈਡਰਲ ਸਰਕਾਰ ਵਿਰੁੱਧ ਜੁਰਮ ਹਨ।</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 18px 36px;">
+      <div style="background:rgba(255,255,255,0.07);border-left:5px solid #fff;padding:20px 22px;">
+        <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1B3A6B;background:#fff;padding:5px 14px;display:inline-block;margin-bottom:12px;">ਟ੍ਰਿਪ ਜਾਂਚ</span>
+        <h4 style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#fff;line-height:1.2;margin:0 0 10px 0;text-transform:none;letter-spacing:0;">ਹਰ ਟ੍ਰਿਪ ਦੀ ਜਾਂਚ ਹੁੰਦੀ ਹੈ</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">ਪਿਕਅੱਪ ਅਤੇ ਡ੍ਰਾਪ-ਆਫ਼ GPS, ਡਿਸਪੈਚ ਲੌਗ, ਅਤੇ ਫੈਸਿਲਿਟੀ ਰਿਕਾਰਡ ਨਾਲ ਮਿਲਾ ਕੇ ਜਾਂਚੇ ਜਾਂਦੇ ਹਨ। ਝੂਠੇ ਪਿਕਅੱਪ, ਜਿਨ੍ਹਾਂ ਨੂੰ <strong style="color:#C9A97A;">ਘੋਸਟ ਟ੍ਰਿਪ</strong> ਵੀ ਕਿਹਾ ਜਾਂਦਾ ਹੈ (ਜਿੱਥੇ ਗੱਡੀ ਵਿੱਚ ਯਾਤਰੀ ਨਹੀਂ ਹੁੰਦਾ), ਤੁਰੰਤ ਨੋਟ ਕੀਤੇ ਜਾਂਦੇ ਹਨ ਅਤੇ ਰਿਪੋਰਟ ਕੀਤੇ ਜਾਂਦੇ ਹਨ। ਜੇ ਕਿਸੇ ਟ੍ਰਿਪ ਦੀ ਅਦਾਇਗੀ ਠੀਕ ਨਾ ਹੋਵੇ, ਡਿਸਪੈਚ ਨੂੰ <strong style="color:#C9A97A;">718-777-7800</strong> ਉੱਤੇ ਕਾਲ ਕਰੋ। ਅਸੀਂ ਤੁਹਾਡੇ ਨਾਲ ਮਿਲ ਕੇ ਜਾਂਚ ਕਰਾਂਗੇ। ਆਪਣੇ ਆਪ ਇਸਨੂੰ ਨਾ ਬਦਲੋ।</p>
+      </div>
+    </div>
+    <div style="padding:0 36px 30px 36px;">
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#C9A97A;line-height:1.7;font-style:italic;text-align:center;margin:0;">ਕੋਈ ਸ਼ੱਕੀ ਚੀਜ਼ ਦੇਖੀ? ਤੁਰੰਤ ਡਿਸਪੈਚ ਨੂੰ ਦੱਸੋ। ਨੈੱਟਵਰਕ ਦੀ ਸੁਰੱਖਿਆ ਹਰ ਡਰਾਈਵਰ ਦੀ ਕਮਾਈ ਅਤੇ ਤੁਹਾਡੀ ਆਜ਼ਾਦੀ ਦੀ ਸੁਰੱਖਿਆ ਹੈ।</p>
+    </div>
+  </div>
+
+<div class="section">
+    <div class="eyebrow">ਮਹੱਤਵਪੂਰਣ ਉਦਯੋਗ ਖ਼ਬਰਾਂ</div>
+    <h2>NYC ਮਾਰਕੀਟ ਵਿੱਚ ਕੀ ਚਲ ਰਿਹਾ ਹੈ</h2>
+    <div class="accent-bar"></div>
+    <div class="update-card navy-border">
+      <span class="pill navy">AutoMarketplace ਤੋਂ</span>
+      <h4>NYC ਟੈਕਸੀ ਅਤੇ FHV ਡਰਾਈਵਰਾਂ ਲਈ ਮਾਰਕੀਟ ਜਾਣਕਾਰੀ</h4>
+      <p>AutoMarketplace ਨਿਯਮਿਤ ਤੌਰ ਉੱਤੇ NYC ਦੀ ਟੈਕਸੀ ਅਤੇ ਫਾਰ-ਹਾਇਰ ਵਹੀਕਲ ਆਰਥਿਕਤਾ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਕਾਸ਼ਿਤ ਕਰਦਾ ਹੈ, ਜਿਸ ਵਿੱਚ TLC ਨਿਯਮ ਬਦਲਾਅ, ਮੈਡਲੀਅਨ ਮਾਰਕੀਟ ਰੁਝਾਨ, ਬੀਮਾ ਅਪਡੇਟ ਅਤੇ ਯਾਤਰੀ ਮੰਗ ਦੇ ਨਮੂਨੇ ਸ਼ਾਮਲ ਹੁੰਦੇ ਹਨ। ਜੇ ਤੁਸੀਂ ਸਮਝਣਾ ਚਾਹੁੰਦੇ ਹੋ ਕਿ ਉਦਯੋਗ ਕਿੱਥੇ ਜਾ ਰਿਹਾ ਹੈ ਅਤੇ ਇਹ ਤੁਹਾਡੀ ਕਮਾਈ ਉੱਤੇ ਕੀ ਅਸਰ ਪਾਉਂਦਾ ਹੈ, ਤਾਂ ਫਾਲੋ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ।</p>
+      <p style="margin-top:12px;"><a href="https://automarketplace.substack.com/" style="color:var(--gold);font-weight:700;text-decoration:none;">automarketplace.substack.com ਉੱਤੇ ਹੋਰ ਪੜ੍ਹੋ &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <div class="q">ਸਵਾਲ? ਅਸੀਂ 24/7 ਇੱਥੇ ਹਾਂ।</div>
+      <div class="phone">718-777-7800</div>
+      <div class="q2">ਲਾਈਵ ਡਿਸਪੈਚ, ਹਮੇਸ਼ਾ ਅਸਲ ਇਨਸਾਨ।</div>
+    </div>
+    <div class="contact-right">
+      <div class="lbl">ਸਾਨੂੰ ਈਮੇਲ ਕਰੋ</div>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <div class="lbl">ਵੈੱਬਸਾਈਟ</div>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ SHARED LEGAL FOOTER ============ -->
+<footer class="legal">
+  <p>&copy; 2026 Classic Car Service DBA Classic Ryde · All rights reserved</p>
+  <p>276 Greenpoint Ave, Brooklyn NY 11222 Suite 251 · <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a> · <a class="navy" href="https://www.classicryde.com/drive">www.classicryde.com/drive</a></p>
+  <p>To unsubscribe, reply with "Unsubscribe" in the subject line. / Para cancelar, responda con "Unsubscribe".</p>
+  <div class="badges">
+    <span class="badge-item">Medicaid Enrolled</span>
+    <span class="badge-item">TLC Licensed</span>
+    <span class="badge-item">24/7 Dispatch</span>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const buttons = document.querySelectorAll('.lang-bar button');
+    const flyers  = document.querySelectorAll('.flyer');
+    function showLang(lang) {
+      let found = false;
+      flyers.forEach(f => { const active = f.id === lang; f.classList.toggle('active', active); if (active) found = true; });
+      if (!found) return;
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      document.documentElement.lang = lang;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      try { if (history.replaceState) history.replaceState(null, '', '#' + lang); } catch (e) { /* sandboxed preview, safe to ignore */ }
+    }
+    buttons.forEach(b => b.addEventListener('click', () => showLang(b.dataset.lang)));
+    try {
+      const initial = (window.location.hash || '').replace('#', '');
+      if (initial) showLang(initial);
+    } catch (e) { /* sandboxed preview, safe to ignore */ }
+  })();
+</script>
+
+</body>
+</html>
