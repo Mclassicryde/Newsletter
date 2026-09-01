@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Ryde, Driver Newsletter, September 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B3A6B; --navy-dark: #0c3b66; --gold: #C9A97A; --gold-bright: #d4b06a;
+    --bg: #F0F0F0; --white: #FFFFFF; --off-white: #FAFAFA; --lightblue: #F5F8FF;
+    --border: #EEEEEE; --text: #1a1a1a; --text-muted: #555555; --text-light: #888888;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .lang-bar { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bottom: 3px solid var(--gold); padding: 10px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+  .lang-bar button { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; color: #ffffff !important; border: 1px solid rgba(201,169,122,0.55); padding: 11px 18px; border-radius: 26px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: Arial, sans-serif; white-space: nowrap; line-height: 1.2; margin: 0; outline: none; display: inline-block; }
+  .lang-bar button:hover { background: rgba(201,169,122,0.18); border-color: var(--gold); }
+  .lang-bar button.active { background: var(--gold); color: var(--navy) !important; border-color: var(--gold); }
+  main { padding: 24px 10px 0; }
+  .flyer { max-width: 640px; margin: 0 auto 24px; background: var(--white); box-shadow: 0 6px 28px rgba(0,0,0,0.08); display: none; animation: fadeIn 0.35s ease; overflow: hidden; }
+  .flyer.active { display: block; }
+  @keyframes fadeIn { from {opacity:0;transform:translateY(10px);} to {opacity:1;transform:translateY(0);} }
+  .hero { background: var(--navy); padding: 40px 36px 32px; color: #fff; }
+  .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand-row { display: flex; align-items: center; gap: 14px; }
+  .logo-img { width: 64px; height: 64px; border-radius: 50%; display: block; flex-shrink: 0; }
+  .brand-text-wrap { line-height: 1; }
+  .brand-text-wrap .classic { font-family: Georgia, serif; font-size: 26px; color: var(--gold); letter-spacing: 1px; }
+  .brand-text-wrap .ryde { font-family: Arial, sans-serif; font-size: 20px; color: #fff; font-weight: 700; letter-spacing: 3px; }
+  .edition { text-align: right; }
+  .edition-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .edition-badge { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 5px 14px; display: inline-block; }
+  .hero-body { margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,169,122,0.35); }
+  .eyebrow-small { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: normal; line-height: 1.2; margin-bottom: 14px; color: #fff; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-intro { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+  .section { padding: 36px 36px; background: var(--white); }
+  .eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .section h2 { font-family: Georgia, serif; font-size: 24px; font-weight: normal; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+  .section h2 em { font-style: italic; color: var(--gold); }
+  .accent-bar { width: 40px; height: 2px; background: var(--gold); margin-bottom: 20px; }
+  .dark-card { background: #1B3A6B; padding: 26px 28px; margin-bottom: 16px; border-left: 6px solid #C9A97A; }
+  .dark-card .pill-badge { font-family: Arial; font-size: 8px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1B3A6B; background: #C9A97A; padding: 5px 14px; display: inline-block; margin-bottom: 14px; }
+  .dark-card h4 { font-family: Georgia, serif; font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2; }
+  .dark-card p { font-family: Arial; font-size: 14px; color: #FFFFFF; line-height: 1.7; margin-bottom: 14px; }
+  .dark-card p.italic { font-size: 13px; color: rgba(255,255,255,0.75); font-style: italic; margin-bottom: 0; }
+  .dark-card .three-btn-list { background: rgba(201,169,122,0.12); border-left: 3px solid #C9A97A; padding: 14px 18px; margin-bottom: 16px; }
+  .dark-card .three-btn-list p { font-size: 13px; margin-bottom: 8px; }
+  .dark-card .three-btn-list p:last-child { margin-bottom: 0; }
+  .light-card { padding: 20px 24px; margin-bottom: 16px; border-left: 4px solid #1B3A6B; background: #F5F8FF; }
+  .light-card.gold-border { border-left-color: #C9A97A; }
+  .light-card .pill-badge { font-family: Arial; font-size: 8px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF; background: #1B3A6B; padding: 4px 12px; display: inline-block; margin-bottom: 10px; }
+  .light-card.gold-border .pill-badge { background: #C9A97A; }
+  .light-card h4 { font-family: Georgia, serif; font-size: 18px; font-weight: normal; color: #1B3A6B; margin-bottom: 10px; }
+  .light-card p { font-family: Arial; font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 10px; }
+  .light-card p:last-child { margin-bottom: 0; }
+  .section-cards { padding: 0 36px 8px; background: var(--white); }
+  .dotm-section { background: var(--navy); }
+  .dotm-header { background: var(--gold); padding: 10px 36px; text-align: center; }
+  .dotm-header span { font-family: Arial; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--navy); }
+  .dotm-avatar-row { padding: 36px 36px 0; display: flex; gap: 22px; align-items: center; }
+  .dotm-avatar { width: 100px; height: 100px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 3px solid #fff; }
+  .dotm-avatar span { font-family: Georgia, serif; font-size: 36px; font-weight: 700; color: var(--navy); }
+  .dotm-name-wrap h2 { font-family: Georgia, serif; font-size: 30px; font-weight: bold; color: #FFFFFF; line-height: 1.1; margin-bottom: 4px; }
+  .dotm-name-wrap .subtitle { font-family: Arial; font-size: 14px; font-weight: 700; letter-spacing: 2px; color: var(--gold); }
+  .dotm-body { background: #FFFFFF; padding: 28px 36px; border-top: 4px solid var(--gold); margin-top: 28px; }
+  .dotm-quote { font-family: Georgia, serif; font-size: 18px; font-style: italic; color: var(--navy); line-height: 1.5; border-left: 4px solid var(--gold); padding-left: 16px; margin-bottom: 18px; }
+  .dotm-body p { font-family: Arial; font-size: 14px; color: #444; line-height: 1.8; margin-bottom: 14px; }
+  .dotm-reward { background: var(--navy); border: 2px solid var(--gold); text-align: center; padding: 14px 18px; margin-bottom: 16px; }
+  .dotm-reward .reward-label { font-family: Arial; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 4px; }
+  .dotm-reward .reward-amount { font-family: Georgia, serif; font-size: 22px; font-weight: bold; color: #FFFFFF; display: block; }
+  .dotm-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dtag { font-family: Arial; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 12px; }
+  .dtag.gold { color: var(--navy); background: var(--gold); }
+  .dtag.navy { color: #FFFFFF; background: var(--navy); }
+  .fraud-section { background: var(--navy); }
+  .fraud-header { background: var(--gold); padding: 8px 36px; text-align: center; }
+  .fraud-header span { font-family: Arial; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--navy); }
+  .fraud-title { padding: 36px 36px 8px; }
+  .fraud-title h2 { font-family: Georgia, serif; font-size: 30px; font-weight: bold; color: #FFFFFF; line-height: 1.15; }
+  .fraud-title h2 em { font-style: italic; color: var(--gold); }
+  .fraud-accent { width: 60px; height: 3px; background: var(--gold); margin: 8px 0 22px; }
+  .fraud-cards { padding: 0 36px 18px; }
+  .fraud-card-a { background: rgba(201,169,122,0.08); border-left: 5px solid #C9A97A; padding: 20px 22px; margin-bottom: 16px; }
+  .fraud-card-b { background: rgba(255,255,255,0.06); border-left: 5px solid #FFFFFF; padding: 20px 22px; margin-bottom: 16px; }
+  .fraud-card-a .pill-badge, .fraud-card-b .pill-badge { font-family: Arial; font-size: 8px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 14px; display: inline-block; margin-bottom: 12px; }
+  .fraud-card-a .pill-badge { color: #1B3A6B; background: #C9A97A; }
+  .fraud-card-b .pill-badge { color: #1B3A6B; background: #FFFFFF; }
+  .fraud-card-a h4, .fraud-card-b h4 { font-family: Georgia, serif; font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 10px; line-height: 1.2; }
+  .fraud-card-a p, .fraud-card-b p { font-family: Arial; font-size: 14px; color: #FFFFFF; line-height: 1.7; }
+  .fraud-card-b p { color: rgba(255,255,255,0.92); }
+  /* Strong text colors matching email template */
+  .dark-card p strong { color: #C9A97A; }
+  .dark-card .three-btn-list p strong { color: #C9A97A; }
+  .light-card p strong { color: #1B3A6B; }
+  .dotm-body p strong { color: #1B3A6B; }
+  .fraud-card-a p strong { color: #FFFFFF; }
+  .fraud-card-b p strong { color: #C9A97A; }
+  .fraud-footer-text { padding: 0 36px 32px; }
+  .fraud-footer-text p { font-family: Arial; font-size: 13px; color: var(--gold); line-height: 1.7; font-style: italic; text-align: center; }
+  .news-section { background: #FAFAFA; padding: 36px 36px; border-top: 3px solid var(--gold); }
+  .news-card { background: #FFFFFF; border: 1px solid #E5EAF3; padding: 18px 22px; }
+  .news-card .pill-badge { font-family: Arial; font-size: 8px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF; background: #1B3A6B; padding: 3px 10px; display: inline-block; margin-bottom: 10px; }
+  .news-card h4 { font-family: Georgia, serif; font-size: 16px; font-weight: normal; color: #1B3A6B; margin-bottom: 8px; }
+  .news-card p { font-family: Arial; font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 12px; }
+  .news-card a { font-family: Arial; font-size: 12px; font-weight: bold; color: var(--gold); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+  .lang-cta { background: #F5F8FF; padding: 32px 36px; text-align: center; border-top: 1px solid #E5EAF3; }
+  .lang-cta .eyebrow { color: var(--gold); margin-bottom: 6px; }
+  .lang-cta p { font-family: Arial; font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 18px; }
+  .lang-cta a { display: inline-block; background: var(--gold); color: var(--navy); padding: 14px 32px; text-decoration: none; font-family: Arial; font-weight: bold; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+  .contact-strip { background: var(--navy); padding: 26px 36px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .contact-left .q { font-size: 10px; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+  .contact-left .phone { font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: var(--gold); line-height: 1.3; }
+  .contact-left .q2 { font-size: 9px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .contact-right { text-align: right; }
+  .contact-right .lbl { font-size: 9px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+  .contact-right a { font-size: 12px; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 10px; }
+  .contact-right a:last-child { margin-bottom: 0; }
+  .legal { max-width: 640px; margin: 0 auto 40px; padding: 26px 36px; text-align: center; background: #F8F8F8; border-top: 3px solid var(--gold); font-size: 10px; color: var(--text-light); line-height: 1.8; }
+  .legal p { margin-bottom: 4px; }
+  .legal a { color: var(--gold); text-decoration: none; }
+  .legal a.navy { color: var(--navy); }
+  .legal .badges { margin-top: 14px; display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; }
+  .legal .badge-item { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #888; border: 1px solid #DDD; padding: 4px 10px; }
+  [dir="rtl"] .hero h1, [dir="rtl"] .section h2, [dir="rtl"] .dark-card h4, [dir="rtl"] .dark-card p, [dir="rtl"] .light-card h4, [dir="rtl"] .light-card p, [dir="rtl"] .hero-intro { text-align: right; }
+  [dir="rtl"] .dark-card { border-left: none; border-right: 6px solid #C9A97A; }
+  [dir="rtl"] .light-card { border-left: none; border-right: 4px solid #1B3A6B; }
+  [dir="rtl"] .light-card.gold-border { border-right-color: #C9A97A; }
+  [dir="rtl"] .dark-card .three-btn-list { border-left: none; border-right: 3px solid #C9A97A; }
+  [dir="rtl"] .fraud-card-a { border-left: none; border-right: 5px solid #C9A97A; }
+  [dir="rtl"] .fraud-card-b { border-left: none; border-right: 5px solid #FFFFFF; }
+  [dir="rtl"] .dotm-quote { border-left: none; border-right: 4px solid var(--gold); padding-left: 0; padding-right: 16px; }
+  [dir="rtl"] .edition { text-align: left; }
+  [dir="rtl"] .contact-right { text-align: left; }
+  @media (max-width: 600px) {
+    .lang-bar { padding: 10px 6px; gap: 5px; }
+    .lang-bar button { padding: 9px 13px; font-size: 14px; }
+    .hero { padding: 28px 22px; }
+    .hero h1 { font-size: 28px; }
+    .section { padding: 28px 22px; }
+    .section-cards { padding: 0 22px 8px; }
+    .contact-strip { padding: 22px; }
+    .legal { padding: 22px; margin-bottom: 24px; }
+    .dotm-avatar-row { padding: 28px 22px 0; }
+    .dotm-body { padding: 22px; }
+    .fraud-title { padding: 28px 22px 8px; }
+    .fraud-cards { padding: 0 22px 18px; }
+    .fraud-footer-text { padding: 0 22px 28px; }
+    .news-section { padding: 28px 22px; }
+    .lang-cta { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="lang-bar" role="navigation" aria-label="Language selection">
+  <button data-lang="en" class="active">English</button>
+  <button data-lang="es">Español</button>
+  <button data-lang="zh">中文</button>
+  <button data-lang="ru">Русский</button>
+  <button data-lang="bn">বাংলা</button>
+  <button data-lang="ht">Kreyòl</button>
+  <button data-lang="ko">한국어</button>
+  <button data-lang="ar">العربية</button>
+  <button data-lang="ur">اردو</button>
+  <button data-lang="fr">Français</button>
+  <button data-lang="pa">ਪੰਜਾਬੀ</button>
+</nav>
+
+<main>
+
+<section id="en" class="flyer active" lang="en">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">Fifth Edition</p>
+      <h1>You Keep New York<br><em>Moving.</em></h1>
+      <p class="hero-intro">School is back and DOE trips return. A reminder on exactly who belongs in your car. And the driver who keeps showing up at the top of the board, month after month.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Company Updates</p>
+    <h2>What is New at <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">Policy &middot; Required</span>
+      <h4>No Mixing Customers From Different Bases, Apps, or Accounts</h4>
+      <p><strong>Every passenger in your car on a Classic Ryde trip must be a Classic Ryde passenger, booked under a Classic Ryde account.</strong> Do not combine a Classic Ryde passenger with a passenger from another base, another app, or another account, even if it fits in the same car on the same route.</p>
+      <p>This applies whether you are running a shared ride or picking someone up on the side. If you are getting paid for more than one passenger on the same trip, every one of those passengers has to belong to Classic Ryde.</p>
+      <p class="italic">This applies to every trip, no exceptions. Treating it as negligence of policy can lead to suspension of participation. If a pairing would mix bases, apps, or accounts, decline it and call dispatch at 718-777-7800 with any questions.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Policy &middot; Required</span>
+      <h4>Three Buttons. Every Trip. Every Time.</h4>
+      <p>It is your responsibility to mark every status on every trip. <strong>Trips not marked in the app are not paid by MAS, and if MAS does not pay, you do not get paid.</strong> There are no exceptions.</p>
+      <p><strong>1. On-Location</strong> when you arrive at the pickup address. <strong>2. Pick-Up</strong> when the passenger is in the vehicle. <strong>3. Drop-Off</strong> when the passenger exits.</p>
+      <p>If you have any problem placing a status during a trip, call dispatch immediately at 718-777-7800. Do not wait until the trip is over.</p>
+      <p class="italic">MAS is not paying trips where GPS tracking or the drop-off status was not recorded. The only way to protect your earnings is to mark every status on every single trip.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Community &middot; September</span>
+      <h4>School Is Back, and So Are DOE Trips</h4>
+      <p>NYC Department of Education trips slowed down all summer. With school back in session they are returning to the board. If DOE runs used to be part of your week, expect to see them again this month.</p>
+      <p>DOE work is different from a regular call. These are scheduled, repeating routes: the same students, the same addresses, on a fixed weekly rhythm. Drivers who take them build a steady base of work they can plan their day around, on top of whatever else they pick up.</p>
+      <p class="italic">If you want DOE runs in your day, call dispatch at 718-777-7800 and tell them your availability and the areas you cover.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Active Campaigns</p>
+    <h2>Earn More With <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; September Offer</span>
+      <h4 style="font-size:24px;">Turn One Referral Into $100</h4>
+      <p>Know someone who drives? Send them to Classic Ryde. If they complete <strong>100 trips within their first month</strong>, <strong>$100</strong> lands in your account. No cap: refer 5 drivers, earn $500. It is some of the easiest money you will make without ever touching the wheel.</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; Earn Per Referral &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100, No Cap</span>
+      </div>
+      <p>Send them to <strong>www.classicryde.com/drive</strong> or have them call dispatch at <strong>718-777-7800</strong> and mention your name and car number so the referral gets credited to you.</p>
+      <p class="italic">The referred driver must complete 100 trips within their first month to qualify. This bonus is ongoing, there is no September deadline.</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; Driver of the Month &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">DRIVER #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;He does not have one big day. He has a long run of good ones.&quot;</p>
+      <p>Mario is one of the most consistent names on the network's daily performance report. Through August he finished number 1 twice and returned to the Top 5 again and again. That pattern is not new. He has been near the top of the board month after month.</p>
+      <p>Consistency at that level is a choice you make every morning. It takes knowing your routes, staying available through the peak windows, and taking trip after trip without slowing down. That is the kind of reliability dispatch counts on when the board is full. <strong>Thank you, Mario.</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; Driver of the Month Reward &#10052;</span>
+        <span class="reward-amount">$100 Gift Card</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">TOP DRIVER</span>
+        <span class="dtag navy">CONSISTENT</span>
+        <span class="dtag navy">HIGH VOLUME</span>
+        <span class="dtag navy">MONTH AFTER MONTH</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Driver Safety</p>
+    <h2>Slow Down, Keep Your <em>Passengers Safe</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">School Zone Advisory</span>
+      <h4>School Is Back: 20 MPH, Eyes Up</h4>
+      <p>NYC school zone speed limits are <strong>20 mph</strong> and the cameras run on school days. More important than the ticket: children step off curbs without looking and school buses stop without warning. <strong>Never pass a stopped school bus with its red lights flashing.</strong></p>
+      <p>Daylight also starts getting shorter this month. Clean your windshield, check your headlights, and leave extra following distance in the afternoon rush. If anything happens on a trip, call dispatch at 718-777-7800 right away.</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; Zero Tolerance to Fraud &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>A False Report Costs<br><em>Your Place in the Network</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">Federal Offense</span>
+        <h4>Classic Ryde Has Zero Tolerance for Fraud</h4>
+        <p>This is not a monthly reminder said out of routine, it is the rule that always applies: <strong>ghost trips, padded mileage, and false completions are not just an internal problem, they are Medicaid fraud, a federal offense</strong> with real jail time and fines for the driver, not just the company.</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">Trip Reviews</span>
+        <h4>Everything Is Reviewed, Everything Is Cross-Checked</h4>
+        <p>GPS, dispatch logs, and facility records are cross-checked on every trip. If something does not add up, it gets caught. If a trip does not pay correctly, the fix is a call to dispatch at <strong>718-777-7800</strong>, never a self-adjustment.</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>Zero tolerance means zero tolerance: a confirmed fraud case ends participation in the network, no exceptions. Protect your account, report anything suspicious.</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">Prefer Another Language?</p>
+    <p>This newsletter is available in Spanish, Chinese, Russian, Bengali, Haitian Creole, Korean, Arabic, Urdu, French, and Punjabi.</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">Choose Your Language</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">Questions? We are here 24/7.</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">Live dispatch, always a real person.</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">Email us</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">Website</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="es" class="flyer" lang="es">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">Quinta Edición</p>
+      <h1>Tú Mantienes a Nueva York<br><em>En Movimiento.</em></h1>
+      <p class="hero-intro">Vuelven las clases y vuelven los viajes de DOE. Un recordatorio de quién exactamente puede ir en tu carro. Y el conductor que sigue apareciendo en la cima de la tabla, mes tras mes.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Actualizaciones de la Empresa</p>
+    <h2>Lo Nuevo en <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">Política &middot; Obligatorio</span>
+      <h4>No Mezclar Clientes de Diferentes Bases, Apps o Cuentas</h4>
+      <p><strong>Todo pasajero en tu carro en un viaje de Classic Ryde debe ser pasajero de Classic Ryde, reservado bajo una cuenta de Classic Ryde.</strong> No combines un pasajero de Classic Ryde con un pasajero de otra base, otra aplicación u otra cuenta, aunque quepa en el mismo carro y en la misma ruta.</p>
+      <p>Esto aplica tanto si estás haciendo un viaje compartido como si recoges a alguien por tu cuenta. Si te pagan por más de un pasajero en el mismo viaje, cada uno de esos pasajeros debe pertenecer a Classic Ryde.</p>
+      <p class="italic">Esto aplica a todo viaje, sin excepciones. Tratarlo como negligencia de política puede llevar a la suspensión de tu participación. Si una combinación mezclaría bases, apps o cuentas, recházala y llama a despacho al 718-777-7800 si tienes preguntas.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Política &middot; Obligatorio</span>
+      <h4>Tres Botones. Cada Viaje. Cada Vez.</h4>
+      <p>Es tu responsabilidad marcar cada estatus en cada viaje. <strong>Los viajes no marcados en la aplicación no son pagados por MAS, y si MAS no paga, tú no cobras.</strong> No hay excepciones.</p>
+      <p><strong>1. On-Location</strong> cuando llegas a la dirección de recogida. <strong>2. Pick-Up</strong> cuando el pasajero está en el vehículo. <strong>3. Drop-Off</strong> cuando el pasajero se baja.</p>
+      <p>Si tienes cualquier problema colocando un estatus durante un viaje, llama a despacho de inmediato al 718-777-7800. No esperes a que termine el viaje.</p>
+      <p class="italic">MAS no está pagando viajes donde no se registró el rastreo GPS o el estatus de drop-off. La única forma de proteger tus ganancias es marcar cada estatus en cada viaje, sin excepción.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Comunidad &middot; Septiembre</span>
+      <h4>Vuelven las Clases y Vuelven los Viajes de DOE</h4>
+      <p>Los viajes del Departamento de Educación de NYC bajaron todo el verano. Con las clases de vuelta, están regresando a la tabla. Si los viajes de DOE eran parte de tu semana, espera verlos de nuevo este mes.</p>
+      <p>El trabajo de DOE es distinto a una llamada normal. Son rutas programadas que se repiten: los mismos estudiantes, las mismas direcciones, con un ritmo semanal fijo. Los conductores que las toman construyen una base estable de trabajo que pueden planificar, además de lo que agarren durante el día.</p>
+      <p class="italic">Si quieres viajes de DOE en tu día, llama a despacho al 718-777-7800 y dile tu disponibilidad y las zonas que cubres.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Campañas Activas</p>
+    <h2>Gana Más Con <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; Oferta de Septiembre</span>
+      <h4 style="font-size:24px;">Convierte Un Referido en $100</h4>
+      <p>¿Conoces a alguien que maneje? Envíalo a Classic Ryde. Si completa <strong>100 viajes dentro de su primer mes</strong>, <strong>$100</strong> llegan a tu cuenta. Sin límite: refiere a 5 conductores, gana $500. Es de lo más fácil que ganarás sin siquiera tocar el volante.</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; Gana Por Cada Referido &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100, Sin Límite</span>
+      </div>
+      <p>Envíalo a <strong>www.classicryde.com/drive</strong> o dile que llame a despacho al <strong>718-777-7800</strong> y mencione tu nombre y número de auto para que el referido se acredite a ti.</p>
+      <p class="italic">El conductor referido debe completar 100 viajes dentro de su primer mes para calificar. Este bono es continuo, no hay fecha límite en septiembre.</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; Conductor del Mes &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">CONDUCTOR #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;No tiene un gran día. Tiene una larga racha de buenos días.&quot;</p>
+      <p>Mario es uno de los nombres más constantes en el reporte diario de desempeño de la red. Durante agosto terminó número 1 dos veces y volvió al Top 5 una y otra vez. Ese patrón no es nuevo. Lleva mes tras mes cerca de la cima de la tabla.</p>
+      <p>La constancia a ese nivel es una decisión que se toma cada mañana. Requiere conocer tus rutas, mantenerte disponible en las horas pico y tomar viaje tras viaje sin bajar el ritmo. Esa es la confiabilidad con la que despacho cuenta cuando la tabla está llena. <strong>Gracias, Mario.</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; Premio Conductor del Mes &#10052;</span>
+        <span class="reward-amount">Tarjeta de Regalo de $100</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">MEJOR CONDUCTOR</span>
+        <span class="dtag navy">CONSTANTE</span>
+        <span class="dtag navy">ALTO VOLUMEN</span>
+        <span class="dtag navy">MES TRAS MES</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Seguridad del Conductor</p>
+    <h2>Baja la Velocidad, Protege a Tus <em>Pasajeros</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">Aviso de Zona Escolar</span>
+      <h4>Vuelven las Clases: 20 MPH, Ojos Arriba</h4>
+      <p>El límite de velocidad en zonas escolares de NYC es de <strong>20 mph</strong> y las cámaras funcionan en días de clases. Más importante que la multa: los niños se bajan de la acera sin mirar y los autobuses escolares se detienen sin aviso. <strong>Nunca pases un autobús escolar detenido con las luces rojas encendidas.</strong></p>
+      <p>La luz del día también empieza a acortarse este mes. Limpia tu parabrisas, revisa tus luces y deja más distancia de seguimiento en la hora pico de la tarde. Si algo pasa durante un viaje, llama a despacho al 718-777-7800 de inmediato.</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; Cero Tolerancia al Fraude &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>Un Reporte Falso Cuesta<br><em>Tu Lugar en la Red</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">Delito Federal</span>
+        <h4>Classic Ryde Tiene Cero Tolerancia al Fraude</h4>
+        <p>Esto no es un recordatorio mensual dicho por rutina, es la regla que siempre aplica: <strong>los viajes fantasma, el kilometraje inflado y las finalizaciones falsas no son solo un problema interno, son fraude de Medicaid, un delito federal</strong> con cárcel real y multas para el conductor, no solo para la empresa.</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">Revisión de Viajes</span>
+        <h4>Todo Se Revisa, Todo Se Verifica</h4>
+        <p>El GPS, los registros de despacho y los registros de las instalaciones se verifican en cada viaje. Si algo no cuadra, se detecta. Si un viaje no paga correctamente, la solución es llamar a despacho al <strong>718-777-7800</strong>, nunca ajustarlo por tu cuenta.</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>Cero tolerancia significa cero tolerancia: un caso de fraude confirmado termina la participación en la red, sin excepciones. Protege tu cuenta, reporta cualquier cosa sospechosa.</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">¿Prefieres Otro Idioma?</p>
+    <p>Este boletín está disponible en inglés, chino, ruso, bengalí, criollo haitiano, coreano, árabe, urdu, francés y panyábí.</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">Elige Tu Idioma</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">¿Preguntas? Estamos aquí 24/7.</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">Despacho en vivo, siempre una persona real.</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">Escíbenos</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">Sitio Web</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="zh" class="flyer" lang="zh">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">第五期</p>
+      <h1>您让纽约<br><em>不断运转。</em></h1>
+      <p class="hero-intro">开学了，教育局(DOE)的行程也回来了。提醒您车上到底可以载哪些乘客。还有那位月复一月稳居榜单前列的司机。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">公司动态</p>
+    <h2><em>Classic Ryde</em> 的新动态</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">政策 &middot; 必须遵守</span>
+      <h4>不得混载来自不同车行、不同应用或不同账户的客户</h4>
+      <p><strong>在 Classic Ryde 行程中，您车上的每一位乘客都必须是通过 Classic Ryde 账户预订的 Classic Ryde 乘客。</strong> 不要把 Classic Ryde 的乘客与来自其他车行、其他应用或其他账户的乘客混载，即使同一辆车、同一条路线也放得下。</p>
+      <p>无论您在跑拼车还是顺路另接一位乘客，此规定同样适用。如果同一趟行程中您因多位乘客而获得报酬，那么每一位乘客都必须属于 Classic Ryde。</p>
+      <p class="italic">此规定适用于每一趟行程，没有例外。将其视为对政策的疏忽可能导致暂停参与资格。如果某个组合会混合车行、应用或账户，请拒绝并致电调度 718-777-7800 咨询。</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">政策 &middot; 必须遵守</span>
+      <h4>三个按钮。每一趟。每一次。</h4>
+      <p>在每一趟行程上标记每一个状态是您的责任。<strong>未在应用中标记的行程 MAS 不予支付，MAS 不付款，您就拿不到钱。</strong>没有例外。</p>
+      <p><strong>1. On-Location</strong>：到达上车地址时。<strong>2. Pick-Up</strong>：乘客上车时。<strong>3. Drop-Off</strong>：乘客下车时。</p>
+      <p>如果在行程中标记状态遇到任何问题，请立即致电调度 718-777-7800。不要等到行程结束。</p>
+      <p class="italic">MAS 不支付没有 GPS 记录或没有记录下车状态的行程。保护您收入的唯一方法，就是在每一趟行程上标记每一个状态。</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">社区 &middot; 九月</span>
+      <h4>开学了，教育局行程也回来了</h4>
+      <p>整个夏天纽约市教育局的行程都在减少。随着开学，它们正陆续回到派单板上。如果教育局的行程曾是您一周工作的一部分，本月请期待它们再次出现。</p>
+      <p>教育局的活儿和普通派单不一样。这些是排定并重复的路线：同样的学生、同样的地址、固定的每周节奏。接下这些行程的司机，可以在日常接单之外，建立一份可以提前规划的稳定工作基础。</p>
+      <p class="italic">如果您希望日程中安排教育局行程，请致电调度 718-777-7800，告知您的可出车时间和常跑区域。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">活动推广</p>
+    <h2>与 <em>Classic Ryde</em> 一起赚更多</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; 九月优惠</span>
+      <h4 style="font-size:24px;">一次推荐，赚取$100</h4>
+      <p>认识有人开车吗？将他们推荐给 Classic Ryde。如果他们<strong>在第一个月内完成100次行程</strong>，<strong>$100</strong>就会存入您的账户。没有上限：推荐5位司机，赚取$500。这是您无需亲自开车就能赚到的最轻松的钱之一。</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; 每次推荐可赚 &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100，无上限</span>
+      </div>
+      <p>将他们发送到 <strong>www.classicryde.com/drive</strong>，或让他们拨打 <strong>718-777-7800</strong> 联系调度，并提及您的姓名和车辆编号，以确保推荐记到您名下。</p>
+      <p class="italic">被推荐的司机必须在第一个月内完成 100 趟行程才符合资格。此奖金持续有效，九月没有截止日期。</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; 本月最佳司机 &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">司机 #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;他没有某一个高光日，他有一长串稳定的好日子。&quot;</p>
+      <p>Mario 是网络每日绩效报告上最稳定的名字之一。整个八月，他两次位居第 1 名，并一次又一次重返前 5 名。这个表现并非新鲜事，他月复一月都稳居榜单前列。</p>
+      <p>这种程度的稳定，是每天早上都要做出的选择。它需要熟悉路线、在高峰时段保持在线，并且一趟接一趟地跑而不放慢节奏。当派单板排满时，这正是调度可以依靠的可靠性。<strong>谢谢您，Mario。</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; 本月最佳司机奖励 &#10052;</span>
+        <span class="reward-amount">$100 礼品卡</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">顶级司机</span>
+        <span class="dtag navy">稳定可靠</span>
+        <span class="dtag navy">高业务量</span>
+        <span class="dtag navy">月复一月</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">司机安全</p>
+    <h2>减速慢行，保护您的<em>乘客</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">学校区域提醒</span>
+      <h4>开学了：20 英里时速，抬头留意</h4>
+      <p>纽约市学校区域限速为 <strong>20 mph</strong>，上学日摄像头正常运作。比罚单更重要的是：孩子会不看路就走下路边，校车会毫无预警地停车。<strong>切勿超越亮起红灯停车的校车。</strong></p>
+      <p>本月白天也开始变短。清洁挡风玻璃，检查车灯，在下午高峰时留出更多跟车距离。行程中如果发生任何情况，请立即致电调度 718-777-7800。</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; 对欺诈零容忍 &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>虚假报告的代价是<br><em>您在网络中的席位</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">联邦罪行</span>
+        <h4>Classic Ryde 对欺诈零容忍</h4>
+        <p>这不是例行公事式的月度提醒，而是始终适用的规则：<strong>虚假行程、虚报里程和虚假完成不仅是内部问题，它们是 Medicaid 欺诈，是联邦罪行，</strong>司机本人（而不仅仅是公司）将面临真实的刑期和罚款。</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">行程审核</span>
+        <h4>一切都会被审核，一切都会被交叉核实</h4>
+        <p>每次行程的 GPS、调度日志和设施记录都会被交叉核实。如果有对不上的地方，一定会被发现。如果行程未正确付款，正确的做法是拨打 <strong>718-777-7800</strong> 联系调度，绝不要自行调整。</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>零容忍就是零容忍：一旦确认欺诈，将终止在网络中的参与资格，没有例外。保护好您的账户，发现可疑情况请立即报告。</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">您希望使用其他语言吗？</p>
+    <p>本快讯提供西班牙语、中文、俄语、孟加拉语、海地厄克里奥语、韩语、阿拉伯语、乌尔毫语、法语和旁遠普语版本。</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">选择您的语言</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">有问题？我们 24/7 在线。</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">实时调度，始终是真人接听。</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">发邮件给我们</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">网站</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="ru" class="flyer" lang="ru">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">Пятый Выпуск</p>
+      <h1>Вы держите Нью-Йорк<br><em>в движении.</em></h1>
+      <p class="hero-intro">Школы открылись, и поездки DOE возвращаются. Напоминание о том, кто именно может находиться в вашей машине. И водитель, который месяц за месяцем держится в верхней части таблицы.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Новости компании</p>
+    <h2>Что нового в <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">Политика &middot; Обязательно</span>
+      <h4>Не Смешивайте Клиентов Разных Баз, Приложений и Аккаунтов</h4>
+      <p><strong>Каждый пассажир в вашей машине во время поездки Classic Ryde должен быть пассажиром Classic Ryde, забронированным через счет Classic Ryde.</strong> Не совмещайте пассажира Classic Ryde с пассажиром из другой базы, другого приложения или другого аккаунта, даже если они помещаются в одну машину на одном маршруте.</p>
+      <p>Это касается и совместных поездок, и случая, когда вы подбираете кого-то попутно. Если вам платят более чем за одного пассажира в одной поездке, каждый из этих пассажиров должен принадлежать Classic Ryde.</p>
+      <p class="italic">Это касается каждой поездки, без исключений. Отношение к этому как к небрежности в соблюдении политики может привести к приостановке участия. Если сочетание смешивает базы, приложения или аккаунты, откажитесь и позвоните диспетчеру по номеру 718-777-7800 с любыми вопросами.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Политика &middot; Обязательно</span>
+      <h4>Три Кнопки. Каждая Поездка. Каждый Раз.</h4>
+      <p>Отмечать каждый статус в каждой поездке это ваша обязанность. <strong>Поездки, не отмеченные в приложении, MAS не оплачивает, а если MAS не платит, то не платят и вам.</strong> Исключений нет.</p>
+      <p><strong>1. On-Location</strong>, когда вы прибыли по адресу подачи. <strong>2. Pick-Up</strong>, когда пассажир в машине. <strong>3. Drop-Off</strong>, когда пассажир вышел.</p>
+      <p>Если во время поездки возникла любая проблема с установкой статуса, немедленно позвоните диспетчеру по номеру 718-777-7800. Не ждите окончания поездки.</p>
+      <p class="italic">MAS не оплачивает поездки, где не записан GPS-трекинг или статус drop-off. Единственный способ защитить свой заработок это отмечать каждый статус в каждой без исключения поездке.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Сообщество &middot; Сентябрь</span>
+      <h4>Школы Открылись, и Поездки DOE Возвращаются</h4>
+      <p>Поездки Департамента образования Нью-Йорка шли на спад все лето. С началом учебного года они возвращаются в систему. Если поездки DOE были частью вашей недели, ожидайте их снова в этом месяце.</p>
+      <p>Работа с DOE отличается от обычного заказа. Это запланированные повторяющиеся маршруты: одни и те же ученики, одни и те же адреса, с фиксированным недельным ритмом. Водители, которые их берут, получают стабильную基 основу работы, которую можно планировать, вдобавок ко всему остальному.</p>
+      <p class="italic">Если вы хотите получать поездки DOE, позвоните диспетчеру по номеру 718-777-7800 и сообщите свою доступность и районы, в которых вы работаете.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Активные акции</p>
+    <h2>Зарабатывайте больше с <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; Предложение Сентября</span>
+      <h4 style="font-size:24px;">Превратите одну рекомендацию в $100</h4>
+      <p>Знаете кого-то, кто водит? Направьте его в Classic Ryde. Если он выполнит <strong>100 поездок в течение первого месяца</strong>, <strong>$100</strong> поступят на ваш счёт. Лимита нет: порекомендуйте 5 водителей и заработайте $500. Это одни из самых лёгких денег, которые вы заработаете, ни разу не сев за руль.</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; Заработок за рекомендацию &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100 без ограничений</span>
+      </div>
+      <p>Направьте его на <strong>www.classicryde.com/drive</strong> или пусть он позвонит диспетчеру <strong>718-777-7800</strong> и назовёт ваше имя и номер машины, чтобы рекомендация была засчитана вам.</p>
+      <p class="italic">Приглашенный водитель должен выполнить 100 поездок в течение первого месяца, чтобы бонус был начислен. Бонус действует постоянно, крайнего срока в сентябре нет.</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; Водитель месяца &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">ВОДИТЕЛЬ #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;У него нет одного большого дня. У него длинная череда хороших.&quot;</p>
+      <p>Mario один из самых стабильных водителей в ежедневном отчете о работе сети. За август он дважды занял первое место и раз за разом возвращался в Топ-5. Это не новость. Он держится в верхней части таблицы месяц за месяцем.</p>
+      <p>Стабильность такого уровня это выбор, который делается каждое утро. Нужно знать свои маршруты, оставаться доступным в часы пик и брать поездку за поездкой, не сбавляя темп. Именно на такую надежность рассчитывает диспетчерская, когда заказов много. <strong>Спасибо, Mario.</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; Награда водителя месяца &#10052;</span>
+        <span class="reward-amount">Подарочная карта на $100</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">ЛУЧШИЙ ВОДИТЕЛЬ</span>
+        <span class="dtag navy">СТАБИЛЬНЫЙ</span>
+        <span class="dtag navy">БОЛЬШОЙ ОБЪЕМ</span>
+        <span class="dtag navy">МЕСЯЦ ЗА МЕСЯЦЕМ</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Безопасность водителя</p>
+    <h2>Сбавьте Скорость, Берегите <em>Пассажиров</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">Предупреждение о Школьных Зонах</span>
+      <h4>Школы Открылись: 20 MPH, Смотрите в Оба</h4>
+      <p>Ограничение скорости в школьных зонах Нью-Йорка составляет <strong>20 mph</strong>, и камеры работают в учебные дни. Важнее штрафа другое: дети сходят с тротуара не глядя, а школьные автобусы останавливаются без предупреждения. <strong>Никогда не обгоняйте остановившийся школьный автобус с мигающими красными огнями.</strong></p>
+      <p>В этом месяце световой день также начинает укорачиваться. Мойте лобовое стекло, проверяйте фары и держите большую дистанцию в вечерний час пик. Если во время поездки что-то произошло, сразу звоните диспетчеру по номеру 718-777-7800.</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; Нулевая терпимость к мошенничеству &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>Ложный отчёт стоит вам<br><em>места в сети</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">Федеральное преступление</span>
+        <h4>Classic Ryde не терпит мошенничества</h4>
+        <p>Это не рутинное ежемесячное напоминание, это правило, которое действует всегда: <strong>поездки-призраки, завышенный пробег и ложные завершения - это не просто внутренняя проблема, это мошенничество с Medicaid, федеральное преступление</strong> с реальным сроком и штрафами для водителя, а не только для компании.</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">Проверка поездок</span>
+        <h4>Всё проверяется, всё сверяется</h4>
+        <p>GPS, журналы диспетчера и записи учреждений сверяются по каждой поездке. Если что-то не сходится, это будет обнаружено. Если поездка оплачена неправильно, решение - звонок диспетчеру 718-777-7800, а не самостоятельная корректировка.</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>Нулевая терпимость значит нулевая терпимость: подтверждённый случай мошенничества прекращает участие в сети, без исключений. Защищайте свой аккаунт, сообщайте обо всём подозрительном.</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">Предпочитаете другой язык?</p>
+    <p>Рассылка доступна на испанском, китайском, бенгальском, гаитянском креольском, корейском, арабском, урду, французском и панджабском языках.</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">Выберите язык</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">Вопросы? Мы на связи 24/7.</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">Живой диспетчер, всегда живой человек.</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">Напишите нам</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">Сайт</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="bn" class="flyer" lang="bn">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">পঞ্চম সংস্করণ</p>
+      <h1>আপনি নিউইয়র্ককে রাখছেন<br><em>চলমান।</em></h1>
+      <p class="hero-intro">স্কুল খুলেছে এবং DOE ট্রিপ ফিরে আসছে। আপনার গাড়িতে ঠিক কারা থাকতে পারেন তার একটি মনে করিয়ে দেওয়া। আর সেই ড্রাইভার, যিনি মাসের পর মাস তালিকার শীর্ষে থাকেন।</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">কোম্পানি আপডেট</p>
+    <h2><em>Classic Ryde</em>-এ নতুন কী</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">নীতি &middot; বাধ্যতামূলক</span>
+      <h4>ভিন্ন বেস, অ্যাপ বা অ্যাকাউন্টের যাত্রী একসাথে নেওয়া যাবে না</h4>
+      <p><strong>Classic Ryde ট্রিপে আপনার গাড়ির প্রতিটি যাত্রীকে অবশ্যই Classic Ryde অ্যাকাউন্টে বুক করা Classic Ryde যাত্রী হতে হবে।</strong> Classic Ryde এর যাত্রীর সাথে অন্য বেস, অন্য অ্যাপ বা অন্য অ্যাকাউন্টের যাত্রী মেলাবেন না, এমনকি একই গাড়িতে একই রুটে জায়গা হলেও নয়।</p>
+      <p>আপনি শেয়ার্ড রাইড করছেন বা পথে আলাদা কাউকে তুলছেন, দুই ক্ষেত্রেই এটি প্রযোজ্য। একই ট্রিপে একাধিক যাত্রীর জন্য আপনি টাকা পেলে, তাদের প্রত্যেককে Classic Ryde এর যাত্রী হতে হবে।</p>
+      <p class="italic">এটি প্রতিটি ট্রিপে প্রযোজ্য, কোনো ব্যতিক্রম নেই। এটিকে নীতির প্রতি অবহেলা হিসেবে গণ্য করা হলে অংশগ্রহণ স্থগিত হতে পারে। কোনো সংমিশ্রণ যদি বেস, অ্যাপ বা অ্যাকাউন্ট মেলায়, তা প্রত্যাখ্যান করুন এবং যেকোনো প্রশ্নে 718-777-7800 নম্বরে ডিসপ্যাচে ফোন করুন।</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">নীতি &middot; বাধ্যতামূলক</span>
+      <h4>তিনটি বাটন। প্রতিটি ট্রিপ। প্রতিবার।</h4>
+      <p>প্রতিটি ট্রিপে প্রতিটি স্ট্যাটাস চিহ্নিত করা আপনার দায়িত্ব। <strong>অ্যাপে চিহ্নিত না করা ট্রিপের জন্য MAS টাকা দেয় না, আর MAS না দিলে আপনিও পাবেন না।</strong> কোনো ব্যতিক্রম নেই।</p>
+      <p><strong>১. On-Location</strong> পিকআপ ঠিকানায় পৌঁছানোর সময়। <strong>২. Pick-Up</strong> যাত্রী গাড়িতে ওঠার সময়। <strong>৩. Drop-Off</strong> যাত্রী নামার সময়।</p>
+      <p>ট্রিপ চলাকালীন স্ট্যাটাস দিতে কোনো সমস্যা হলে সঙ্গে সঙ্গে 718-777-7800 নম্বরে ডিসপ্যাচে ফোন করুন। ট্রিপ শেষ হওয়া পর্যন্ত অপেক্ষা করবেন না।</p>
+      <p class="italic">যেসব ট্রিপে GPS ট্র্যাকিং বা ড্রপ-অফ স্ট্যাটাস রেকর্ড হয়নি, MAS সেগুলোর টাকা দিচ্ছে না। আপনার আয় রক্ষার একমাত্র উপায় হলো প্রতিটি ট্রিপে প্রতিটি স্ট্যাটাস চিহ্নিত করা।</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">কমিউনিটি &middot; সেপ্টেম্বর</span>
+      <h4>স্কুল খুলেছে, DOE ট্রিপও ফিরছে</h4>
+      <p>সারা গ্রীষ্মে NYC Department of Education এর ট্রিপ কমে গিয়েছিল। স্কুল শুরু হওয়ায় সেগুলো আবার বোর্ডে ফিরে আসছে। DOE ট্রিপ যদি আপনার সপ্তাহের অংশ থাকত, এই মাসে সেগুলো আবার দেখতে পাবেন বলে আশা করুন।</p>
+      <p>DOE এর কাজ সাধারণ কলের চেয়ে আলাদা। এগুলো নির্ধারিত ও পুনরাবৃত্ত রুট: একই শিক্ষার্থী, একই ঠিকানা, একটি নির্দিষ্ট সাপ্তাহিক ছন্দে। যারা এগুলো নেন তারা দিনের অন্য কাজের পাশাপাশি এমন একটি স্থিতিশীল কাজের ভিত্তি গড়েন যা আগে থেকে পরিকল্পনা করা যায়।</p>
+      <p class="italic">আপনার দিনে DOE ট্রিপ চাইলে 718-777-7800 নম্বরে ডিসপ্যাচে ফোন করে আপনার সময় এবং আপনি যেসব এলাকায় চালান তা জানান।</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">সক্রিয় ক্যাম্পেইন</p>
+    <h2><em>Classic Ryde</em>-এর সাথে আরও বেশি আয় করুন</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; সেপ্টেম্বর অফার</span>
+      <h4 style="font-size:24px;">একটি রেফারেলকে $100-এ রূপান্তর করুন</h4>
+      <p>কাউকে চেনেন যিনি ড্রাইভ করেন? তাদের Classic Ryde-এ পাঠান। তারা যদি তাদের <strong>প্রথম মাসের মধ্যে ১০০টি ট্রিপ</strong> সম্পন্ন করে, <strong>$100</strong> আপনার অ্যাকাউন্টে জমা হবে। কোনো সীমা নেই: ৫ জন চালক রেফার করুন, $500 আয় করুন। এটি স্টিয়ারিং হুইল স্পর্শ না করেই আয় করা সবচেয়ে সহজ অর্থগুলোর একটি।</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; প্রতি রেফারেলে আয় করুন &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100</span>
+      </div>
+      <p>তাদের <strong>www.classicryde.com/drive</strong>-এ পাঠান অথবা <strong>718-777-7800</strong> নম্বরে ডিসপ্যাচকে কল করতে বলুন এবং আপনার নাম ও গাড়ির নম্বর উল্লেখ করতে বলুন যাতে রেফারেলটি আপনার নামে ক্রেডিট হয়।</p>
+      <p class="italic">যোগ্য হতে রেফার করা ড্রাইভারকে প্রথম মাসের মধ্যে ১০০টি ট্রিপ সম্পূর্ণ করতে হবে। এই বোনাস চলমান, সেপ্টেম্বরে কোনো শেষ তারিখ নেই।</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; মাসের সেরা চালক &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">চালক #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;তাঁর একটি বড় দিন নেই। তাঁর আছে ভালো দিনের একটি দীর্ঘ ধারা।&quot;</p>
+      <p>Mario নেটওয়ার্কের দৈনিক পারফরম্যান্স রিপোর্টের সবচেয়ে ধারাবাহিক নামগুলোর একজন। আগস্ট জুড়ে তিনি দুইবার ১ নম্বরে শেষ করেছেন এবং বারবার শীর্ষ ৫ এ ফিরে এসেছেন। এই ধারা নতুন নয়। তিনি মাসের পর মাস তালিকার শীর্ষের কাছে থাকেন।</p>
+      <p>এই মাত্রার ধারাবাহিকতা প্রতিদিন সকালে নেওয়া একটি সিদ্ধান্ত। এর জন্য নিজের রুট জানা, ব্যস্ত সময়ে উপলব্ধ থাকা এবং গতি না কমিয়ে একের পর এক ট্রিপ নেওয়া দরকার। বোর্ড ভরা থাকলে ডিসপ্যাচ ঠিক এই নির্ভরযোগ্যতার উপরই ভরসা করে। <strong>ধন্যবাদ, Mario।</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; মাসের সেরা চালকের পুরস্কার &#10052;</span>
+        <span class="reward-amount">$100 গিফট কার্ড</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">শীর্ষ ড্রাইভার</span>
+        <span class="dtag navy">ধারাবাহিক</span>
+        <span class="dtag navy">উচ্চ ভলিউম</span>
+        <span class="dtag navy">মাসের পর মাস</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">চালকের নিরাপত্তা</p>
+    <h2>গতি কমান, আপনার <em>যাত্রীদের নিরাপদ রাখুন</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">স্কুল জোন সতর্কতা</span>
+      <h4>স্কুল খুলেছে: ২০ MPH, চোখ খোলা রাখুন</h4>
+      <p>NYC স্কুল জোনে গতিসীমা <strong>20 mph</strong> এবং স্কুলের দিনগুলোতে ক্যামেরা চালু থাকে। জরিমানার চেয়েও জরুরি: শিশুরা না তাকিয়েই ফুটপাত থেকে নেমে পড়ে এবং স্কুল বাস বিনা সতর্কতায় থামে। <strong>লাল বাতি জ্বলা থামানো স্কুল বাস কখনও অতিক্রম করবেন না।</strong></p>
+      <p>এই মাসে দিনের আলোও ছোট হতে শুরু করে। উইন্ডশিল্ড পরিষ্কার রাখুন, হেডলাইট পরীক্ষা করুন এবং বিকেলের ভিড়ে বাড়তি দূরত্ব রাখুন। ট্রিপে কিছু ঘটলে সঙ্গে সঙ্গে 718-777-7800 নম্বরে ডিসপ্যাচে ফোন করুন।</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; জালিয়াতির প্রতি শূন্য সহনশীলতা &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>একটি মিথ্যা রিপোর্টের মূল্য<br><em>নেটওয়ার্কে আপনার স্থান</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">ফেডারেল অপরাধ</span>
+        <h4>Classic Ryde জালিয়াতির প্রতি শূন্য সহনশীলতা প্রয়োগ করে</h4>
+        <p>এটি রুটিন মাসিক অনুস্মারক নয়, এটি এমন একটি নিয়ম যা সবসময় প্রযোজ্য: <strong>ঘোস্ট ট্রিপ, বাড়িয়ে বলা মাইলেজ এবং মিথ্যা সম্পন্ন করা শুধু অভ্যন্তরীণ সমস্যা নয়, এগুলো Medicaid জালিয়াতি, একটি ফেডারেল অপরাধ,</strong> যাতে চালকের জন্য (শুধু কোম্পানির জন্য নয়) বাস্তব কারাদণ্ড ও জরিমানা হতে পারে।</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">ট্রিপ পর্যালোচনা</span>
+        <h4>সবকিছু পর্যালোচনা করা হয়, সবকিছু ক্রস-চেক করা হয়</h4>
+        <p>প্রতিটি ট্রিপে GPS, ডিসপ্যাচ লগ এবং সুবিধার রেকর্ড ক্রস-চেক করা হয়। কিছু মিলছে না দেখলে তা ধরা পড়বেই। কোনো ট্রিপের পেমেন্ট সঠিক না হলে, সমাধান হলো <strong>৭১৮-৭৭৭-৭৮০০</strong>-এ ডিসপ্যাচকে কল করা, নিজে থেকে সামঞ্জস্য করা কখনোই নয়।</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>শূন্য সহনশীলতা মানে শূন্য সহনশীলতা: একটি নিশ্চিত জালিয়াতির ঘটনা নেটওয়ার্কে অংশগ্রহণের সমাপ্তি ঘটায়, কোনো ব্যতিক্রম নেই। আপনার অ্যাকাউন্ট রক্ষা করুন, সন্দেহজনক কিছু দেখলে রিপোর্ট করুন।</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">অন্য ভাষা পছন্দ করেন?</p>
+    <p>এই নিউজলেটার স্প্যানিশ, চীনা, রাশিয়ান, হাইতিয়ান ক্রেওল, কোরিয়ান, আরবি, উর্দু, ফরাসি এবং পাঞ্জাবিতে পাওয়া যায়।</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">আপনার ভাষা বেছে নিন</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">প্রশ্ন আছে? আমরা ২৪/৭ এখানে আছি।</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">লাইভ ডিসপ্যাচ, সবসময় একজন বাস্তব ব্যক্তি।</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">ইমেইল করুন</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">ওয়েবসাইট</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="ht" class="flyer" lang="ht">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">Senkyèm Edisyon</p>
+      <h1>Ou Kenbe New York<br><em>Ap Mache.</em></h1>
+      <p class="hero-intro">Lekòl rekòmanse epi vwayaj DOE yo ap retounen. Yon rapèl sou kiyès egzakteman ki gen dwa nan machin ou. Epi chofè a ki kontinye parèt anlè tablo a, mwa apre mwa.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Mizajou Konpayi</p>
+    <h2>Sa Ki Nouvo nan <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">Politik &middot; Obligatwa</span>
+      <h4>Pa Melanje Kliyan Ki Soti nan Diferan Baz, App, oswa Kont</h4>
+      <p><strong>Chak pasajè nan machin ou pandan yon vwayaj Classic Ryde dwe se yon pasajè Classic Ryde ki rezève anba yon kont Classic Ryde.</strong> Pa mete yon pasajè Classic Ryde ansanm ak yon pasajè ki soti nan yon lòt baz, yon lòt app, oswa yon lòt kont, menm si yo antre nan menm machin nan sou menm wout la.</p>
+      <p>Sa aplike kit ou ap fè yon vwayaj pataje kit ou ap pran yon moun sou kote. Si ou ap touche pou plis pase yon pasajè nan menm vwayaj la, chak nan pasajè sa yo dwe se pou Classic Ryde.</p>
+      <p class="italic">Sa aplike pou chak vwayaj, san eksepsyon. Trete sa kòm neglijans politik ka mennen nan sispansyon patisipasyon ou. Si yon konbinezon ta melanje baz, app, oswa kont, refize l epi rele dispatch nan 718-777-7800 ak nenpòt kesyon.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Politik &middot; Obligatwa</span>
+      <h4>Twa Bouton. Chak Vwayaj. Chak Fwa.</h4>
+      <p>Se responsablite ou pou make chak estati nan chak vwayaj. <strong>MAS pa peye vwayaj ki pa make nan app la, epi si MAS pa peye, ou pa touche.</strong> Pa gen eksepsyon.</p>
+      <p><strong>1. On-Location</strong> lè ou rive nan adrès pickup la. <strong>2. Pick-Up</strong> lè pasajè a nan machin nan. <strong>3. Drop-Off</strong> lè pasajè a desann.</p>
+      <p>Si ou gen nenpòt pwoblèm pou mete yon estati pandan yon vwayaj, rele dispatch touswit nan 718-777-7800. Pa tann jiskaske vwayaj la fini.</p>
+      <p class="italic">MAS pa peye vwayaj kote yo pa anrejistre swivi GPS oswa estati drop-off la. Sèl fason pou pwoteje kòb ou se make chak estati nan chak vwayaj.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Kominote &middot; Septanm</span>
+      <h4>Lekòl Rekòmanse, Vwayaj DOE Yo Tou</h4>
+      <p>Vwayaj NYC Department of Education yo te ralanti pandan tout ete a. Kounye a lekòl rekòmanse, y ap retounen sou tablo a. Si vwayaj DOE te fè pati semèn ou, atann pou wè yo ankò mwa sa a.</p>
+      <p>Travay DOE a diferan de yon apèl regilye. Se wout ki pwograme epi ki repete: menm elèv yo, menm adrès yo, sou yon ritm chak semèn ki fiks. Chofè ki pran yo bati yon baz travay ki estab yo ka planifye, anplis tout lòt bagay yo pran nan jounen an.</p>
+      <p class="italic">Si ou vle vwayaj DOE nan jounen ou, rele dispatch nan 718-777-7800 epi di yo lè ou disponib ak zòn ou kouvri yo.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Kanpay Aktif</p>
+    <h2>Touche Plis Ak <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; Òf Septanm</span>
+      <h4 style="font-size:24px;">Chanje Yon Sèl Referans An $100</h4>
+      <p>Ou konnen moun ki kondwi? Voye yo nan Classic Ryde. Si yo fè <strong>100 vwayaj nan premye mwa yo</strong>, <strong>$100</strong> antre nan kont ou. Pa gen limit: refere 5 chofè, touche $500. Se kèk nan lajan ki pi fasil w ap fè san w pa janm manyen volan an.</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; Touche Pou Chak Referans &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100, San Limit</span>
+      </div>
+      <p>Voye yo nan <strong>www.classicryde.com/drive</strong> oswa fè yo rele dispach nan <strong>718-777-7800</strong> e mansyone non ou ak nimewo machin ou pou referans lan kredite pou ou.</p>
+      <p class="italic">Chofè ou refere a dwe konplete 100 vwayaj nan premye mwa li pou li kalifye. Bonis sa a kontinyèl, pa gen dat limit nan septanm.</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; Chofè Mwa a &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">CHOFÈ #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;Li pa gen yon sèl gwo jounen. Li gen yon long seri bon jounen.&quot;</p>
+      <p>Mario se youn nan non ki pi konsistan nan rapò pèfòmans chak jou rezo a. Pandan mwa out, li fini nimewo 1 de fwa epi li retounen nan Top 5 la ankò e ankò. Modèl sa a pa nouvo. Li rete toupre tèt tablo a mwa apre mwa.</p>
+      <p>Konsistans nan nivo sa a se yon chwa ou fè chak maten. Li mande konnen wout ou yo, rete disponib pandan lè pwent yo, epi pran vwayaj apre vwayaj san ralanti. Se kalite fyabilite sa a dispatch konte sou li lè tablo a plen. <strong>Mèsi, Mario.</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; Pri Chofè Mwa a &#10052;</span>
+        <span class="reward-amount">Kat Kado $100</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">PI BON CHOFÈ</span>
+        <span class="dtag navy">KONSISTAN</span>
+        <span class="dtag navy">GWO VOLIM</span>
+        <span class="dtag navy">MWA APRE MWA</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Sekirite Chofè</p>
+    <h2>Ralanti, Kenbe <em>Pasajè Ou Yo An Sekirite</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">Avètisman Zòn Lekòl</span>
+      <h4>Lekòl Rekòmanse: 20 MPH, Je Ouvè</h4>
+      <p>Limit vitès nan zòn lekòl NYC se <strong>20 mph</strong> epi kamera yo mache nan jou lekòl. Pi enpòtan pase tikè a: timoun desann twotwa a san yo pa gade epi bis lekòl kanpe san avètisman. <strong>Pa janm depase yon bis lekòl ki kanpe ak limyè wouj li ap klere.</strong></p>
+      <p>Limyè jounen an kòmanse pi kout tou mwa sa a. Netwaye vit devan ou, tcheke limyè ou yo, epi kite plis distans nan lè pwent apremidi a. Si nenpòt bagay rive pandan yon vwayaj, rele dispatch nan 718-777-7800 touswit.</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; Zewo Tolerans Pou Fwod &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>Yon Fo Rapò Koute<br><em>Plas Ou Nan Rezo A</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">Krim Federal</span>
+        <h4>Classic Ryde Gen Zewo Tolerans Pou Fwod</h4>
+        <p>Sa se pa yon rapèl mansyèl woutin, se règ ki toujou aplike: <strong>vwayaj fantòm, kilomtray gonfle, ak fo konpletasyon se pa sèlman yon pwoblèm entèn, se fwod Medicaid, yon krim federal</strong> ki pote prizon reyèl ak amann pou chofè a, pa sèlman konpayi an.</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">Revizyon Vwayaj</span>
+        <h4>Tout Bagay Revize, Tout Bagay Kwaze Verifye</h4>
+        <p>GPS, jounal dispach, ak dosye etablisman kwaze verifye pou chak vwayaj. Si yon bagay pa kadre, y ap dekouvri l. Si yon vwayaj pa peye kòrèkteman, solisyon an se yon apèl nan dispach nan <strong>718-777-7800</strong>, pa janm yon ajisteman ou fè poukont ou.</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>Zewo tolerans vle di zewo tolerans: yon ka fwod konfime fini patisipasyon nan rezo a, san eksepsyon. Pwoteje kont ou, rapòte nenpòt bagay sispèk.</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">Ou Prefere Yon Lòt Lang?</p>
+    <p>Bilten sa disponib an panyòl, chinwa, ris, bèngali, koreyen, arab, ourdou, fransè ak pendjabi.</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">Chwazi Lang Ou</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">Kesyon? Nou la 24/7.</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">Dispach vivan, toujou yon moun reyèl.</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">Ekri Nou</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">Sit Entènèt</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="ko" class="flyer" lang="ko">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">제5호</p>
+      <h1>당신은 뉴욕을<br><em>움직이고 있습니다.</em></h1>
+      <p class="hero-intro">개학과 함께 DOE 운행이 돌아옵니다. 차량에 누가 탈 수 있는지에 대한 안내. 그리고 매달 꾸준히 상위권을 지키는 기사님.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">회사 소식</p>
+    <h2><em>Classic Ryde</em>의 새로운 소식</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">정책 &middot; 필수</span>
+      <h4>다른 베이스, 다른 앱, 다른 계정의 승객을 혼합하지 마십시오</h4>
+      <p><strong>Classic Ryde 운행 중 차량에 탑승한 모든 승객은 Classic Ryde 계정으로 예약된 Classic Ryde 승객이어야 합니다.</strong> Classic Ryde 승객과 다른 베이스, 다른 앱, 다른 계정의 승객을 함께 태우지 마십시오. 같은 차량, 같은 경로로 가능하더라도 안 됩니다.</p>
+      <p>합승 운행이든 도중에 따로 태우는 경우든 동일하게 적용됩니다. 같은 운행에서 두 명 이상의 승객에 대해 요금을 받는다면, 그 승객 전원이 Classic Ryde 소속이어야 합니다.</p>
+      <p class="italic">모든 운행에 예외 없이 적용됩니다. 이를 정책 소홀로 처리할 경우 네트워크 참여가 정지될 수 있습니다. 어떤 조합이 베이스, 앱, 계정을 섞게 된다면 거절하시고 궁금한 점은 718-777-7800으로 디스패치에 문의하십시오.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">정책 &middot; 필수</span>
+      <h4>세 개의 버튼. 모든 운행. 매번.</h4>
+      <p>모든 운행에서 모든 상태를 표시하는 것은 기사님의 책임입니다. <strong>앱에 표시되지 않은 운행은 MAS가 지급하지 않으며, MAS가 지급하지 않으면 기사님도 받지 못합니다.</strong> 예외는 없습니다.</p>
+      <p><strong>1. On-Location</strong> 픽업 주소에 도착했을 때. <strong>2. Pick-Up</strong> 승객이 차량에 탑승했을 때. <strong>3. Drop-Off</strong> 승객이 하차할 때.</p>
+      <p>운행 중 상태 입력에 문제가 있으면 즉시 718-777-7800으로 디스패치에 전화하십시오. 운행이 끝날 때까지 기다리지 마십시오.</p>
+      <p class="italic">MAS는 GPS 추적이나 하차 상태가 기록되지 않은 운행을 지급하지 않습니다. 수입을 지키는 유일한 방법은 모든 운행에서 모든 상태를 표시하는 것입니다.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">커뮤니티 &middot; 9월</span>
+      <h4>개학, 그리고 DOE 운행의 복귀</h4>
+      <p>뉴욕시 교육청(DOE) 운행은 여름 내내 줄어 있었습니다. 개학과 함께 다시 배차판에 올라오고 있습니다. DOE 운행이 한 주의 일부였다면, 이번 달에 다시 보시게 될 것입니다.</p>
+      <p>DOE 운행은 일반 콜과 다릅니다. 정해진 반복 노선입니다. 같은 학생, 같은 주소, 고정된 주간 리듬으로 운행됩니다. 이 운행을 맡는 기사님은 하루 중 받는 다른 콜에 더해, 미리 계획할 수 있는 안정적인 일감을 확보하게 됩니다.</p>
+      <p class="italic">DOE 운행을 배정받고 싶으시면 718-777-7800으로 디스패치에 전화하셔서 가능한 시간대와 주로 운행하는 지역을 알려주십시오.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">진행 중인 캠페인</p>
+    <h2><em>Classic Ryde</em>로 더 많이 버세요</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; 9월 혜택</span>
+      <h4 style="font-size:24px;">추천 한 건을 $100으로 바꾸세요</h4>
+      <p>운전할 사람을 알고 계신가요? Classic Ryde에 보내세요. 그 분이 <strong>첫 달 안에 100번 트립</strong>을 완료하면, <strong>$100</strong>이 여러분의 계정에 입금됩니다. 한도 없음: 운전자 5명을 추천하면 $500을 벌 수 있습니다. 핸들 한 번 잡지 않고 벌 수 있는 가장 쉬운 돈 중 하나입니다.</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; 추천 건당 수익 &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100, 한도 없음</span>
+      </div>
+      <p>그 분을 <strong>www.classicryde.com/drive</strong>로 보내거나 <strong>718-777-7800</strong>으로 배차에 전화하도록 안내하고, 여러분의 이름과 차량 번호를 언급하게 하여 추천이 정확히 여러분에게 적립되도록 하세요.</p>
+      <p class="italic">추천받은 기사님은 첫 달 이내에 100회 운행을 완료해야 자격이 주어집니다. 이 보너스는 상시 진행되며 9월 마감일은 없습니다.</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; 이달의 운전자 &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">운전자 #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;하루가 특별한 것이 아니라, 좋은 날이 길게 이어집니다.&quot;</p>
+      <p>Mario 기사님은 네트워크 일일 성과 보고서에서 가장 꾸준한 이름 중 한 분입니다. 8월 한 달 동안 두 차례 1위를 기록했고 Top 5에 거듭 복귀했습니다. 새로운 일이 아닙니다. 여러 달에 걸쳐 계속 상위권을 지켜왔습니다.</p>
+      <p>그 수준의 꾸준함은 매일 아침 내리는 선택입니다. 자기 노선을 알고, 피크 시간대에 대기 상태를 유지하며, 속도를 늦추지 않고 운행을 이어가야 합니다. 배차판이 꽉 찼을 때 디스패치가 믿고 기대는 것이 바로 그런 신뢰성입니다. <strong>감사합니다, Mario.</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; 이달의 운전자 상 &#10052;</span>
+        <span class="reward-amount">$100 기프트 카드</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">최우수 기사</span>
+        <span class="dtag navy">꾸준함</span>
+        <span class="dtag navy">높은 운행량</span>
+        <span class="dtag navy">매달 꾸준히</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">운전자 안전</p>
+    <h2>속도를 줄이고 <em>승객을 안전하게</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">스쿨존 주의보</span>
+      <h4>개학: 시속 20마일, 시야 확보</h4>
+      <p>뉴욕시 스쿨존 제한 속도는 <strong>시속 20마일</strong>이며 등교일에는 단속 카메라가 작동합니다. 벌금보다 중요한 것은 아이들이 좌우를 보지 않고 인도에서 내려서고, 스쿨버스가 예고 없이 정차한다는 점입니다. <strong>빨간 불이 깜빡이며 정차한 스쿨버스는 절대 추월하지 마십시오.</strong></p>
+      <p>이번 달부터 해도 짧아지기 시작합니다. 앞유리를 닦고 전조등을 점검하며 오후 러시아워에는 차간 거리를 더 확보하십시오. 운행 중 문제가 생기면 즉시 718-777-7800으로 디스패치에 전화하십시오.</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; 사기에 대한 무관용 원칙 &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>허위 보고의 대가는<br><em>네트워크에서의 자리입니다</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">연방 범죄</span>
+        <h4>Classic Ryde는 사기에 대해 무관용 원칙을 적용합니다</h4>
+        <p>이것은 형식적으로 매달 반복되는 안내가 아니라, 항상 적용되는 규칙입니다. <strong>유령 트립, 부풀린 주행 거리, 허위 완료는 단순한 내부 문제가 아니라 메디케이드 사기, 즉 연방 범죄이며,</strong> 회사뿐 아니라 운전자 본인에게도 실제 징역형과 벌금이 부과됩니다.</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">트립 검토</span>
+        <h4>모든 것이 검토되고, 모든 것이 교차 확인됩니다</h4>
+        <p>모든 트립에서 GPS, 배차 기록, 시설 기록이 교차 확인됩니다. 무언가 맞지 않으면 반드시 발견됩니다. 트립 결제가 올바르지 않으면 해결책은 <strong>718-777-7800</strong>으로 배차에 전화하는 것이며, 절대 스스로 조정해서는 안 됩니다.</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>무관용 원칙은 말 그대로 무관용을 의미합니다. 사기가 확인되면 네트워크 참여가 예외 없이 종료됩니다. 계정을 보호하고, 의심스러운 것은 무엇이든 신고하세요.</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">다른 언어를 원하시나요?</p>
+    <p>이 뉴스레터는 스페인어, 중국어, 러시아어, 벵골어, 아이티 크리올어, 아랍어, 우르두어, 프랑스어, 펀자브어로 제공됩니다.</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">언어 선택</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">질문이 있으신가요? 24시간 연중무휴 여기 있습니다.</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">라이브 배차, 항상 실제 사람.</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">이메일 보내기</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">웹사이트</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="ar" class="flyer" lang="ar" dir="rtl">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">الإصدار الخامس</p>
+      <h1>أنتَ تُبقي نيويورك<br><em>في الحركة.</em></h1>
+      <p class="hero-intro">عادت المدارس وعادت معها رحلات DOE. تذكير بمن يحق له بالضبط أن يكون في سيارتك. والسائق الذي يظل في أعلى الترتيب، شهراً بعد شهر.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">أخبار الشركة</p>
+    <h2>الجديد في <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">سياسة &middot; إلزامي</span>
+      <h4>عدم خلط عملاء من قواعد أو تطبيقات أو حسابات مختلفة</h4>
+      <p><strong>كل راكب في سيارتك خلال رحلة Classic Ryde يجب أن يكون راكب Classic Ryde محجوزاً ضمن حساب Classic Ryde.</strong> لا تجمع راكب Classic Ryde مع راكب من قاعدة أخرى أو تطبيق آخر أو حساب آخر، حتى لو كان ذلك يناسب نفس السيارة ونفس المسار.</p>
+      <p>ينطبق هذا سواء كنت تنفذ رحلة مشتركة أو تصطحب شخصاً على الطريق. إذا كنت تتقاضى أجراً عن أكثر من راكب في نفس الرحلة، يجب أن ينتمي كل هؤلاء الركاب إلى Classic Ryde.</p>
+      <p class="italic">ينطبق هذا على كل رحلة، دون استثناء. التعامل مع الأمر كإهمال للسياسة قد يؤدي إلى تعليق المشاركة. إذا كان الجمع سيخلط بين القواعد أو التطبيقات أو الحسابات، ارفضه واتصل بالإرسال على 718-777-7800 لأي استفسار.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">سياسة &middot; إلزامي</span>
+      <h4>ثلاثة أزرار. كل رحلة. في كل مرة.</h4>
+      <p>من مسؤوليتك تسجيل كل حالة في كل رحلة. <strong>الرحلات غير المسجلة في التطبيق لا تدفعها MAS، وإذا لم تدفع MAS فلن تتقاضى أنت أجرك.</strong> لا استثناءات.</p>
+      <p><strong>1. On-Location</strong> عند وصولك إلى عنوان الاستلام. <strong>2. Pick-Up</strong> عندما يكون الراكب داخل السيارة. <strong>3. Drop-Off</strong> عند نزول الراكب.</p>
+      <p>إذا واجهت أي مشكلة في تسجيل حالة أثناء الرحلة، اتصل بالإرسال فوراً على 718-777-7800. لا تنتظر حتى تنتهي الرحلة.</p>
+      <p class="italic">MAS لا تدفع الرحلات التي لم يُسجَّل فيها تتبع GPS أو حالة النزول. الطريقة الوحيدة لحماية أرباحك هي تسجيل كل حالة في كل رحلة دون استثناء.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">المجتمع &middot; سبتمبر</span>
+      <h4>عادت المدارس، وعادت رحلات DOE</h4>
+      <p>تراجعت رحلات إدارة التعليم في نيويورك طوال الصيف. ومع عودة الدراسة، بدأت تعود إلى لوحة الرحلات. إذا كانت رحلات DOE جزءاً من أسبوعك، توقّع أن تراها مجدداً هذا الشهر.</p>
+      <p>عمل DOE يختلف عن الطلب العادي. هذه مسارات مجدولة ومتكررة: نفس الطلاب، ونفس العناوين، وبإيقاع أسبوعي ثابت. السائقون الذين يأخذونها يبنون قاعدة عمل ثابتة يمكنهم التخطيط ليومهم على أساسها، إضافة إلى ما يلتقطونه خلال النهار.</p>
+      <p class="italic">إذا أردت رحلات DOE ضمن يومك، اتصل بالإرسال على 718-777-7800 وأخبرهم بأوقات توفرك وبالمناطق التي تغطيها.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">الحملات النشطة</p>
+    <h2>اكسب أكثر مع <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; عرض سبتمبر</span>
+      <h4 style="font-size:24px;">حوّل إحالة واحدة إلى $100</h4>
+      <p>هل تعرف شخصاً يقود؟ أرسله إلى Classic Ryde. إذا أكمل <strong>100 رحلة خلال شهره الأول</strong>، سيصل <strong>$100</strong> إلى حسابك. بلا سقف: أحِل 5 سائقين واربح $500. إنها من أسهل الأموال التي ستجنيها دون أن تلمس المقود.</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; اربح عن كل إحالة &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100 بلا سقف</span>
+      </div>
+      <p>أرسله إلى <strong>www.classicryde.com/drive</strong> أو اطلب منه الاتصال بالإرسال على <strong>718-777-7800</strong> وذكر اسمك ورقم سيارتك حتى تُحتسب الإحالة لك.</p>
+      <p class="italic">يجب على السائق المُحال إكمال 100 رحلة خلال شهره الأول ليكون مؤهلاً. هذه المكافأة مستمرة، ولا يوجد موعد نهائي في سبتمبر.</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; سائق الشهر &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">سائق #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;ليس لديه يوم واحد كبير. لديه سلسلة طويلة من الأيام الجيدة.&quot;</p>
+      <p>Mario من أكثر الأسماء ثباتاً في تقرير الأداء اليومي للشبكة. خلال أغسطس احتل المرتبة الأولى مرتين وعاد إلى قائمة أفضل 5 مرة بعد مرة. وهذا ليس جديداً. فهو قريب من قمة الترتيب شهراً بعد شهر.</p>
+      <p>الثبات على هذا المستوى قرار يُتخذ كل صباح. يتطلب معرفة مساراتك، والبقاء متاحاً خلال أوقات الذروة، وأخذ رحلة تلو الأخرى دون تباطؤ. هذا هو نوع الاعتمادية التي يعتمد عليها الإرسال حين تمتلئ لوحة الرحلات. <strong>شكراً لك، Mario.</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; جائزة سائق الشهر &#10052;</span>
+        <span class="reward-amount">بطاقة هدية بقيمة $100</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">أفضل سائق</span>
+        <span class="dtag navy">ثابت</span>
+        <span class="dtag navy">حجم عمل مرتفع</span>
+        <span class="dtag navy">شهراً بعد شهر</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">سلامة السائق</p>
+    <h2>خفّف السرعة، وحافظ على <em>سلامة ركابك</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">تنبيه مناطق المدارس</span>
+      <h4>عادت المدارس: 20 ميلاً في الساعة، وانتبه</h4>
+      <p>حد السرعة في مناطق المدارس في نيويورك هو <strong>20 mph</strong> والكاميرات تعمل في أيام الدراسة. والأهم من المخالفة: الأطفال ينزلون من الرصيف دون أن ينظروا، وحافلات المدارس تتوقف دون سابق إنذار. <strong>لا تتجاوز أبداً حافلة مدرسية متوقفة وأضواؤها الحمراء تومض.</strong></p>
+      <p>كما تبدأ ساعات النهار بالقِصَر هذا الشهر. نظّف زجاجك الأمامي، افحص أضواءك، واترك مسافة أمان أكبر في ذروة بعد الظهر. إذا حدث أي شيء أثناء رحلة، اتصل بالإرسال على 718-777-7800 فوراً.</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; عدم التسامح المطلق مع الاحتيال &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>البلاغ الكاذب يكلفك<br><em>مكانك في الشبكة</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">جريمة فيدرالية</span>
+        <h4>Classic Ryde لا تتسامح إطلاقاً مع الاحتيال</h4>
+        <p>هذا ليس تذكيراً شهرياً روتينياً، بل هو القاعدة التي تُطبَّق دائماً: <strong>الرحلات الوهمية، والمسافات المُبالَغ فيها، والإنهاءات الكاذبة ليست مجرد مشكلة داخلية، بل هي احتيال على Medicaid، وهي جريمة فيدرالية</strong> تترتب عليها عقوبة سجن فعلية وغرامات على السائق، وليس على الشركة فقط.</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">مراجعة الرحلات</span>
+        <h4>كل شيء يُراجَع، كل شيء يُدقَّق</h4>
+        <p>يتم تدقيق GPS وسجلات الإرسال وسجلات المنشآت في كل رحلة. إذا كان هناك خلل، سيتم اكتشافه. إذا لم تُدفع رحلة بشكل صحيح، فالحل هو الاتصال بالإرسال على <strong>718-777-7800</strong>، وليس التعديل الذاتي أبداً.</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>عدم التسامح المطلق يعني عدم التسامح المطلق: أي حالة احتيال مؤكدة تُنهي المشاركة في الشبكة، دون استثناء. احمِ حسابك، وأبلغ عن أي شيء مريب.</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">تفضّل لغة أخرى؟</p>
+    <p>هذه النشرة متوفرة بالإسبانية والصينية والروسية والبنغالية والكريولية الهايتية والكورية والأردية والفرنسية والبنجابية.</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">اختر لغتك</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">أسئلة؟ نحن هنا على مدار الساعة.</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">إرسال مباشر، دائماً شخص حقيقي.</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">راسلنا</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">الموقع الإلكتروني</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="ur" class="flyer" lang="ur" dir="rtl">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">پانچواں شمارہ</p>
+      <h1>آپ نیویارک کو<br><em>رواں رکھتے ہیں۔</em></h1>
+      <p class="hero-intro">اسکول کھل گئے اور DOE کے سفر واپس آ رہے ہیں۔ ایک یاد دہانی کہ آپ کی گاڑی میں بالکل کون بیٹھ سکتا ہے۔ اور وہ ڈرائیور جو مہینے در مہینے فہرست میں سرِفہرست رہتا ہے۔</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">کمپنی کی خبریں</p>
+    <h2><em>Classic Ryde</em> میں کیا نیا ہے</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">پالیسی &middot; لازمی</span>
+      <h4>مختلف بیسز، ایپس یا اکاؤنٹس کے گاہکوں کو نہ ملائیں</h4>
+      <p><strong>Classic Ryde کے سفر کے دوران آپ کی گاڑی کا ہر مسافر Classic Ryde اکاؤنٹ کے تحت بک کیا گیا Classic Ryde کا مسافر ہونا چاہیے۔</strong> Classic Ryde کے مسافر کو کسی دوسری بیس، دوسری ایپ یا دوسرے اکاؤنٹ کے مسافر کے ساتھ نہ ملائیں، چاہے وہ ایک ہی گاڑی میں ایک ہی راستے پر آ ہی کیوں نہ جائے۔</p>
+      <p>یہ اس صورت میں بھی لاگو ہے جب آپ شیئرڈ رائیڈ کر رہے ہوں اور اس صورت میں بھی جب آپ راستے میں الگ سے کسی کو بٹھائیں۔ اگر ایک ہی سفر میں ایک سے زیادہ مسافروں کے پیسے مل رہے ہیں تو ان میں سے ہر مسافر کا Classic Ryde سے ہونا لازمی ہے۔</p>
+      <p class="italic">یہ ہر سفر پر لاگو ہے، کوئی استثنا نہیں۔ اسے پالیسی سے غفلت سمجھا گیا تو شرکت معطل ہو سکتی ہے۔ اگر کوئی جوڑ بیسز، ایپس یا اکاؤنٹس کو ملاتا ہے تو اسے مسترد کریں اور کسی بھی سوال کے لیے 718-777-7800 پر ڈسپیچ کو کال کریں۔</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">پالیسی &middot; لازمی</span>
+      <h4>تین بٹن۔ ہر سفر۔ ہر بار۔</h4>
+      <p>ہر سفر میں ہر اسٹیٹس درج کرنا آپ کی ذمہ داری ہے۔ <strong>ایپ میں درج نہ کیے گئے سفر کی ادائیگی MAS نہیں کرتا، اور اگر MAS ادائیگی نہ کرے تو آپ کو بھی نہیں ملتا۔</strong> کوئی استثنا نہیں۔</p>
+      <p><strong>1. On-Location</strong> جب آپ پک اپ کے پتے پر پہنچیں۔ <strong>2. Pick-Up</strong> جب مسافر گاڑی میں ہو۔ <strong>3. Drop-Off</strong> جب مسافر اترے۔</p>
+      <p>اگر سفر کے دوران اسٹیٹس درج کرنے میں کوئی مسئلہ ہو تو فوراً 718-777-7800 پر ڈسپیچ کو کال کریں۔ سفر ختم ہونے کا انتظار نہ کریں۔</p>
+      <p class="italic">جن سفروں میں GPS ٹریکنگ یا ڈراپ آف اسٹیٹس ریکارڈ نہیں ہوا، MAS ان کی ادائیگی نہیں کر رہا۔ اپنی کمائی محفوظ رکھنے کا واحد طریقہ یہ ہے کہ ہر سفر میں ہر اسٹیٹس درج کریں۔</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">کمیونٹی &middot; ستمبر</span>
+      <h4>اسکول کھل گئے، DOE کے سفر بھی واپس</h4>
+      <p>پورے موسمِ گرما میں NYC Department of Education کے سفر کم ہو گئے تھے۔ اسکول دوبارہ کھلنے کے ساتھ یہ واپس بورڈ پر آ رہے ہیں۔ اگر DOE کے سفر آپ کے ہفتے کا حصہ تھے تو اس مہینے انہیں دوبارہ دیکھنے کی توقع رکھیں۔</p>
+      <p>DOE کا کام عام کال سے مختلف ہے۔ یہ طے شدہ اور بار بار دہرائے جانے والے روٹ ہیں: وہی طلبہ، وہی پتے، ایک مقررہ ہفتہ وار ترتیب کے ساتھ۔ جو ڈرائیور یہ لیتے ہیں وہ دن بھر کی باقی کمائی کے ساتھ ساتھ ایک مستحکم بنیاد بنا لیتے ہیں جس کے گرد وہ اپنا دن ترتیب دے سکتے ہیں۔</p>
+      <p class="italic">اگر آپ اپنے دن میں DOE کے سفر چاہتے ہیں تو 718-777-7800 پر ڈسپیچ کو کال کریں اور انہیں اپنی دستیابی اور اپنے علاقے بتائیں۔</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">فعال مہمات</p>
+    <h2><em>Classic Ryde</em> کے ساتھ زیادہ کمائیں</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; ستمبر کی پیشکش</span>
+      <h4 style="font-size:24px;">ایک ریفرل کو $100 میں بدلیں</h4>
+      <p>کوئی ڈرائیونگ کرنے والا جانتے ہیں؟ انہیں Classic Ryde بھیجیں۔ اگر وہ اپنے <strong>پہلے مہینے کے اندر 100 ٹرپ</strong> مکمل کریں، تو <strong>$100</strong> آپ کے اکاؤنٹ میں آ جائیں گے۔ کوئی حد نہیں: 5 ڈرائیور ریفر کریں، $500 کمائیں۔ یہ بغیر اسٹیئرنگ وہیل چھوئے کمانے کے سب سے آسان طریقوں میں سے ایک ہے۔</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; ہر ریفرل پر کمائیں &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100، کوئی حد نہیں</span>
+      </div>
+      <p>انہیں <strong>www.classicryde.com/drive</strong> پر بھیجیں یا ان سے <strong>718-777-7800</strong> پر ڈسپیچ کو کال کرنے کو کہیں اور اپنا نام اور گاڑی کا نمبر بتانے کو کہیں تاکہ ریفرل کا کریڈٹ آپ کو ملے۔</p>
+      <p class="italic">اہل ہونے کے لیے ریفر کیے گئے ڈرائیور کو پہلے مہینے کے اندر 100 سفر مکمل کرنے ہوں گے۔ یہ بونس جاری ہے، ستمبر میں کوئی آخری تاریخ نہیں۔</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; مہینے کا ڈرائیور &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">ڈرائیور #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;اُن کا کوئی ایک بڑا دن نہیں۔ اُن کے پاس اچھے دنوں کا ایک لمبا سلسلہ ہے۔&quot;</p>
+      <p>Mario نیٹ ورک کی روزانہ کارکردگی رپورٹ کے سب سے مستقل ناموں میں سے ایک ہیں۔ اگست کے دوران وہ دو بار پہلے نمبر پر رہے اور بار بار ٹاپ 5 میں واپس آئے۔ یہ کوئی نئی بات نہیں۔ وہ مہینے در مہینے فہرست کے اوپری حصے کے قریب رہتے ہیں۔</p>
+      <p>اس درجے کا تسلسل ہر صبح کیا جانے والا ایک فیصلہ ہے۔ اس کے لیے اپنے راستے جاننا، مصروف اوقات میں دستیاب رہنا اور رفتار کم کیے بغیر ایک کے بعد ایک سفر لینا ضروری ہے۔ جب بورڈ بھرا ہو تو ڈسپیچ اسی بھروسے پر انحصار کرتا ہے۔ <strong>شکریہ، Mario۔</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; مہینے کے ڈرائیور کا انعام &#10052;</span>
+        <span class="reward-amount">$100 گفٹ کارڈ</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">بہترین ڈرائیور</span>
+        <span class="dtag navy">مستقل مزاج</span>
+        <span class="dtag navy">زیادہ حجم</span>
+        <span class="dtag navy">مہینے در مہینے</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">ڈرائیور کی حفاظت</p>
+    <h2>رفتار کم کریں، اپنے <em>مسافروں کو محفوظ رکھیں</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">اسکول زون انتباہ</span>
+      <h4>اسکول کھل گئے: 20 MPH، نظر رکھیں</h4>
+      <p>NYC کے اسکول زون میں رفتار کی حد <strong>20 mph</strong> ہے اور اسکول کے دنوں میں کیمرے کام کرتے ہیں۔ جرمانے سے زیادہ اہم یہ ہے: بچے بغیر دیکھے فٹ پاتھ سے اتر آتے ہیں اور اسکول بسیں بغیر اطلاع رک جاتی ہیں۔ <strong>سرخ بتیاں جلاتی کھڑی اسکول بس کو کبھی نہ گزریں۔</strong></p>
+      <p>اس مہینے دن کی روشنی بھی کم ہونے لگتی ہے۔ ونڈ اسکرین صاف رکھیں، ہیڈلائٹس چیک کریں، اور دوپہر کے رش میں زیادہ فاصلہ رکھیں۔ سفر کے دوران کچھ بھی ہو تو فوراً 718-777-7800 پر ڈسپیچ کو کال کریں۔</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; دھوکہ دہی کے لیے صفر برداشت &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>ایک جھوٹی رپورٹ کی قیمت<br><em>نیٹ ورک میں آپ کی جگہ ہے</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">وفاقی جرم</span>
+        <h4>Classic Ryde دھوکہ دہی کے لیے صفر برداشت رکھتا ہے</h4>
+        <p>یہ کوئی معمول کی ماہانہ یاد دہانی نہیں، بلکہ ایک ایسا اصول ہے جو ہمیشہ لاگو ہوتا ہے: <strong>گھوسٹ ٹرپس، بڑھا چڑھا کر بتائی گئی مائلیج، اور جھوٹی تکمیل صرف اندرونی مسئلہ نہیں ہیں، یہ Medicaid دھوکہ دہی ہیں، ایک وفاقی جرم</strong> جس میں ڈرائیور کو، نہ کہ صرف کمپنی کو، اصل قید اور جرمانے کا سامنا ہو سکتا ہے۔</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">سفر کا جائزہ</span>
+        <h4>ہر چیز کا جائزہ لیا جاتا ہے، ہر چیز کی کراس چیکنگ ہوتی ہے</h4>
+        <p>ہر سفر میں GPS، ڈسپیچ لاگ اور سہولت کے ریکارڈ کی کراس چیکنگ کی جاتی ہے۔ اگر کچھ میل نہ کھائے تو وہ پکڑا جاتا ہے۔ اگر کسی سفر کی ادائیگی درست نہ ہو تو حل یہ ہے کہ <strong>718-777-7800</strong> پر ڈسپیچ کو کال کریں، خود سے کبھی ایڈجسٹ نہ کریں۔</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>صفر برداشت کا مطلب واقعی صفر برداشت ہے: دھوکہ دہی کا تصدیق شدہ کیس نیٹ ورک میں شرکت ختم کر دیتا ہے، کوئی استثنا نہیں۔ اپنا اکاؤنٹ محفوظ رکھیں، کوئی بھی مشکوک بات نظر آئے تو رپورٹ کریں۔</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">کوئی اور زبان پسند ہے؟</p>
+    <p>یہ نیوز لیٹر ہسپانوی، چینی، روسی، بنگالی، ہیتی کریول، کورین، عربی، فرانسیسی اور پنجابی میں دستیاب ہے۔</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">اپنی زبان چنیں</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">سوالات؟ ہم 24/7 یہاں ہیں۔</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">لائیو ڈسپیچ، ہمیشہ ایک حقیقی انسان۔</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">ہمیں ای میل کریں</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">ویب سائٹ</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="fr" class="flyer" lang="fr">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">Cinquième Édition</p>
+      <h1>Vous Maintenez New York<br><em>En Mouvement.</em></h1>
+      <p class="hero-intro">La rentrée est là et les courses DOE reviennent. Un rappel sur qui exactement a le droit d'être dans votre voiture. Et le chauffeur qui reste en haut du tableau, mois après mois.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Actualités de l'Entreprise</p>
+    <h2>Quoi de Neuf chez <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">Politique &middot; Obligatoire</span>
+      <h4>Ne Pas Mélanger des Clients de Bases, d'Applications ou de Comptes Différents</h4>
+      <p><strong>Chaque passager dans votre voiture lors d'une course Classic Ryde doit être un passager Classic Ryde réservé sous un compte Classic Ryde.</strong> Ne combinez pas un passager Classic Ryde avec un passager d'une autre base, d'une autre application ou d'un autre compte, même si cela tient dans la même voiture sur le même trajet.</p>
+      <p>Cela s'applique que vous fassiez une course partagée ou que vous preniez quelqu'un en chemin. Si vous êtes payé pour plus d'un passager sur la même course, chacun de ces passagers doit appartenir à Classic Ryde.</p>
+      <p class="italic">Cela s'applique à chaque course, sans exception. Traiter cela comme une négligence de la politique peut entraîner la suspension de votre participation. Si une combinaison mélangerait des bases, des applications ou des comptes, refusez-la et appelez le dispatch au 718-777-7800 pour toute question.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Politique &middot; Obligatoire</span>
+      <h4>Trois Boutons. Chaque Course. Chaque Fois.</h4>
+      <p>Il est de votre responsabilité de marquer chaque statut sur chaque course. <strong>Les courses non marquées dans l'application ne sont pas payées par MAS, et si MAS ne paie pas, vous n'êtes pas payé.</strong> Il n'y a aucune exception.</p>
+      <p><strong>1. On-Location</strong> à votre arrivée à l'adresse de prise en charge. <strong>2. Pick-Up</strong> quand le passager est dans le véhicule. <strong>3. Drop-Off</strong> quand le passager descend.</p>
+      <p>Si vous avez le moindre problème pour enregistrer un statut pendant une course, appelez immédiatement le dispatch au 718-777-7800. N'attendez pas la fin de la course.</p>
+      <p class="italic">MAS ne paie pas les courses où le suivi GPS ou le statut drop-off n'a pas été enregistré. La seule façon de protéger vos revenus est de marquer chaque statut sur chaque course.</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">Communauté &middot; Septembre</span>
+      <h4>La Rentrée Est Là, et les Courses DOE Aussi</h4>
+      <p>Les courses du Département de l'Éducation de New York ont ralenti tout l'été. Avec la rentrée, elles reviennent sur le tableau. Si les courses DOE faisaient partie de votre semaine, attendez-vous à les revoir ce mois-ci.</p>
+      <p>Le travail DOE n'est pas un appel comme les autres. Ce sont des trajets planifiés et récurrents : les mêmes élèves, les mêmes adresses, sur un rythme hebdomadaire fixe. Les chauffeurs qui les prennent se constituent une base de travail stable qu'ils peuvent planifier, en plus de ce qu'ils prennent dans la journée.</p>
+      <p class="italic">Si vous voulez des courses DOE dans votre journée, appelez le dispatch au 718-777-7800 et indiquez vos disponibilités et les secteurs que vous couvrez.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Campagnes Actives</p>
+    <h2>Gagnez Plus Avec <em>Classic Ryde</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; Offre de Septembre</span>
+      <h4 style="font-size:24px;">Transformez un Parrainage en $100</h4>
+      <p>Vous connaissez quelqu'un qui conduit? Envoyez-le vers Classic Ryde. S'il complète <strong>100 trajets au cours de son premier mois</strong>, <strong>$100</strong> arrive sur votre compte. Sans plafond: parrainez 5 chauffeurs, gagnez $500. C'est parmi l'argent le plus facile que vous gagnerez sans jamais toucher le volant.</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; Gagnez Par Parrainage &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100, Sans Plafond</span>
+      </div>
+      <p>Envoyez-le vers <strong>www.classicryde.com/drive</strong> ou demandez-lui d'appeler la répartition au <strong>718-777-7800</strong> et de mentionner votre nom et votre numéro de voiture pour que le parrainage vous soit crédité.</p>
+      <p class="italic">Le chauffeur parrainé doit compléter 100 courses au cours de son premier mois pour être admissible. Ce bonus est permanent, il n'y a pas de date limite en septembre.</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; Chauffeur du Mois &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">CHAUFFEUR #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;Il n'a pas une grande journée. Il a une longue série de bonnes journées.&quot;</p>
+      <p>Mario est l'un des noms les plus réguliers du rapport de performance quotidien du réseau. En août, il a terminé numéro 1 à deux reprises et est revenu dans le Top 5 encore et encore. Ce n'est pas nouveau. Il reste près du haut du tableau mois après mois.</p>
+      <p>Une régularité de ce niveau est un choix que l'on fait chaque matin. Il faut connaître ses itinéraires, rester disponible aux heures de pointe et enchaîner les courses sans ralentir. C'est sur ce type de fiabilité que le dispatch compte quand le tableau est chargé. <strong>Merci, Mario.</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; Récompense du Chauffeur du Mois &#10052;</span>
+        <span class="reward-amount">Carte-Cadeau de $100</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">MEILLEUR CHAUFFEUR</span>
+        <span class="dtag navy">RÉGULIER</span>
+        <span class="dtag navy">GROS VOLUME</span>
+        <span class="dtag navy">MOIS APRÈS MOIS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">Sécurité du Chauffeur</p>
+    <h2>Ralentissez, Gardez Vos <em>Passagers en Sécurité</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">Avis Zone Scolaire</span>
+      <h4>La Rentrée : 20 MPH, Restez Vigilant</h4>
+      <p>La limite de vitesse dans les zones scolaires de New York est de <strong>20 mph</strong> et les caméras fonctionnent les jours d'école. Plus important que l'amende : les enfants descendent du trottoir sans regarder et les bus scolaires s'arrêtent sans prévenir. <strong>Ne dépassez jamais un bus scolaire arrêté avec ses feux rouges clignotants.</strong></p>
+      <p>La lumière du jour commence aussi à diminuer ce mois-ci. Nettoyez votre pare-brise, vérifiez vos phares et laissez plus de distance de sécurité à la pointe de l'après-midi. Si quelque chose se produit pendant une course, appelez le dispatch au 718-777-7800 immédiatement.</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; Tolérance Zéro envers la Fraude &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>Un Faux Rapport Coûte<br><em>Votre Place dans le Réseau</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">Infraction Fédérale</span>
+        <h4>Classic Ryde a une Tolérance Zéro envers la Fraude</h4>
+        <p>Ceci n'est pas un rappel mensuel de routine, c'est la règle qui s'applique toujours: <strong>les trajets fantômes, le kilométrage gonflé, et les complétions falsifiées ne sont pas seulement un problème interne, ce sont de la fraude Medicaid, une infraction fédérale</strong> entraînant une vraie prison et des amendes pour le chauffeur, pas seulement pour la société.</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">Révision des Trajets</span>
+        <h4>Tout est Vérifié, Tout est Recoupé</h4>
+        <p>Le GPS, les journaux de répartition et les dossiers des établissements sont recoupés à chaque trajet. Si quelque chose ne correspond pas, c'est détecté. Si un trajet n'est pas payé correctement, la solution est d'appeler la répartition au <strong>718-777-7800</strong>, jamais de faire un ajustement soi-même.</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>Tolérance zéro signifie tolérance zéro: un cas de fraude confirmé met fin à la participation dans le réseau, sans exception. Protégez votre compte, signalez tout ce qui est suspect.</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">Vous Préférez une Autre Langue?</p>
+    <p>Cette newsletter est disponible en espagnol, chinois, russe, bengali, créole haïtien, coréen, arabe, ourdou et pendjabi.</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">Choisissez votre Langue</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">Questions? Nous sommes là 24h/24.</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">Répartition en direct, toujours une vraie personne.</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">Envoyez-nous un Email</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">Site Web</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="pa" class="flyer" lang="pa">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-row">
+        <img class="logo-img" src="https://mclassicryde.github.io/Newsletter/logo.png" alt="Classic Ryde" width="64" height="64" />
+        <div class="brand-text-wrap"><span class="classic">Classic </span><span class="ryde">Ryde</span></div>
+      </div>
+      <div class="edition">
+        <div class="edition-label">Driver Newsletter</div>
+        <div class="edition-badge">September 2026</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow-small">ਪੰਜਵਾਂ ਅੰਕ</p>
+      <h1>ਤੁਸੀਂ ਨਿਊਯਾਰਕ ਨੂੰ<br><em>ਚੱਲਦਾ ਰੱਖਦੇ ਹੋ।</em></h1>
+      <p class="hero-intro">ਸਕੂਲ ਖੁੱਲ੍ਹ ਗਏ ਹਨ ਅਤੇ DOE ਦੇ ਟ੍ਰਿਪ ਵਾਪਸ ਆ ਰਹੇ ਹਨ। ਇੱਕ ਯਾਦ ਦਹਾਨੀ ਕਿ ਤੁਹਾਡੀ ਗੱਡੀ ਵਿੱਚ ਬਿਲਕੁਲ ਕੌਣ ਬੈਠ ਸਕਦਾ ਹੈ। ਅਤੇ ਉਹ ਡਰਾਈਵਰ ਜੋ ਮਹੀਨੇ ਦਰ ਮਹੀਨੇ ਸੂਚੀ ਵਿੱਚ ਸਿਖਰ ਉੱਤੇ ਰਹਿੰਦਾ ਹੈ।</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">ਕੰਪਨੀ ਅਪਡੇਟ</p>
+    <h2><em>Classic Ryde</em> ਵਿੱਚ ਕੀ ਨਵਾਂ ਹੈ</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards">
+    <div class="dark-card">
+      <span class="pill-badge">ਨੀਤੀ &middot; ਲਾਜ਼ਮੀ</span>
+      <h4>ਵੱਖ-ਵੱਖ ਬੇਸਾਂ, ਐਪਾਂ ਜਾਂ ਖਾਤਿਆਂ ਦੇ ਗਾਹਕ ਨਾ ਮਿਲਾਓ</h4>
+      <p><strong>Classic Ryde ਦੇ ਟ੍ਰਿਪ ਦੌਰਾਨ ਤੁਹਾਡੀ ਗੱਡੀ ਵਿੱਚ ਹਰ ਸਵਾਰੀ Classic Ryde ਖਾਤੇ ਹੇਠ ਬੁੱਕ ਕੀਤੀ Classic Ryde ਦੀ ਸਵਾਰੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।</strong> Classic Ryde ਦੀ ਸਵਾਰੀ ਨੂੰ ਕਿਸੇ ਹੋਰ ਬੇਸ, ਹੋਰ ਐਪ ਜਾਂ ਹੋਰ ਖਾਤੇ ਦੀ ਸਵਾਰੀ ਨਾਲ ਨਾ ਮਿਲਾਓ, ਭਾਵੇਂ ਉਹ ਇੱਕੋ ਗੱਡੀ ਵਿੱਚ ਇੱਕੋ ਰਸਤੇ ਉੱਤੇ ਆ ਹੀ ਜਾਵੇ।</p>
+      <p>ਇਹ ਉਦੋਂ ਵੀ ਲਾਗੂ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਸ਼ੇਅਰਡ ਰਾਈਡ ਕਰ ਰਹੇ ਹੋ ਅਤੇ ਉਦੋਂ ਵੀ ਜਦੋਂ ਤੁਸੀਂ ਰਸਤੇ ਵਿੱਚ ਵੱਖਰੇ ਤੌਰ ਤੇ ਕਿਸੇ ਨੂੰ ਬਿਠਾਉਂਦੇ ਹੋ। ਜੇ ਇੱਕੋ ਟ੍ਰਿਪ ਵਿੱਚ ਇੱਕ ਤੋਂ ਵੱਧ ਸਵਾਰੀਆਂ ਦੇ ਪੈਸੇ ਮਿਲ ਰਹੇ ਹਨ, ਤਾਂ ਉਨ੍ਹਾਂ ਵਿੱਚੋਂ ਹਰ ਸਵਾਰੀ Classic Ryde ਦੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।</p>
+      <p class="italic">ਇਹ ਹਰ ਟ੍ਰਿਪ ਉੱਤੇ ਲਾਗੂ ਹੈ, ਕੋਈ ਛੋਟ ਨਹੀਂ। ਇਸ ਨੂੰ ਨੀਤੀ ਪ੍ਰਤੀ ਲਾਪਰਵਾਹੀ ਮੰਨਿਆ ਗਿਆ ਤਾਂ ਭਾਗੀਦਾਰੀ ਮੁਅੱਤਲ ਹੋ ਸਕਦੀ ਹੈ। ਜੇ ਕੋਈ ਜੋੜ ਬੇਸਾਂ, ਐਪਾਂ ਜਾਂ ਖਾਤਿਆਂ ਨੂੰ ਮਿਲਾਉਂਦਾ ਹੈ ਤਾਂ ਉਸ ਨੂੰ ਠੁਕਰਾਓ ਅਤੇ ਕਿਸੇ ਵੀ ਸਵਾਲ ਲਈ 718-777-7800 ਉੱਤੇ ਡਿਸਪੈਚ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">ਨੀਤੀ &middot; ਲਾਜ਼ਮੀ</span>
+      <h4>ਤਿੰਨ ਬਟਨ। ਹਰ ਟ੍ਰਿਪ। ਹਰ ਵਾਰ।</h4>
+      <p>ਹਰ ਟ੍ਰਿਪ ਵਿੱਚ ਹਰ ਸਟੇਟਸ ਲਗਾਉਣਾ ਤੁਹਾਡੀ ਜ਼ਿੰਮੇਵਾਰੀ ਹੈ। <strong>ਐਪ ਵਿੱਚ ਨਾ ਲਗਾਏ ਗਏ ਟ੍ਰਿਪਾਂ ਦਾ ਭੁਗਤਾਨ MAS ਨਹੀਂ ਕਰਦਾ, ਅਤੇ ਜੇ MAS ਭੁਗਤਾਨ ਨਹੀਂ ਕਰਦਾ ਤਾਂ ਤੁਹਾਨੂੰ ਵੀ ਨਹੀਂ ਮਿਲਦਾ।</strong> ਕੋਈ ਛੋਟ ਨਹੀਂ।</p>
+      <p><strong>1. On-Location</strong> ਜਦੋਂ ਤੁਸੀਂ ਪਿੱਕਅੱਪ ਪਤੇ ਉੱਤੇ ਪਹੁੰਚੋ। <strong>2. Pick-Up</strong> ਜਦੋਂ ਸਵਾਰੀ ਗੱਡੀ ਵਿੱਚ ਹੋਵੇ। <strong>3. Drop-Off</strong> ਜਦੋਂ ਸਵਾਰੀ ਉਤਰੇ।</p>
+      <p>ਜੇ ਟ੍ਰਿਪ ਦੌਰਾਨ ਸਟੇਟਸ ਲਗਾਉਣ ਵਿੱਚ ਕੋਈ ਸਮੱਸਿਆ ਆਵੇ ਤਾਂ ਤੁਰੰਤ 718-777-7800 ਉੱਤੇ ਡਿਸਪੈਚ ਨੂੰ ਫ਼ੋਨ ਕਰੋ। ਟ੍ਰਿਪ ਖ਼ਤਮ ਹੋਣ ਦੀ ਉਡੀਕ ਨਾ ਕਰੋ।</p>
+      <p class="italic">ਜਿਨ੍ਹਾਂ ਟ੍ਰਿਪਾਂ ਵਿੱਚ GPS ਟ੍ਰੈਕਿੰਗ ਜਾਂ ਡ੍ਰੌਪ-ਆਫ ਸਟੇਟਸ ਦਰਜ ਨਹੀਂ ਹੋਇਆ, MAS ਉਨ੍ਹਾਂ ਦਾ ਭੁਗਤਾਨ ਨਹੀਂ ਕਰ ਰਿਹਾ। ਆਪਣੀ ਕਮਾਈ ਬਚਾਉਣ ਦਾ ਇੱਕੋ ਤਰੀਕਾ ਹੈ ਹਰ ਟ੍ਰਿਪ ਵਿੱਚ ਹਰ ਸਟੇਟਸ ਲਗਾਉਣਾ।</p>
+    </div>
+    <div class="dark-card">
+      <span class="pill-badge">ਕਮਿਊਨਿਟੀ &middot; ਸਤੰਬਰ</span>
+      <h4>ਸਕੂਲ ਖੁੱਲ੍ਹੇ, DOE ਟ੍ਰਿਪ ਵੀ ਵਾਪਸ</h4>
+      <p>ਸਾਰੀ ਗਰਮੀ NYC Department of Education ਦੇ ਟ੍ਰਿਪ ਘਟ ਗਏ ਸਨ। ਸਕੂਲ ਮੁੜ ਖੁੱਲ੍ਹਣ ਨਾਲ ਇਹ ਵਾਪਸ ਬੋਰਡ ਉੱਤੇ ਆ ਰਹੇ ਹਨ। ਜੇ DOE ਟ੍ਰਿਪ ਤੁਹਾਡੇ ਹਫ਼ਤੇ ਦਾ ਹਿੱਸਾ ਸਨ, ਤਾਂ ਇਸ ਮਹੀਨੇ ਉਨ੍ਹਾਂ ਨੂੰ ਮੁੜ ਦੇਖਣ ਦੀ ਉਮੀਦ ਰੱਖੋ।</p>
+      <p>DOE ਦਾ ਕੰਮ ਆਮ ਕਾਲ ਨਾਲੋਂ ਵੱਖਰਾ ਹੈ। ਇਹ ਤੈਅਸ਼ੁਦਾ ਅਤੇ ਦੁਹਰਾਏ ਜਾਣ ਵਾਲੇ ਰੂਟ ਹਨ: ਉਹੀ ਵਿਦਿਆਰਥੀ, ਉਹੀ ਪਤੇ, ਇੱਕ ਤੈਅ ਹਫ਼ਤਾਵਾਰੀ ਤਾਲ ਨਾਲ। ਜੋ ਡਰਾਈਵਰ ਇਹ ਲੈਂਦੇ ਹਨ, ਉਹ ਦਿਨ ਭਰ ਦੇ ਬਾਕੀ ਕੰਮ ਦੇ ਨਾਲ-ਨਾਲ ਇੱਕ ਸਥਿਰ ਬੁਨਿਆਦ ਬਣਾ ਲੈਂਦੇ ਹਨ ਜਿਸ ਦੇ ਆਲੇ-ਦੁਆਲੇ ਆਪਣਾ ਦਿਨ ਤੈਅ ਕਰ ਸਕਦੇ ਹਨ।</p>
+      <p class="italic">ਜੇ ਤੁਸੀਂ ਆਪਣੇ ਦਿਨ ਵਿੱਚ DOE ਟ੍ਰਿਪ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ 718-777-7800 ਉੱਤੇ ਡਿਸਪੈਚ ਨੂੰ ਫ਼ੋਨ ਕਰੋ ਅਤੇ ਆਪਣੀ ਉਪਲਬਧਤਾ ਅਤੇ ਆਪਣੇ ਇਲਾਕੇ ਦੱਸੋ।</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">ਸਰਗਰਮ ਮੁਹਿੰਮਾਂ</p>
+    <h2><em>Classic Ryde</em> ਨਾਲ ਜ਼ਿਆਦਾ ਕਮਾਓ</h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="dark-card">
+      <span class="pill-badge">&#128176; ਸਤੰਬਰ ਦੀ ਪੇਸ਼ਕਸ਼</span>
+      <h4 style="font-size:24px;">ਇੱਕ ਰੈਫਰਲ ਨੂੰ $100 ਵਿੱਚ ਬਦਲੋ</h4>
+      <p>ਕੋਈ ਜਾਣਦੇ ਹੋ ਜੋ ਡ੍ਰਾਈਵ ਕਰਦਾ ਹੈ? ਉਹਨਾਂ ਨੂੰ Classic Ryde ਵਿੱਚ ਭੇਜੋ। ਜੇ ਉਹ ਆਪਣੇ <strong>ਪਹਿਲੇ ਮਹੀਨੇ ਦੇ ਅੰਦਰ 100 ਸਫ਼ਰ</strong> ਪੂਰੇ ਕਰਦੇ ਹਨ, ਤਾਂ <strong>$100</strong> ਤੁਹਾਡੇ ਖਾਤੇ ਵਿੱਚ ਆ ਜਾਂਦਾ ਹੈ। ਕੋਈ ਸੀਮਾ ਨਹੀਂ: 5 ਚਾਲਕਾਂ ਨੂੰ ਰੈਫਰ ਕਰੋ, $500 ਕਮਾਓ। ਇਹ ਪਹੀਏ ਨੂੰ ਹੱਥ ਲਾਏ ਬਿਨਾਂ ਕਮਾਉਣ ਵਾਲੇ ਸਭ ਤੋਂ ਆਸਾਨ ਪੈਸਿਆਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ।</p>
+      <div style="background-color:rgba(201,169,122,0.12);border:2px solid #C9A97A;margin:14px 0;padding:14px 18px;text-align:center;">
+        <span style="display:block;font-size:10px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:#C9A97A;margin-bottom:4px;">&#128176; ਹਰ ਰੈਫਰਲ ਤੇ ਕਮਾਓ &#128176;</span>
+        <span style="display:block;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#FFFFFF;">$100, ਕੋਈ ਸੀਮਾ ਨਹੀਂ</span>
+      </div>
+      <p>ਉਹਨਾਂ ਨੂੰ <strong>www.classicryde.com/drive</strong> ਤੇ ਭੇਜੋ ਜਾਂ ਉਹਨਾਂ ਨੂੰ <strong>718-777-7800</strong> ਤੇ ਡਿਸਪੈਚ ਨੂੰ ਕਾਲ ਕਰਨ ਲਈ ਕਹੋ ਅਤੇ ਆਪਣਾ ਨਾਮ ਅਤੇ ਗੱਡੀ ਦਾ ਨੰਬਰ ਦੱਸਣ ਲਈ ਕਹੋ ਤਾਂ ਜੋ ਰੈਫਰਲ ਦਾ ਕ੍ਰੈਡਿਟ ਤੁਹਾਨੂੰ ਮਿਲੇ।</p>
+      <p class="italic">ਯੋਗ ਹੋਣ ਲਈ ਰੈਫਰ ਕੀਤੇ ਡਰਾਈਵਰ ਨੂੰ ਪਹਿਲੇ ਮਹੀਨੇ ਦੇ ਅੰਦਰ 100 ਟ੍ਰਿਪ ਪੂਰੇ ਕਰਨੇ ਪੈਣਗੇ। ਇਹ ਬੋਨਸ ਜਾਰੀ ਹੈ, ਸਤੰਬਰ ਵਿੱਚ ਕੋਈ ਆਖ਼ਰੀ ਤਾਰੀਖ਼ ਨਹੀਂ।</p>
+    </div>
+  </div>
+
+  <div class="dotm-section">
+    <div class="dotm-header"><span>&#9733; &nbsp; ਮਹੀਨੇ ਦਾ ਚਾਲਕ &nbsp; &#9733;</span></div>
+    <div class="dotm-avatar-row">
+      <div class="dotm-avatar"><span>MA</span></div>
+      <div class="dotm-name-wrap">
+        <h2>Mario Achury</h2>
+        <p class="subtitle">ਚਾਲਕ #598 &middot; SEPTEMBER 2026</p>
+      </div>
+    </div>
+    <div class="dotm-body">
+      <p class="dotm-quote">&quot;ਉਸ ਦਾ ਕੋਈ ਇੱਕ ਵੱਡਾ ਦਿਨ ਨਹੀਂ। ਉਸ ਕੋਲ ਚੰਗੇ ਦਿਨਾਂ ਦੀ ਲੰਮੀ ਲੜੀ ਹੈ।&quot;</p>
+      <p>Mario ਨੈੱਟਵਰਕ ਦੀ ਰੋਜ਼ਾਨਾ ਕਾਰਗੁਜ਼ਾਰੀ ਰਿਪੋਰਟ ਦੇ ਸਭ ਤੋਂ ਲਗਾਤਾਰ ਨਾਵਾਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ। ਅਗਸਤ ਦੌਰਾਨ ਉਹ ਦੋ ਵਾਰ ਪਹਿਲੇ ਨੰਬਰ ਉੱਤੇ ਰਿਹਾ ਅਤੇ ਵਾਰ-ਵਾਰ ਟਾਪ 5 ਵਿੱਚ ਪਰਤਿਆ। ਇਹ ਕੋਈ ਨਵੀਂ ਗੱਲ ਨਹੀਂ। ਉਹ ਮਹੀਨੇ ਦਰ ਮਹੀਨੇ ਸੂਚੀ ਦੇ ਸਿਖਰ ਦੇ ਨੇੜੇ ਰਹਿੰਦਾ ਹੈ।</p>
+      <p>ਇਸ ਪੱਧਰ ਦੀ ਲਗਾਤਾਰਤਾ ਹਰ ਸਵੇਰ ਲਿਆ ਜਾਣ ਵਾਲਾ ਫ਼ੈਸਲਾ ਹੈ। ਇਸ ਲਈ ਆਪਣੇ ਰੂਟ ਜਾਣਨੇ, ਭੀੜ ਵਾਲੇ ਸਮੇਂ ਉਪਲਬਧ ਰਹਿਣਾ ਅਤੇ ਰਫ਼ਤਾਰ ਘਟਾਏ ਬਿਨਾਂ ਇੱਕ ਤੋਂ ਬਾਅਦ ਇੱਕ ਟ੍ਰਿਪ ਲੈਣਾ ਪੈਂਦਾ ਹੈ। ਜਦੋਂ ਬੋਰਡ ਭਰਿਆ ਹੋਵੇ ਤਾਂ ਡਿਸਪੈਚ ਇਸੇ ਭਰੋਸੇ ਉੱਤੇ ਟੇਕ ਰੱਖਦਾ ਹੈ। <strong>ਧੰਨਵਾਦ, Mario।</strong></p>
+      <div class="dotm-reward">
+        <span class="reward-label">&#10052; ਮਹੀਨੇ ਦੇ ਚਾਲਕ ਦਾ ਇਨਾਮ &#10052;</span>
+        <span class="reward-amount">$100 ਗਿਫਟ ਕਾਰਡ</span>
+      </div>
+      <div class="dotm-tags">
+        <span class="dtag gold">ਸਿਖਰਲਾ ਡਰਾਈਵਰ</span>
+        <span class="dtag navy">ਲਗਾਤਾਰ</span>
+        <span class="dtag navy">ਵੱਧ ਵਾਲੀਅਮ</span>
+        <span class="dtag navy">ਮਹੀਨੇ ਦਰ ਮਹੀਨੇ</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow">ਚਾਲਕ ਸੁਰੱਖਿਆ</p>
+    <h2>ਰਫ਼ਤਾਰ ਘਟਾਓ, ਆਪਣੀਆਂ <em>ਸਵਾਰੀਆਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖੋ</em></h2>
+    <div class="accent-bar"></div>
+  </div>
+  <div class="section-cards" style="padding-bottom:28px;">
+    <div class="light-card gold-border">
+      <span class="pill-badge">ਸਕੂਲ ਜ਼ੋਨ ਚੇਤਾਵਨੀ</span>
+      <h4>ਸਕੂਲ ਖੁੱਲ੍ਹੇ: 20 MPH, ਨਜ਼ਰ ਰੱਖੋ</h4>
+      <p>NYC ਦੇ ਸਕੂਲ ਜ਼ੋਨ ਵਿੱਚ ਰਫ਼ਤਾਰ ਦੀ ਹੱਦ <strong>20 mph</strong> ਹੈ ਅਤੇ ਸਕੂਲ ਵਾਲੇ ਦਿਨਾਂ ਵਿੱਚ ਕੈਮਰੇ ਚੱਲਦੇ ਹਨ। ਜੁਰਮਾਨੇ ਤੋਂ ਵੀ ਜ਼ਰੂਰੀ ਗੱਲ: ਬੱਚੇ ਬਿਨਾਂ ਦੇਖੇ ਫੁੱਟਪਾਥ ਤੋਂ ਉਤਰ ਆਉਂਦੇ ਹਨ ਅਤੇ ਸਕੂਲ ਬੱਸਾਂ ਬਿਨਾਂ ਚੇਤਾਵਨੀ ਰੁਕ ਜਾਂਦੀਆਂ ਹਨ। <strong>ਲਾਲ ਬੱਤੀਆਂ ਜਗਦੀ ਖੜ੍ਹੀ ਸਕੂਲ ਬੱਸ ਨੂੰ ਕਦੇ ਨਾ ਲੰਘੋ।</strong></p>
+      <p>ਇਸ ਮਹੀਨੇ ਦਿਨ ਦੀ ਰੌਸ਼ਨੀ ਵੀ ਘਟਣੀ ਸ਼ੁਰੂ ਹੋ ਜਾਂਦੀ ਹੈ। ਵਿੰਡਸ਼ੀਲਡ ਸਾਫ਼ ਰੱਖੋ, ਹੈੱਡਲਾਈਟਾਂ ਚੈੱਕ ਕਰੋ, ਅਤੇ ਦੁਪਹਿਰ ਦੀ ਭੀੜ ਵਿੱਚ ਵੱਧ ਫ਼ਾਸਲਾ ਰੱਖੋ। ਜੇ ਟ੍ਰਿਪ ਦੌਰਾਨ ਕੁਝ ਵਾਪਰੇ ਤਾਂ ਤੁਰੰਤ 718-777-7800 ਉੱਤੇ ਡਿਸਪੈਚ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</p>
+    </div>
+  </div>
+
+  <div class="fraud-section">
+    <div class="fraud-header"><span>&#9888; &nbsp; ਧੋਖਾਧੜੀ ਪ੍ਰਤੀ ਜ਼ੀਰੋ ਸਹਿਣਸ਼ੀਲਤਾ &nbsp; &#9888;</span></div>
+    <div class="fraud-title">
+      <h2>ਇੱਕ ਝੂਠੀ ਰਿਪੋਰਟ ਦੀ ਕੀਮਤ<br><em>ਨੈੱਟਵਰਕ ਵਿੱਚ ਤੁਹਾਡੀ ਥਾਂ ਹੈ</em></h2>
+      <div class="fraud-accent"></div>
+    </div>
+    <div class="fraud-cards">
+      <div class="fraud-card-a">
+        <span class="pill-badge">ਸੰਘੀ ਅਪਰਾਧ</span>
+        <h4>Classic Ryde ਧੋਖਾਧੜੀ ਪ੍ਰਤੀ ਜ਼ੀਰੋ ਸਹਿਣਸ਼ੀਲਤਾ ਰੱਖਦਾ ਹੈ</h4>
+        <p>ਇਹ ਕੋਈ ਆਮ ਮਹੀਨਾਵਾਰ ਯਾਦ ਦਹਾਨੀ ਨਹੀਂ ਹੈ, ਇਹ ਉਹ ਨਿਯਮ ਹੈ ਜੋ ਹਮੇਸ਼ਾ ਲਾਗੂ ਹੁੰਦਾ ਹੈ: <strong>ਭੂਤ ਸਫ਼ਰ, ਵਧਾਈ ਗਈ ਮਾਈਲੇਜ, ਅਤੇ ਝੂਠੀਆਂ ਸੰਪੂਰਨਤਾਵਾਂ ਸਿਰਫ਼ ਅੰਦਰੂਨੀ ਸਮੱਸਿਆ ਨਹੀਂ ਹਨ, ਇਹ Medicaid ਧੋਖਾਧੜੀ ਹਨ, ਇੱਕ ਸੰਘੀ ਅਪਰਾਧ,</strong> ਜਿਸ ਵਿੱਚ ਚਾਲਕ ਨੂੰ, ਨਾ ਕਿ ਸਿਰਫ਼ ਕੰਪਨੀ ਨੂੰ, ਅਸਲ ਜੇਲ੍ਹ ਅਤੇ ਜ਼ੁਰਮਾਨੇ ਦਾ ਸਾਹਮਣਾ ਕਰਨਾ ਪੈ ਸਕਦਾ ਹੈ।</p>
+      </div>
+      <div class="fraud-card-b">
+        <span class="pill-badge">ਸਫ਼ਰ ਸਮੀਖਿਆ</span>
+        <h4>ਹਰ ਚੀਜ਼ ਦੀ ਸਮੀਖਿਆ ਹੁੰਦੀ ਹੈ, ਹਰ ਚੀਜ਼ ਦੀ ਕਰਾਸ-ਚੈਕਿੰਗ ਹੁੰਦੀ ਹੈ</h4>
+        <p>ਹਰ ਸਫ਼ਰ ਤੇ GPS, ਡਿਸਪੈਚ ਲਾਗ ਅਤੇ ਸਹੂਲਤਾਂ ਦੇ ਰਿਕਾਰਡ ਦੀ ਕਰਾਸ-ਚੈਕਿੰਗ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਜੇ ਕੁਝ ਮੇਲ ਨਾ ਖਾਵੇ, ਤਾਂ ਇਹ ਫੜਿਆ ਜਾਵੇਗਾ। ਜੇ ਕੋਈ ਸਫ਼ਰ ਸਹੀ ਢੰਗ ਨਾਲ ਭੁਗਤਾਨ ਨਹੀਂ ਕਰਦਾ, ਤਾਂ ਹੱਲ ਹੈ <strong>718-777-7800</strong> ਤੇ ਡਿਸਪੈਚ ਨੂੰ ਕਾਲ ਕਰਨਾ, ਖੁਦ ਤੋਂ ਕਦੇ ਵੀ ਸੁਧਾਰ ਨਾ ਕਰਨਾ।</p>
+      </div>
+    </div>
+    <div class="fraud-footer-text"><p>ਜ਼ੀਰੋ ਸਹਿਣਸ਼ੀਲਤਾ ਦਾ ਮਤਲਬ ਹੈ ਜ਼ੀਰੋ ਸਹਿਣਸ਼ੀਲਤਾ: ਧੋਖਾਧੜੀ ਦਾ ਪੁਸ਼ਟੀ ਹੋਇਆ ਮਾਮਲਾ ਨੈੱਟਵਰਕ ਵਿੱਚ ਭਾਗੀਦਾਰੀ ਖਤਮ ਕਰ ਦਿੰਦਾ ਹੈ, ਕੋਈ ਅਪਵਾਦ ਨਹੀਂ। ਆਪਣਾ ਖਾਤਾ ਸੁਰੱਖਿਅਤ ਰੱਖੋ, ਕੋਈ ਵੀ ਸ਼ੱਕੀ ਗੱਲ ਦੇਖੋ ਤਾਂ ਰਿਪੋਰਟ ਕਰੋ।</p></div>
+  </div>
+
+  <div class="lang-cta">
+    <p class="eyebrow">ਕੋਈ ਹੋਰ ਭਾਸ਼ਾ ਚਾਹੁੰਦੇ ਹੋ?</p>
+    <p>ਇਹ ਨਿਊਜ਼ਲੈਟਰ ਸਪੇਨੀ, ਚੀਨੀ, ਰੂਸੀ, ਬੰਗਾਲੀ, ਹੈਤੀਅਨ ਕ੍ਰਿਓਲ, ਕੋਰੀਅਨ, ਅਰਬੀ, ਉਰਦੂ ਅਤੇ ਫਰਾਂਸੀਸੀ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।</p>
+    <a href="https://mclassicryde.github.io/Newsletter/">ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ</a>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-left">
+      <p class="q">ਸਵਾਲ ਹਨ? ਅਸੀਂ 24/7 ਇੱਥੇ ਹਾਂ।</p>
+      <span class="phone">718-777-7800</span>
+      <p class="q2">ਲਾਈਵ ਡਿਸਪੈਚ, ਹਮੇਸ਼ਾ ਇੱਕ ਅਸਲੀ ਵਿਅਕਤੀ।</p>
+    </div>
+    <div class="contact-right">
+      <p class="lbl">ਸਾਨੂੰ ਈਮੇਲ ਕਰੋ</p>
+      <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a>
+      <p class="lbl">ਵੈੱਬਸਾਈਟ</p>
+      <a href="https://www.classicryde.com/drive">www.classicryde.com/drive</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="legal">
+  <p>&copy; 2026 Classic Car Service DBA Classic Ryde &middot; All rights reserved</p>
+  <p>276 Greenpoint Ave, Brooklyn NY 11222 Suite 251 &middot; <a href="mailto:drivers@classicryde.com">drivers@classicryde.com</a> &middot; <a class="navy" href="https://www.classicryde.com/drive">www.classicryde.com/drive</a></p>
+  <p>You are receiving this because you are a Classic Ryde driver.</p>
+  <div class="badges">
+    <span class="badge-item">Medicaid Enrolled</span>
+    <span class="badge-item">TLC Licensed</span>
+    <span class="badge-item">24/7 Dispatch</span>
+  </div>
+</div>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('[data-lang]');
+  var flyers = document.querySelectorAll('.flyer');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-lang');
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      flyers.forEach(function(f){ f.classList.remove('active'); });
+      btn.classList.add('active');
+      var target = document.getElementById(lang);
+      if(target){ target.classList.add('active'); }
+      var anchor = '#'+lang;
+      if(history.pushState){ history.pushState(null,null,anchor); }
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+  var hash = window.location.hash.replace('#','');
+  if(hash && document.getElementById(hash)){
+    btns.forEach(function(b){ b.classList.remove('active'); });
+    flyers.forEach(function(f){ f.classList.remove('active'); });
+    var hBtn = document.querySelector('[data-lang="'+hash+'"]');
+    if(hBtn) hBtn.classList.add('active');
+    document.getElementById(hash).classList.add('active');
+  }
+})();
+</script>
+</body>
+</html>
